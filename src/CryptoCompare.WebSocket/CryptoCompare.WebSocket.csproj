@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="../../CryptoCompare.targets" />
+  <PropertyGroup>
+    <PackageId>CryptoCompare.WebSocket</PackageId>
+    <AssemblyTitle>CryptoCompare.WebSocket</AssemblyTitle>
+    <AssemblyName>CryptoCompare.WebSocket</AssemblyName>
+    <RootNamespace>CryptoCompare.WebSocket</RootNamespace>
+    <Description>A WebSocket part of async-based CryptoCompare API client library for .NET and .NET Core</Description>
+    <TargetFrameworks>netstandard1.3;net45</TargetFrameworks>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CryptoCompare\CryptoCompare.csproj" />
+  </ItemGroup>
+  
+</Project>

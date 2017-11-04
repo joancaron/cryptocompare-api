@@ -15,6 +15,7 @@ deploy:
   server: https://ci.appveyor.com/nuget/joancaron/api/v2/package
   api_key:
     secure: Rtj50ytl532cDpBHKIEEzcPAP78MkrrMBxp/wnSqNUk=
+  skip_symbols: true
   on:
     branch: develop
 - provider: NuGet

@@ -11,6 +11,6 @@ namespace CryptoCompare.Clients
         /// <summary>
         /// all the exchanges that CryptoCompare has integrated with..
         /// </summary>
-        Task<IDictionary<string, IDictionary<string, IEnumerable<string>>>> AllExchangesAsync();
+        Task<IDictionary<string, IDictionary<string, IEnumerable<string>>>> ListAsync();
     }
 }

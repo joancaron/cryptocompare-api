@@ -27,7 +27,7 @@ namespace CryptoCompare.Clients
         /// Returns all the coins that CryptoCompare has added to the website.
         /// </summary>
         /// <seealso cref="M:CryptoCompare.Clients.ICoinsClient.AllCoinsAsync()"/>
-        public async Task<CoinList> AllCoinsAsync()
+        public async Task<CoinList> ListAsync()
         {
             return await this.SendRequestAsync<CoinList>(HttpMethod.Get, ApiUrls.AllCoins);
         }

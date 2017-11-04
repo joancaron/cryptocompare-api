@@ -55,9 +55,6 @@ namespace CryptoCompare.Responses
         /// </summary>
         public string ProofType { get; set; }
 
-        [JsonProperty(nameof(SortOrder))]
-        private string ActualSortOrder { get; set; }
-
         /// <summary>
         /// Gets the sort order.
         /// </summary>
@@ -75,18 +72,21 @@ namespace CryptoCompare.Responses
         public string Symbol { get; set; }
 
         /// <summary>
-        /// Gets or sets the total number of supplied coins.
-        /// </summary>
-        public string TotalCoinSupply { get; set; }
-
-        /// <summary>
         /// Gets or sets the total number of freed coins.
         /// </summary>
         public string TotalCoinsFreeFloat { get; set; }
 
         /// <summary>
+        /// Gets or sets the total number of supplied coins.
+        /// </summary>
+        public string TotalCoinSupply { get; set; }
+
+        /// <summary>
         /// Gets or sets the url of the coin on cryptocompare.
         /// </summary>
         public string Url { get; set; }
+
+        [JsonProperty(nameof(SortOrder))]
+        private string ActualSortOrder { get; set; }
     }
 }

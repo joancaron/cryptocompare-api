@@ -18,20 +18,22 @@ namespace CryptoCompare.Responses
         /// <value>
         /// True if this is a successful response, false if not.
         /// </value>
-        public bool IsSuccessfulResponse =>
-            !string.Equals(this.Status, Constants.ResponseErrorStatus, StringComparison.OrdinalIgnoreCase);
-
-        /// <summary>
-        /// Gets or sets the message.
-        /// </summary>
-        [JsonProperty("Message")]
-        public string StatusMessage { get; set; }
+        public bool IsSuccessfulResponse => !string.Equals(
+                                                this.Status,
+                                                Constants.ResponseErrorStatus,
+                                                StringComparison.OrdinalIgnoreCase);
 
         /// <summary>
         /// Gets or sets the response status.
         /// </summary>
         [JsonProperty("Response")]
         public string Status { get; set; }
+
+        /// <summary>
+        /// Gets or sets the message.
+        /// </summary>
+        [JsonProperty("Message")]
+        public string StatusMessage { get; set; }
 
         /// <summary>
         /// Gets or sets the type of the status.

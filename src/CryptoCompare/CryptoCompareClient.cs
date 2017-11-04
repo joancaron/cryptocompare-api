@@ -45,6 +45,24 @@ namespace CryptoCompare
         public static CryptoCompareClient Instance => Lazy.Value;
 
         /// <summary>
+        /// Gets the client for coins related api endpoints.
+        /// </summary>
+        /// <seealso cref="P:CryptoCompare.ICryptoCompareClient.Coins"/>
+        public ICoinsClient Coins => new CoinsClient(this._httpClient);
+
+        /// <summary>
+        /// Gets the client for exchanges related api endpoints.
+        /// </summary>
+        /// <seealso cref="P:CryptoCompare.ICryptoCompareClient.Exchanges"/>
+        public IExchangesClient Exchanges { get; }
+
+        /// <summary>
+        /// Gets or sets the client for api calls rate limits.
+        /// </summary>
+        /// <seealso cref="P:CryptoCompare.ICryptoCompareClient.RateLimits"/>
+        public IRateLimitsClient RateLimits => new RateLimitsClient(this._httpClient);
+
+        /// <summary>
         /// Performs application-defined tasks associated with freeing, releasing, or
         /// resetting unmanaged resources.
         /// </summary>
@@ -68,17 +86,5 @@ namespace CryptoCompare
                 this._isDisposed = true;
             }
         }
-
-        /// <summary>
-        /// Gets or sets the client for api calls rate limits.
-        /// </summary>
-        /// <seealso cref="P:CryptoCompare.ICryptoCompareClient.RateLimits"/>
-        public IRateLimitsClient RateLimits => new RateLimitsClient(this._httpClient);
-
-        /// <summary>
-        /// Gets the client for coins related api endpoints.
-        /// </summary>
-        /// <seealso cref="P:CryptoCompare.ICryptoCompareClient.Coins"/>
-        public ICoinsClient Coins => new CoinsClient(this._httpClient);
     }
 }

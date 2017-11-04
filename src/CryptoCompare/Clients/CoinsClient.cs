@@ -1,13 +1,10 @@
-﻿using System.Collections.Generic;
-using System.Net.Http;
+﻿using System.Net.Http;
 using System.Threading.Tasks;
 
 using CryptoCompare.Core;
 using CryptoCompare.Responses;
 
 using JetBrains.Annotations;
-
-using Newtonsoft.Json.Serialization;
 
 namespace CryptoCompare.Clients
 {
@@ -32,20 +29,7 @@ namespace CryptoCompare.Clients
         /// <seealso cref="M:CryptoCompare.Clients.ICoinsClient.AllCoinsAsync()"/>
         public async Task<CoinList> AllCoinsAsync()
         {
-            return await this.SendRequestAsync<CoinList>(
-                       HttpMethod.Get,
-                       ApiUrls.AllCoins);
-        }
-
-        /// <summary>
-        /// all the exchanges that CryptoCompare has integrated with.
-        /// </summary>
-        /// <seealso cref="M:CryptoCompare.Clients.ICoinsClient.AllExchangesAsync()"/>
-        public async Task<IDictionary<string, IDictionary<string, IEnumerable<string>>>> AllExchangesAsync()
-        {
-            return await this.SendRequestAsync<IDictionary<string, IDictionary<string, IEnumerable<string>>>>(
-                       HttpMethod.Get,
-                       ApiUrls.AllExchanges);
+            return await this.SendRequestAsync<CoinList>(HttpMethod.Get, ApiUrls.AllCoins);
         }
     }
 }

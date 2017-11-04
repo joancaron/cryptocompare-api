@@ -1,13 +1,18 @@
 ﻿using System.Collections.Generic;
 
-using CryptoCompare.Clients;
-
 using Newtonsoft.Json;
 
 namespace CryptoCompare.Responses
 {
+    /// <summary>
+    /// List of coins.
+    /// </summary>
+    /// <seealso cref="T:CryptoCompare.Responses.BaseApiResponse"/>
     public class CoinList : BaseApiResponse
     {
+        /// <summary>
+        /// Gets or sets the coins data.
+        /// </summary>
         [JsonProperty("Data")]
         public IDictionary<string, CoinInfo> Coins { get; set; }
     }

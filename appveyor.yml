@@ -12,10 +12,10 @@ artifacts:
   name: NuGet
 deploy:
 - provider: NuGet
-  server: https://ci.appveyor.com/nuget/joancaron/api/v2/package
+  server: https://www.myget.org/F/ci-joancaron/api/v2/package
+  symbol_server: https://www.myget.org/F/ci-joancaron/symbols/api/v2/package
   api_key:
-    secure: Rtj50ytl532cDpBHKIEEzcPAP78MkrrMBxp/wnSqNUk=
-  skip_symbols: true
+    secure: sh75BgL6t/4l/KaaUbeUS5S4B64q/cZEVmSNenw+FfDpHRKwj/5AdnCuOqfcp75D
   on:
     branch: develop
 - provider: NuGet

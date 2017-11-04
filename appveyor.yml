@@ -1,0 +1,23 @@
+version: '{build}'
+pull_requests:
+  do_not_increment_build_number: true
+image: Visual Studio 2017
+nuget:
+  disable_publish_on_pr: true
+build_script:
+- ps: .\build.ps1
+test: off
+artifacts:
+- path: .\src\**\artifacts\**\*.nupkg
+  name: NuGet
+deploy:
+- provider: NuGet
+  server: https://ci.appveyor.com/nuget/cryptocompare-api
+  on:
+    branch: develop
+- provider: NuGet
+  name: production
+  api_key:
+    secure: j3r94Yxo18PaZPxOHA+54dQRbwPvx30s9te7OrnuYIyNUHAnK9K4orCR0Y8+6u0G
+  on:
+    appveyor_repo_tag: true

@@ -1,15 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2006
+VisualStudioVersion = 15.0.27004.2005
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoCompare", "src\CryptoCompare\CryptoCompare.csproj", "{74DE4A18-AFE5-485F-A205-5C38CA3BD0BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CryptoCompare", "src\CryptoCompare\CryptoCompare.csproj", "{74DE4A18-AFE5-485F-A205-5C38CA3BD0BB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B4B8ECDB-63A4-431A-8313-2D90142033C1}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 		.gitattributes = .gitattributes
 		.gitignore = .gitignore
+		appveyor.yml = appveyor.yml
+		build.ps1 = build.ps1
 		CryptoCompare.targets = CryptoCompare.targets
 		LICENSE = LICENSE
 		README.md = README.md
@@ -18,19 +20,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{CAAC477E-7487-42CB-9DEB-AE8860A3B03F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoCompare.Tests", "test\CryptoCompare.Tests\CryptoCompare.Tests.csproj", "{E352A047-C22D-4AB6-9737-47700656B4C4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CryptoCompare.Tests", "test\CryptoCompare.Tests\CryptoCompare.Tests.csproj", "{E352A047-C22D-4AB6-9737-47700656B4C4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoCompare.WebSocket", "src\CryptoCompare.WebSocket\CryptoCompare.WebSocket.csproj", "{7AB690D4-E6BB-4B2F-B37D-2A452D385478}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CryptoCompare.WebSocket", "src\CryptoCompare.WebSocket\CryptoCompare.WebSocket.csproj", "{7AB690D4-E6BB-4B2F-B37D-2A452D385478}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoCompare.WebSocket.Tests", "test\CryptoCompare.WebSocket.Tests\CryptoCompare.WebSocket.Tests.csproj", "{CD718BE1-87BE-4B78-B379-6F83640FF836}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CryptoCompare.WebSocket.Tests", "test\CryptoCompare.WebSocket.Tests\CryptoCompare.WebSocket.Tests.csproj", "{CD718BE1-87BE-4B78-B379-6F83640FF836}"
 	ProjectSection(ProjectDependencies) = postProject
 		{74DE4A18-AFE5-485F-A205-5C38CA3BD0BB} = {74DE4A18-AFE5-485F-A205-5C38CA3BD0BB}
 		{7AB690D4-E6BB-4B2F-B37D-2A452D385478} = {7AB690D4-E6BB-4B2F-B37D-2A452D385478}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoCompare.Tests.Integration", "test\CryptoCompare.Tests.Integration\CryptoCompare.Tests.Integration.csproj", "{30CAA1A3-3982-4673-9559-B1ABCDC08B79}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CryptoCompare.Tests.Integration", "test\CryptoCompare.Tests.Integration\CryptoCompare.Tests.Integration.csproj", "{30CAA1A3-3982-4673-9559-B1ABCDC08B79}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoCompare.WebSocket.Tests.Integration", "test\CryptoCompare.WebSocket.Tests.Integration\CryptoCompare.WebSocket.Tests.Integration.csproj", "{EC0F41A3-E853-4F8A-94B7-34155CF9B77E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CryptoCompare.WebSocket.Tests.Integration", "test\CryptoCompare.WebSocket.Tests.Integration\CryptoCompare.WebSocket.Tests.Integration.csproj", "{EC0F41A3-E853-4F8A-94B7-34155CF9B77E}"
 	ProjectSection(ProjectDependencies) = postProject
 		{74DE4A18-AFE5-485F-A205-5C38CA3BD0BB} = {74DE4A18-AFE5-485F-A205-5C38CA3BD0BB}
 	EndProjectSection

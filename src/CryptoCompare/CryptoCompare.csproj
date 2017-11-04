@@ -10,9 +10,5 @@
     <Description>An async-based CryptoCompare API client library for .NET and .NET Core</Description>
     <TargetFrameworks>netstandard1.1;netstandard1.3;net45</TargetFrameworks>
   </PropertyGroup>
-  
-  <ItemGroup>
-    <PackageReference Include="JetBrains.Annotations" Version="11.1.0" />
-  </ItemGroup>
 
 </Project>

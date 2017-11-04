@@ -9,7 +9,7 @@ namespace CryptoCompare.Helpers
     /// Null checking utilities.
     /// </summary>
     [DebuggerStepThrough]
-    public static class Check
+    internal static class Check
     {
         /// <summary>
         /// Checks null arguments.

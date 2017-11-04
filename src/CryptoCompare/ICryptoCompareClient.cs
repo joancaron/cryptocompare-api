@@ -13,5 +13,10 @@ namespace CryptoCompare
         /// Gets the client for api calls rate limits.
         /// </summary>
         IRateLimitsClient RateLimits { get; }
+
+        /// <summary>
+        /// Gets the client for coins related api endpoints.
+        /// </summary>
+        ICoinsClient Coins { get; }
     }
 }

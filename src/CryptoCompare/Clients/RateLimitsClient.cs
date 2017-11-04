@@ -26,12 +26,6 @@ namespace CryptoCompare.Clients
         }
 
         /// <summary>
-        /// Gets or sets the base URI for api calls.
-        /// </summary>
-        /// <seealso cref="P:CryptoCompare.Clients.BaseApiClient.BaseUri"/>
-        protected override Uri BaseUri => ApiUrls.MinApiEndpoint;
-
-        /// <summary>
         /// Gets the rate limits left for you on the histo, price and news paths in the
         /// current hour.
         /// </summary>

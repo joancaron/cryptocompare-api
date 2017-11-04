@@ -69,6 +69,16 @@ namespace CryptoCompare
             }
         }
 
+        /// <summary>
+        /// Gets or sets the client for api calls rate limits.
+        /// </summary>
+        /// <seealso cref="P:CryptoCompare.ICryptoCompareClient.RateLimits"/>
         public IRateLimitsClient RateLimits => new RateLimitsClient(this._httpClient);
+
+        /// <summary>
+        /// Gets the client for coins related api endpoints.
+        /// </summary>
+        /// <seealso cref="P:CryptoCompare.ICryptoCompareClient.Coins"/>
+        public ICoinsClient Coins => new CoinsClient(this._httpClient);
     }
 }

@@ -33,6 +33,9 @@ namespace CryptoCompare.Responses
         [JsonProperty("Response")]
         public string Status { get; set; }
 
+        /// <summary>
+        /// Gets or sets the type of the status.
+        /// </summary>
         [JsonProperty("Type")]
         public int StatusType { get; set; }
     }

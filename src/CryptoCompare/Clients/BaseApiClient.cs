@@ -12,20 +12,22 @@ using Newtonsoft.Json;
 
 namespace CryptoCompare.Clients
 {
+    /// <summary>
+    /// A base API client.
+    /// </summary>
     public abstract class BaseApiClient
     {
         private readonly HttpClient _httpClient;
 
+        /// <summary>
+        /// Initializes a new instance of the CryptoCompare.Clients.BaseApiClient class.
+        /// </summary>
+        /// <param name="httpClient">The HTTP client. This cannot be null.</param>
         protected BaseApiClient([NotNull] HttpClient httpClient)
         {
             Check.NotNull(httpClient, nameof(httpClient));
             this._httpClient = httpClient;
         }
-
-        /// <summary>
-        /// Gets the base URI for api calls
-        /// </summary>
-        protected abstract Uri BaseUri { get; }
 
         /// <summary>
         /// Sends an api request asynchronously.
@@ -40,14 +42,10 @@ namespace CryptoCompare.Clients
         protected async Task<TApiResponse> SendRequestAsync<TApiResponse>(
             HttpMethod httpMethod,
             [NotNull] Uri resourceUri)
-            where TApiResponse : BaseApiResponse
         {
-            Check.NotNull(this.BaseUri, nameof(resourceUri));
             Check.NotNull(resourceUri, nameof(resourceUri));
 
-            var uri = new Uri(this.BaseUri, resourceUri);
-
-            var response = await this._httpClient.SendAsync(new HttpRequestMessage(httpMethod, uri))
+            var response = await this._httpClient.SendAsync(new HttpRequestMessage(httpMethod, resourceUri))
                                .ConfigureAwait(false);
             response.EnsureSuccessStatusCode();
 
@@ -55,9 +53,13 @@ namespace CryptoCompare.Clients
                 JsonConvert.DeserializeObject<TApiResponse>(
                     await response.Content.ReadAsStringAsync().ConfigureAwait(false));
 
-            return apiResponseObject.IsSuccessfulResponse
-                       ? apiResponseObject
-                       : throw new CryptoCompareException(apiResponseObject);
+            var baseApiResponse = apiResponseObject as BaseApiResponse;
+            if (baseApiResponse != null && !baseApiResponse.IsSuccessfulResponse)
+            {
+                throw new CryptoCompareException(baseApiResponse);
+            }
+
+            return apiResponseObject;
         }
     }
 }

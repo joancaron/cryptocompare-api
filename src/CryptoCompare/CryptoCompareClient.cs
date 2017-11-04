@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Net.Http;
 
+using CryptoCompare.Clients;
 using CryptoCompare.Helpers;
 
 using JetBrains.Annotations;
@@ -67,5 +68,7 @@ namespace CryptoCompare
                 this._isDisposed = true;
             }
         }
+
+        public IRateLimitsClient RateLimits => new RateLimitsClient(this._httpClient);
     }
 }

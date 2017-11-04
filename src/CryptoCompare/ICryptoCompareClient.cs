@@ -1,5 +1,7 @@
 ﻿using System;
 
+using CryptoCompare.Clients;
+
 namespace CryptoCompare
 {
     /// <summary>
@@ -7,5 +9,9 @@ namespace CryptoCompare
     /// </summary>
     public interface ICryptoCompareClient : IDisposable
     {
+        /// <summary>
+        /// Gets the client for api calls rate limits.
+        /// </summary>
+        IRateLimitsClient RateLimits { get; }
     }
 }

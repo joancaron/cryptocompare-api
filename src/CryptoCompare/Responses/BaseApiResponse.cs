@@ -19,7 +19,7 @@ namespace CryptoCompare.Responses
         /// True if this is a successful response, false if not.
         /// </value>
         public bool IsSuccessfulResponse =>
-            string.Equals(this.Status, Constants.ResponseErrorStatus, StringComparison.OrdinalIgnoreCase);
+            !string.Equals(this.Status, Constants.ResponseErrorStatus, StringComparison.OrdinalIgnoreCase);
 
         /// <summary>
         /// Gets or sets the message.

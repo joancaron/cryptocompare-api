@@ -12,7 +12,7 @@ using Newtonsoft.Json;
 
 namespace CryptoCompare.Clients
 {
-    internal abstract class BaseApiClient
+    public abstract class BaseApiClient
     {
         private readonly HttpClient _httpClient;
 
@@ -22,6 +22,9 @@ namespace CryptoCompare.Clients
             this._httpClient = httpClient;
         }
 
+        /// <summary>
+        /// Gets the base URI for api calls
+        /// </summary>
         protected abstract Uri BaseUri { get; }
 
         /// <summary>
@@ -36,11 +39,11 @@ namespace CryptoCompare.Clients
         /// </returns>
         protected async Task<TApiResponse> SendRequestAsync<TApiResponse>(
             HttpMethod httpMethod,
-            [NotNull] string resourceUri)
+            [NotNull] Uri resourceUri)
             where TApiResponse : BaseApiResponse
         {
             Check.NotNull(this.BaseUri, nameof(resourceUri));
-            Check.NotNullOrWhiteSpace(resourceUri, nameof(resourceUri));
+            Check.NotNull(resourceUri, nameof(resourceUri));
 
             var uri = new Uri(this.BaseUri, resourceUri);
 

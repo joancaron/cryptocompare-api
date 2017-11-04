@@ -12,7 +12,9 @@ artifacts:
   name: NuGet
 deploy:
 - provider: NuGet
-  server: https://ci.appveyor.com/nuget/cryptocompare-api
+  server: https://ci.appveyor.com/nuget/joancaron/api/v2/package
+  api_key:
+    secure: Rtj50ytl532cDpBHKIEEzcPAP78MkrrMBxp/wnSqNUk=
   on:
     branch: develop
 - provider: NuGet

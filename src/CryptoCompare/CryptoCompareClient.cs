@@ -54,7 +54,7 @@ namespace CryptoCompare
         /// Gets the client for exchanges related api endpoints.
         /// </summary>
         /// <seealso cref="P:CryptoCompare.ICryptoCompareClient.Exchanges"/>
-        public IExchangesClient Exchanges { get; }
+        public IExchangesClient Exchanges => new ExchangesClient(this._httpClient);
 
         /// <summary>
         /// Gets or sets the client for api calls rate limits.

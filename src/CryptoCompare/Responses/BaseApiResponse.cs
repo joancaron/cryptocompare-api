@@ -40,5 +40,15 @@ namespace CryptoCompare.Responses
         /// </summary>
         [JsonProperty("Type")]
         public int StatusType { get; set; }
+
+        /// <summary>
+        /// Gets or sets the errors summary.
+        /// </summary>
+        public string ErrorsSummary { get; set; }
+
+        /// <summary>
+        /// Gets or sets the full pathname of the resource called.
+        /// </summary>
+        public string Path { get; set; }
     }
 }

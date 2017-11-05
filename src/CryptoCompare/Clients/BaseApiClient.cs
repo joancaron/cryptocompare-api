@@ -47,19 +47,28 @@ namespace CryptoCompare.Clients
 
             var response = await this._httpClient.SendAsync(new HttpRequestMessage(httpMethod, resourceUri))
                                .ConfigureAwait(false);
+
             response.EnsureSuccessStatusCode();
 
-            var apiResponseObject =
-                JsonConvert.DeserializeObject<TApiResponse>(
-                    await response.Content.ReadAsStringAsync().ConfigureAwait(false));
+            var jsonResponse = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
-            var baseApiResponse = apiResponseObject as BaseApiResponse;
-            if (baseApiResponse != null && !baseApiResponse.IsSuccessfulResponse)
+            try
             {
-                throw new CryptoCompareException(baseApiResponse);
-            }
+                var apiResponseObject = JsonConvert.DeserializeObject<TApiResponse>(jsonResponse);
 
-            return apiResponseObject;
+                var baseApiResponse = apiResponseObject as BaseApiResponse;
+                if (baseApiResponse != null && !baseApiResponse.IsSuccessfulResponse)
+                {
+                    throw new CryptoCompareException(baseApiResponse);
+                }
+
+                return apiResponseObject;
+            }
+            catch (JsonSerializationException jsonSerializationException)
+            {
+                var apiErrorResponse = JsonConvert.DeserializeObject<BaseApiResponse>(jsonResponse);
+                throw new CryptoCompareException(apiErrorResponse, jsonSerializationException);
+            }
         }
     }
 }

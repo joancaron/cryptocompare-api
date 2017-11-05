@@ -1,4 +1,8 @@
-﻿using Newtonsoft.Json;
+﻿using System;
+
+using CryptoCompare.Converters;
+
+using Newtonsoft.Json;
 
 namespace CryptoCompare.Responses
 {
@@ -16,8 +20,9 @@ namespace CryptoCompare.Responses
         [JsonProperty("LASTTRADEID")]
         public string LastTradeId { get; set; }
 
+        [JsonConverter(typeof(UnixTimeConverter))]
         [JsonProperty("LASTUPDATE")]
-        public string LastUpdate { get; set; }
+        public DateTimeOffset LastUpdate { get; set; }
 
         [JsonProperty("LASTVOLUME")]
         public decimal LastVolume { get; set; }

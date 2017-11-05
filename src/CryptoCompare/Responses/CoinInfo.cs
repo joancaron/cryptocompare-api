@@ -1,6 +1,4 @@
-﻿using Newtonsoft.Json;
-
-namespace CryptoCompare.Responses
+﻿namespace CryptoCompare.Responses
 {
     /// <summary>
     /// Information about the coin. (Coin list endpoint)

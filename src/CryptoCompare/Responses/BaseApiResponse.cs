@@ -13,6 +13,11 @@ namespace CryptoCompare.Responses
     public class BaseApiResponse
     {
         /// <summary>
+        /// Gets or sets the errors summary.
+        /// </summary>
+        public string ErrorsSummary { get; set; }
+
+        /// <summary>
         /// Gets or sets a value indicating whether this is a successful response.
         /// </summary>
         /// <value>
@@ -22,6 +27,11 @@ namespace CryptoCompare.Responses
                                                 this.Status,
                                                 Constants.ResponseErrorStatus,
                                                 StringComparison.OrdinalIgnoreCase);
+
+        /// <summary>
+        /// Gets or sets the full pathname of the resource called.
+        /// </summary>
+        public string Path { get; set; }
 
         /// <summary>
         /// Gets or sets the response status.
@@ -40,15 +50,5 @@ namespace CryptoCompare.Responses
         /// </summary>
         [JsonProperty("Type")]
         public int StatusType { get; set; }
-
-        /// <summary>
-        /// Gets or sets the errors summary.
-        /// </summary>
-        public string ErrorsSummary { get; set; }
-
-        /// <summary>
-        /// Gets or sets the full pathname of the resource called.
-        /// </summary>
-        public string Path { get; set; }
     }
 }

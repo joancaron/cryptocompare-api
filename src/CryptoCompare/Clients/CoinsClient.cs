@@ -1,4 +1,5 @@
-﻿using System.Net.Http;
+﻿using System;
+using System.Net.Http;
 using System.Threading.Tasks;
 
 using CryptoCompare.Core;
@@ -45,6 +46,19 @@ namespace CryptoCompare.Clients
             Check.NotNull(toSymbol, nameof(toSymbol));
             Check.NotNull(fromSymbol, nameof(fromSymbol));
             return await this.SendRequestAsync<CoinSnapshot>(HttpMethod.Get, ApiUrls.CoinSnapshot(fromSymbol, toSymbol));
+        }
+
+        /// <summary>
+        /// Get the general, subs (used to connect to the streamer and to figure out what exchanges we have data for and what are the exact coin pairs of the coin) 
+        /// and the aggregated prices for all pairs available..
+        /// </summary>
+        /// <param name="id">The id of the coin you want data for.</param>
+        /// <returns>
+        /// The asynchronous result that yields a full CoinSnapshot.
+        /// </returns>
+        public async Task<CoinSnapshotFull> SnapshotFullAsync(int id)
+        {
+            return await this.SendRequestAsync<CoinSnapshotFull>(HttpMethod.Get, ApiUrls.CoinSnapshotFull(id));
         }
     }
 }

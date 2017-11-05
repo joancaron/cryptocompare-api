@@ -36,6 +36,15 @@ namespace CryptoCompare.Core
                 });
         }
 
+        public static Uri CoinSnapshotFull(int id)
+        {
+            return new Uri(SiteApiEndpoint, "coinsnapshotfullbyid").ApplyParameters(
+                new Dictionary<string, string>()
+                {
+                    { nameof(id), id.ToString() }
+                });
+        }
+
         public static Uri RateLimitsByHour() => new Uri(MinApiEndpoint, string.Format(RateLimitsUrl, "hour"));
 
         public static Uri RateLimitsByMinute() => new Uri(MinApiEndpoint, string.Format(RateLimitsUrl, "minute"));

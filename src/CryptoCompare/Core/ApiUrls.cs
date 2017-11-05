@@ -45,7 +45,30 @@ namespace CryptoCompare.Core
                 });
         }
 
-        public static Uri PriceSingle([NotNull] string fsym, [NotNull] IEnumerable<string> tsyms, string e)
+        public static Uri PriceMulti(
+            [NotNull] IEnumerable<string> fsyms,
+            [NotNull] IEnumerable<string> tsyms,
+            bool? tryConversion,
+            string e)
+        {
+            Check.NotEmpty(fsyms, nameof(fsyms));
+            Check.NotEmpty(tsyms, nameof(tsyms));
+
+            return new Uri(MinApiEndpoint, "pricemulti").ApplyParameters(
+                new Dictionary<string, string>()
+                {
+                    { nameof(fsyms), fsyms.ToJoinedList() },
+                    { nameof(tsyms), tsyms.ToJoinedList() },
+                    { nameof(tryConversion), tryConversion?.ToString() },
+                    { nameof(e), e }
+                });
+        }
+
+        public static Uri PriceSingle(
+            [NotNull] string fsym,
+            [NotNull] IEnumerable<string> tsyms,
+            bool? tryConversion,
+            string e)
         {
             Check.NotNullOrWhiteSpace(fsym, nameof(fsym));
             Check.NotEmpty(tsyms, nameof(tsyms));
@@ -55,6 +78,7 @@ namespace CryptoCompare.Core
                 {
                     { nameof(fsym), fsym },
                     { nameof(tsyms), tsyms.ToJoinedList() },
+                    { nameof(tryConversion), tryConversion?.ToString() },
                     { nameof(e), e }
                 });
         }

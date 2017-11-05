@@ -17,7 +17,7 @@ An async-based CryptoCompare API client library for .NET and .NET Core
 - [x] [All coins](https://min-api.cryptocompare.com/data/all/coinlist)
 - [x] [Coin snapshot](https://www.cryptocompare.com/api/data/coinsnapshot/?fsym=BTC&tsym=USD)
 - [x] [Coin snapshot full](https://www.cryptocompare.com/api/data/coinsnapshotfullbyid/?id=7605)
-- [ ] [Price single](https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=BTC,USD,EUR)
+- [x] [Price single](https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=BTC,USD,EUR)
 - [ ] [Price multi](https://min-api.cryptocompare.com/data/pricemulti?fsyms=ETH,DASH&tsyms=BTC,USD,EUR)
 - [ ] [Price multi full](https://min-api.cryptocompare.com/data/pricemultifull?fsyms=ETH,DASH&tsyms=BTC,USD,EUR)
 - [ ] [Generate Average price](https://min-api.cryptocompare.com/data/generateAvg?fsym=BTC&tsym=USD&e=Coinbase,Kraken,Bitstamp,Bitfinex)

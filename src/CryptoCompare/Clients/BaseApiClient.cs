@@ -15,7 +15,7 @@ namespace CryptoCompare.Clients
     /// <summary>
     /// A base API client.
     /// </summary>
-    public abstract class BaseApiClient
+    public abstract class BaseApiClient : IApiClient
     {
         private readonly HttpClient _httpClient;
 
@@ -39,7 +39,7 @@ namespace CryptoCompare.Clients
         /// <returns>
         /// The asynchronous result that yields a TApiResponse.
         /// </returns>
-        protected async Task<TApiResponse> SendRequestAsync<TApiResponse>(
+        public async Task<TApiResponse> SendRequestAsync<TApiResponse>(
             HttpMethod httpMethod,
             [NotNull] Uri resourceUri)
         {

@@ -50,5 +50,18 @@ namespace CryptoCompare.Core
         public static Uri RateLimitsByMinute() => new Uri(MinApiEndpoint, string.Format(RateLimitsUrl, "minute"));
 
         public static Uri RateLimitsBySecond() => new Uri(MinApiEndpoint, string.Format(RateLimitsUrl, "second"));
+
+        public static Uri PriceSingle([NotNull] string fsym, [NotNull] IEnumerable<string> tsyms)
+        {
+            Check.NotNullOrWhiteSpace(fsym, nameof(fsym));
+            Check.NotEmpty(tsyms, nameof(tsyms));
+
+            return new Uri(MinApiEndpoint, "price").ApplyParameters(
+                new Dictionary<string, string>()
+                {
+                    { nameof(fsym), fsym },
+                    { nameof(tsyms), tsyms.ToJoinedList() }
+                });
+        }
     }
 }

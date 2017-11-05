@@ -66,6 +66,12 @@ namespace CryptoCompare
         public IRateLimitsClient RateLimits => new RateLimitsClient(this._httpClient);
 
         /// <summary>
+        /// Gets the api client for cryptocurrency prices.
+        /// </summary>
+        /// <seealso cref="P:CryptoCompare.ICryptoCompareClient.Prices"/>
+        public IPricesClient Prices => new PricesClient(this._httpClient);
+
+        /// <summary>
         /// Performs application-defined tasks associated with freeing, releasing, or
         /// resetting unmanaged resources.
         /// </summary>

@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 
 using JetBrains.Annotations;
 
@@ -11,6 +13,30 @@ namespace CryptoCompare.Helpers
     [DebuggerStepThrough]
     internal static class Check
     {
+        /// <summary>
+        /// Checks null enmerable.
+        /// </summary>
+        /// <exception cref="ArgumentException">Thrown when one or more arguments have unsupported or
+        /// illegal values.</exception>
+        /// <typeparam name="T">Generic type parameter.</typeparam>
+        /// <param name="value">The value.</param>
+        /// <param name="parameterName">Name of the parameter. This cannot be null.</param>
+        [ContractAnnotation("value:null => halt")]
+        public static IEnumerable<T> NotEmpty<T>(
+            IEnumerable<T> value,
+            [InvokerParameterName] [NotNull] string parameterName)
+        {
+            NotNull(value, parameterName);
+
+            if (!value.Any())
+            {
+                NotNullOrWhiteSpace(parameterName, nameof(parameterName));
+                throw new ArgumentException(parameterName);
+            }
+
+            return value;
+        }
+
         /// <summary>
         /// Checks null arguments.
         /// </summary>

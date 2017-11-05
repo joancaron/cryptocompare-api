@@ -23,5 +23,10 @@ namespace CryptoCompare
         /// Gets the api client for api calls rate limits.
         /// </summary>
         IRateLimitsClient RateLimits { get; }
+
+        /// <summary>
+        /// Gets the api client for cryptocurrency prices.
+        /// </summary>
+        IPricesClient Prices { get; }
     }
 }

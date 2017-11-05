@@ -52,12 +52,13 @@ namespace CryptoCompare.Converters
                         var values = token.ToString().Split('~');
                         if (values.Length == 4)
                         {
+                            Enum.TryParse(values.ElementAtOrDefault(0), out SubId subId);
                             return new Sub()
                             {
-                                SubId = (SubId)Enum.Parse(typeof(SubId), values[0]),
-                                Exchange = values[1],
-                                FromSymbol = values[2],
-                                ToSymbol = values[3]
+                                SubId = subId,
+                                Exchange = values.ElementAtOrDefault(1),
+                                FromSymbol = values.ElementAtOrDefault(2),
+                                ToSymbol = values.ElementAtOrDefault(3)
                             };
                         }
                         return null;

@@ -58,8 +58,7 @@ namespace CryptoCompare.Responses
         /// <summary>
         /// Gets the sort order.
         /// </summary>
-        [JsonIgnore]
-        public int SortOrder => int.Parse(this.ActualSortOrder);
+        public int SortOrder { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the  coin is sponsored.
@@ -85,8 +84,5 @@ namespace CryptoCompare.Responses
         /// Gets or sets the url of the coin on cryptocompare.
         /// </summary>
         public string Url { get; set; }
-
-        [JsonProperty(nameof(SortOrder))]
-        private string ActualSortOrder { get; set; }
     }
 }

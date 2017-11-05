@@ -32,7 +32,7 @@ namespace CryptoCompare.Clients
         {
             return await this.SendRequestAsync<IDictionary<string, IDictionary<string, IEnumerable<string>>>>(
                        HttpMethod.Get,
-                       ApiUrls.AllExchanges);
+                       ApiUrls.AllExchanges());
         }
     }
 }

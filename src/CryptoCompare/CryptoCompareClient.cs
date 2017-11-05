@@ -31,9 +31,12 @@ namespace CryptoCompare
             this._httpClient = new HttpClient(httpClientHandler, true);
         }
 
-        private CryptoCompareClient()
+        /// <summary>
+        /// Initializes a new instance of the CryptoCompare.CryptoCompareClient class.
+        /// </summary>
+        public CryptoCompareClient()
+           : this(new HttpClientHandler())
         {
-            this._httpClient = new HttpClient();
         }
 
         /// <summary>

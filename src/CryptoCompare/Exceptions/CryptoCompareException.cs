@@ -41,7 +41,7 @@ namespace CryptoCompare.Exceptions
 
             if (apiResponse != null)
             {
-                reason = $"{apiResponse.StatusType} : {apiResponse.StatusMessage} {apiResponse.ErrorsSummary} => {apiResponse.Path}";
+                reason = $"{apiResponse.StatusType} : {apiResponse.StatusMessage} {apiResponse.ErrorsSummary} {apiResponse.Path}";
             }
 
             return reason;

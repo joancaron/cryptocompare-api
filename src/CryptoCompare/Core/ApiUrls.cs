@@ -45,13 +45,7 @@ namespace CryptoCompare.Core
                 });
         }
 
-        public static Uri RateLimitsByHour() => new Uri(MinApiEndpoint, string.Format(RateLimitsUrl, "hour"));
-
-        public static Uri RateLimitsByMinute() => new Uri(MinApiEndpoint, string.Format(RateLimitsUrl, "minute"));
-
-        public static Uri RateLimitsBySecond() => new Uri(MinApiEndpoint, string.Format(RateLimitsUrl, "second"));
-
-        public static Uri PriceSingle([NotNull] string fsym, [NotNull] IEnumerable<string> tsyms)
+        public static Uri PriceSingle([NotNull] string fsym, [NotNull] IEnumerable<string> tsyms, string e)
         {
             Check.NotNullOrWhiteSpace(fsym, nameof(fsym));
             Check.NotEmpty(tsyms, nameof(tsyms));
@@ -60,8 +54,15 @@ namespace CryptoCompare.Core
                 new Dictionary<string, string>()
                 {
                     { nameof(fsym), fsym },
-                    { nameof(tsyms), tsyms.ToJoinedList() }
+                    { nameof(tsyms), tsyms.ToJoinedList() },
+                    { nameof(e), e }
                 });
         }
+
+        public static Uri RateLimitsByHour() => new Uri(MinApiEndpoint, string.Format(RateLimitsUrl, "hour"));
+
+        public static Uri RateLimitsByMinute() => new Uri(MinApiEndpoint, string.Format(RateLimitsUrl, "minute"));
+
+        public static Uri RateLimitsBySecond() => new Uri(MinApiEndpoint, string.Format(RateLimitsUrl, "second"));
     }
 }

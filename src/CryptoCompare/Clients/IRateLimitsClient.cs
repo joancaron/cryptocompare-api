@@ -7,7 +7,7 @@ namespace CryptoCompare.Clients
     /// <summary>
     /// Interface of api client for cryptocompare api calls rate limits.
     /// </summary>
-    public interface IRateLimitsClient
+    public interface IRateLimitsClient : IApiClient
     {
         /// <summary>
         /// Gets the rate limits left for you on the histo, price and news paths in the current hour..

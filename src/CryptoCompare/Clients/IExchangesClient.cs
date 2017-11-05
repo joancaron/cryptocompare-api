@@ -6,7 +6,7 @@ namespace CryptoCompare.Clients
     /// <summary>
     /// Interface for exchanges api client.
     /// </summary>
-    public interface IExchangesClient
+    public interface IExchangesClient : IApiClient
     {
         /// <summary>
         /// all the exchanges that CryptoCompare has integrated with..

@@ -11,7 +11,7 @@ namespace CryptoCompare.Extensions
     /// <summary>
     /// Extensions for uris.
     /// </summary>
-    public static class UriExtensions
+    internal static class UriExtensions
     {
         /// <summary>
         /// Merge a dictionary of values with an existing <see cref="Uri"/>

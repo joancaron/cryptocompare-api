@@ -30,6 +30,18 @@ namespace CryptoCompare.Clients
         }
 
         /// <summary>
+        /// Sends an api request asynchronously usin GET method.
+        /// </summary>
+        /// <typeparam name="TApiResponse">Type of the API response.</typeparam>
+        /// <param name="resourceUri">The resource uri path.</param>
+        /// <returns>
+        /// The asynchronous result that yields the asynchronous.
+        /// </returns>
+        /// <seealso cref="M:CryptoCompare.Clients.IApiClient.GetAsync{TApiResponse}(Uri)"/>
+        public Task<TApiResponse> GetAsync<TApiResponse>(Uri resourceUri) =>
+            this.SendRequestAsync<TApiResponse>(HttpMethod.Get, resourceUri);
+
+        /// <summary>
         /// Sends an api request asynchronously.
         /// </summary>
         /// <exception cref="CryptoCompareException">Thrown when a CryptoCompare api error occurs.</exception>
@@ -39,9 +51,7 @@ namespace CryptoCompare.Clients
         /// <returns>
         /// The asynchronous result that yields a TApiResponse.
         /// </returns>
-        public async Task<TApiResponse> SendRequestAsync<TApiResponse>(
-            HttpMethod httpMethod,
-            [NotNull] Uri resourceUri)
+        public async Task<TApiResponse> SendRequestAsync<TApiResponse>(HttpMethod httpMethod, [NotNull] Uri resourceUri)
         {
             Check.NotNull(resourceUri, nameof(resourceUri));
 

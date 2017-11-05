@@ -31,7 +31,7 @@ namespace CryptoCompare.Clients
         /// <seealso cref="M:CryptoCompare.Clients.ICoinsClient.AllCoinsAsync()"/>
         public async Task<CoinList> ListAsync()
         {
-            return await this.SendRequestAsync<CoinList>(HttpMethod.Get, ApiUrls.AllCoins());
+            return await this.GetAsync<CoinList>(ApiUrls.AllCoins());
         }
 
         /// <summary>
@@ -45,7 +45,7 @@ namespace CryptoCompare.Clients
         {
             Check.NotNull(toSymbol, nameof(toSymbol));
             Check.NotNull(fromSymbol, nameof(fromSymbol));
-            return await this.SendRequestAsync<CoinSnapshot>(HttpMethod.Get, ApiUrls.CoinSnapshot(fromSymbol, toSymbol));
+            return await this.GetAsync<CoinSnapshot>(ApiUrls.CoinSnapshot(fromSymbol, toSymbol));
         }
 
         /// <summary>
@@ -58,7 +58,7 @@ namespace CryptoCompare.Clients
         /// </returns>
         public async Task<CoinSnapshotFull> SnapshotFullAsync(int id)
         {
-            return await this.SendRequestAsync<CoinSnapshotFull>(HttpMethod.Get, ApiUrls.CoinSnapshotFull(id));
+            return await this.GetAsync<CoinSnapshotFull>(ApiUrls.CoinSnapshotFull(id));
         }
     }
 }

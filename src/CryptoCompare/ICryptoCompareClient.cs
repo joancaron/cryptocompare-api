@@ -1,7 +1,5 @@
 ﻿using System;
 
-using CryptoCompare.Clients;
-
 namespace CryptoCompare
 {
     /// <summary>
@@ -20,13 +18,13 @@ namespace CryptoCompare
         IExchangesClient Exchanges { get; }
 
         /// <summary>
-        /// Gets the api client for api calls rate limits.
-        /// </summary>
-        IRateLimitsClient RateLimits { get; }
-
-        /// <summary>
         /// Gets the api client for cryptocurrency prices.
         /// </summary>
         IPricesClient Prices { get; }
+
+        /// <summary>
+        /// Gets the api client for api calls rate limits.
+        /// </summary>
+        IRateLimitsClient RateLimits { get; }
     }
 }

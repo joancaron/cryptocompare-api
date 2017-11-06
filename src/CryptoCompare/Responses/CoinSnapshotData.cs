@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace CryptoCompare.Responses
+namespace CryptoCompare
 {
     public class CoinSnapshotData
     {

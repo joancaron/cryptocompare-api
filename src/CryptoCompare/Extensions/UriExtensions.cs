@@ -2,11 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 
-using CryptoCompare.Helpers;
-
 using JetBrains.Annotations;
 
-namespace CryptoCompare.Extensions
+namespace CryptoCompare
 {
     /// <summary>
     /// Extensions for uris.

@@ -1,8 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-using CryptoCompare.Responses;
-
-namespace CryptoCompare.Clients
+namespace CryptoCompare
 {
     /// <summary>
     /// Coins api client. Gets general info for all the coins available on the website.

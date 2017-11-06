@@ -2,15 +2,11 @@
 using System.Net.Http;
 using System.Threading.Tasks;
 
-using CryptoCompare.Exceptions;
-using CryptoCompare.Helpers;
-using CryptoCompare.Responses;
-
 using JetBrains.Annotations;
 
 using Newtonsoft.Json;
 
-namespace CryptoCompare.Clients
+namespace CryptoCompare
 {
     /// <summary>
     /// A base API client.

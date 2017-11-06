@@ -2,11 +2,9 @@
 using System.Net.Http;
 using System.Threading.Tasks;
 
-using CryptoCompare.Exceptions;
-
 using JetBrains.Annotations;
 
-namespace CryptoCompare.Clients
+namespace CryptoCompare
 {
     public interface IApiClient
     {
@@ -29,8 +27,6 @@ namespace CryptoCompare.Clients
         /// <returns>
         /// The asynchronous result that yields a TApiResponse.
         /// </returns>
-        Task<TApiResponse> SendRequestAsync<TApiResponse>(
-            HttpMethod httpMethod,
-            [NotNull] Uri resourceUri);
+        Task<TApiResponse> SendRequestAsync<TApiResponse>(HttpMethod httpMethod, [NotNull] Uri resourceUri);
     }
 }

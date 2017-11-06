@@ -1,10 +1,8 @@
 ﻿using System.Collections.Generic;
 
-using CryptoCompare.Converters;
-
 using Newtonsoft.Json;
 
-namespace CryptoCompare.Responses
+namespace CryptoCompare
 {
     public class CoinSnapshotFullData
     {

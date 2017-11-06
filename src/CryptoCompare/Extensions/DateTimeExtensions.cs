@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CryptoCompare.Extensions
+namespace CryptoCompare
 {
     internal static class DateTimeExtensions
     {

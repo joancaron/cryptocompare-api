@@ -2,9 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-using CryptoCompare.Responses;
-
-namespace CryptoCompare.Clients
+namespace CryptoCompare
 {
     public interface IPricesClient : IApiClient
     {

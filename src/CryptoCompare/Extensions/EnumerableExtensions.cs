@@ -1,10 +1,8 @@
 ﻿using System.Collections.Generic;
 
-using CryptoCompare.Helpers;
-
 using JetBrains.Annotations;
 
-namespace CryptoCompare.Extensions
+namespace CryptoCompare
 {
     internal static class EnumerableExtensions
     {

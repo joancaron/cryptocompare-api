@@ -3,13 +3,9 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 
-using CryptoCompare.Core;
-using CryptoCompare.Helpers;
-using CryptoCompare.Responses;
-
 using JetBrains.Annotations;
 
-namespace CryptoCompare.Clients
+namespace CryptoCompare
 {
     public class PricesClient : BaseApiClient, IPricesClient
     {

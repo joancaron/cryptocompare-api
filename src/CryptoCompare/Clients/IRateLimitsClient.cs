@@ -1,8 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-using CryptoCompare.Responses;
-
-namespace CryptoCompare.Clients
+namespace CryptoCompare
 {
     /// <summary>
     /// Interface of api client for cryptocompare api calls rate limits.

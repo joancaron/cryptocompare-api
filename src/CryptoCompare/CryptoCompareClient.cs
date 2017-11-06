@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Net.Http;
 
-using CryptoCompare.Clients;
-using CryptoCompare.Helpers;
-
 using JetBrains.Annotations;
 
 namespace CryptoCompare
@@ -35,7 +32,7 @@ namespace CryptoCompare
         /// Initializes a new instance of the CryptoCompare.CryptoCompareClient class.
         /// </summary>
         public CryptoCompareClient()
-           : this(new HttpClientHandler())
+            : this(new HttpClientHandler())
         {
         }
 
@@ -60,16 +57,16 @@ namespace CryptoCompare
         public IExchangesClient Exchanges => new ExchangesClient(this._httpClient);
 
         /// <summary>
-        /// Gets or sets the client for api calls rate limits.
-        /// </summary>
-        /// <seealso cref="P:CryptoCompare.ICryptoCompareClient.RateLimits"/>
-        public IRateLimitsClient RateLimits => new RateLimitsClient(this._httpClient);
-
-        /// <summary>
         /// Gets the api client for cryptocurrency prices.
         /// </summary>
         /// <seealso cref="P:CryptoCompare.ICryptoCompareClient.Prices"/>
         public IPricesClient Prices => new PricesClient(this._httpClient);
+
+        /// <summary>
+        /// Gets or sets the client for api calls rate limits.
+        /// </summary>
+        /// <seealso cref="P:CryptoCompare.ICryptoCompareClient.RateLimits"/>
+        public IRateLimitsClient RateLimits => new RateLimitsClient(this._httpClient);
 
         /// <summary>
         /// Performs application-defined tasks associated with freeing, releasing, or

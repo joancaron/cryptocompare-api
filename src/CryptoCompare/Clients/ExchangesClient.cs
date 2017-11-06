@@ -2,11 +2,9 @@
 using System.Net.Http;
 using System.Threading.Tasks;
 
-using CryptoCompare.Core;
-
 using JetBrains.Annotations;
 
-namespace CryptoCompare.Clients
+namespace CryptoCompare
 {
     /// <summary>
     /// The exchanges api client.

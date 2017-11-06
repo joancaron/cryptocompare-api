@@ -2,13 +2,9 @@
 using System.Collections.Generic;
 using System.Globalization;
 
-using CryptoCompare.Extensions;
-using CryptoCompare.Helpers;
-using CryptoCompare.Responses;
-
 using JetBrains.Annotations;
 
-namespace CryptoCompare.Core
+namespace CryptoCompare
 {
     internal static class ApiUrls
     {
@@ -60,7 +56,10 @@ namespace CryptoCompare.Core
                 {
                     { nameof(fsym), fsym },
                     { nameof(tsyms), tsyms.ToJoinedList() },
-                    { nameof(ts), ts.ToUnixTime().ToString(CultureInfo.InvariantCulture) },
+                    {
+                        nameof(ts),
+                        ts.ToUnixTime().ToString(CultureInfo.InvariantCulture)
+                    },
                     { nameof(calculationType), calculationType?.ToString("G") },
                     { nameof(tryConversion), tryConversion?.ToString() },
                     { nameof(e), e }

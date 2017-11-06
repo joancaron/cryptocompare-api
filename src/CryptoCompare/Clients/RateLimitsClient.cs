@@ -1,12 +1,9 @@
 ﻿using System.Net.Http;
 using System.Threading.Tasks;
 
-using CryptoCompare.Core;
-using CryptoCompare.Responses;
-
 using JetBrains.Annotations;
 
-namespace CryptoCompare.Clients
+namespace CryptoCompare
 {
     /// <summary>
     /// Api client for cryptocompare api calls rate limits.

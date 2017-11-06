@@ -1,4 +1,4 @@
-﻿namespace CryptoCompare.Responses
+﻿namespace CryptoCompare
 {
     public class SEO
     {

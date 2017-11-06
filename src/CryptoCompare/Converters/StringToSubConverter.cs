@@ -2,14 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 
-using CryptoCompare.Responses;
-
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace CryptoCompare.Converters
+namespace CryptoCompare
 {
-    public class StringToSubConverter : JsonConverter
+    internal class StringToSubConverter : JsonConverter
     {
         /// <summary>
         /// Determines whether this instance can convert the specified object type.
@@ -54,12 +52,12 @@ namespace CryptoCompare.Converters
                         {
                             Enum.TryParse(values.ElementAtOrDefault(0), out SubId subId);
                             return new Sub()
-                            {
-                                SubId = subId,
-                                Exchange = values.ElementAtOrDefault(1),
-                                FromSymbol = values.ElementAtOrDefault(2),
-                                ToSymbol = values.ElementAtOrDefault(3)
-                            };
+                                   {
+                                       SubId = subId,
+                                       Exchange = values.ElementAtOrDefault(1),
+                                       FromSymbol = values.ElementAtOrDefault(2),
+                                       ToSymbol = values.ElementAtOrDefault(3)
+                                   };
                         }
                         return null;
                     });

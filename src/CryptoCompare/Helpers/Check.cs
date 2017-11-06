@@ -5,7 +5,7 @@ using System.Linq;
 
 using JetBrains.Annotations;
 
-namespace CryptoCompare.Helpers
+namespace CryptoCompare
 {
     /// <summary>
     /// Null checking utilities.

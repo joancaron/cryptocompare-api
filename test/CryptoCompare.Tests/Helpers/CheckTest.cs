@@ -1,7 +1,5 @@
 ﻿using System;
 
-using CryptoCompare.Helpers;
-
 using Xunit;
 
 namespace CryptoCompare.Tests.Helpers

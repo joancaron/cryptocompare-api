@@ -1,12 +1,10 @@
 ﻿using System;
 
-using CryptoCompare.Extensions;
-
 using Newtonsoft.Json;
 
-namespace CryptoCompare.Converters
+namespace CryptoCompare
 {
-    public class UnixTimeConverter : JsonConverter
+    internal class UnixTimeConverter : JsonConverter
     {
         public override bool CanConvert(Type objectType)
         {

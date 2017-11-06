@@ -1,11 +1,9 @@
 ﻿using System;
 
-using CryptoCompare.Converters;
-
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
-namespace CryptoCompare.Responses
+namespace CryptoCompare
 {
     public class CoinGeneralInfo
     {

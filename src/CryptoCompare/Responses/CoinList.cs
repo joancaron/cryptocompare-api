@@ -2,7 +2,7 @@
 
 using Newtonsoft.Json;
 
-namespace CryptoCompare.Responses
+namespace CryptoCompare
 {
     /// <summary>
     /// List of coins.

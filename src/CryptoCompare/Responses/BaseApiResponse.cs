@@ -1,10 +1,8 @@
 ﻿using System;
 
-using CryptoCompare.Core;
-
 using Newtonsoft.Json;
 
-namespace CryptoCompare.Responses
+namespace CryptoCompare
 {
     /// <summary>
     /// A base API response.

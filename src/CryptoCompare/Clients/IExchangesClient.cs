@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace CryptoCompare.Clients
+namespace CryptoCompare
 {
     /// <summary>
     /// Interface for exchanges api client.

@@ -1,14 +1,9 @@
-﻿using System;
-using System.Net.Http;
+﻿using System.Net.Http;
 using System.Threading.Tasks;
-
-using CryptoCompare.Core;
-using CryptoCompare.Helpers;
-using CryptoCompare.Responses;
 
 using JetBrains.Annotations;
 
-namespace CryptoCompare.Clients
+namespace CryptoCompare
 {
     /// <summary>
     /// The coins client. Gets general info for all the coins available on the website.

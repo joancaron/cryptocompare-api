@@ -1,4 +1,4 @@
-﻿namespace CryptoCompare.Core
+﻿namespace CryptoCompare
 {
     internal static class Constants
     {

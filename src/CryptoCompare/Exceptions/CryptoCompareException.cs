@@ -1,12 +1,7 @@
 ﻿using System;
 using System.Net.Http;
 
-using CryptoCompare.Helpers;
-using CryptoCompare.Responses;
-
-using JetBrains.Annotations;
-
-namespace CryptoCompare.Exceptions
+namespace CryptoCompare
 {
     /// <summary>
     /// Global Exception for signalling cryptocompare api errors.
@@ -41,7 +36,8 @@ namespace CryptoCompare.Exceptions
 
             if (apiResponse != null)
             {
-                reason = $"{apiResponse.StatusType} : {apiResponse.StatusMessage} {apiResponse.ErrorsSummary} {apiResponse.Path}";
+                reason =
+                    $"{apiResponse.StatusType} : {apiResponse.StatusMessage} {apiResponse.ErrorsSummary} {apiResponse.Path}";
             }
 
             return reason;

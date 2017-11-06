@@ -59,7 +59,7 @@ namespace CryptoCompare
                                        ToSymbol = values.ElementAtOrDefault(3)
                                    };
                         }
-                        return null;
+                        return default(Sub);
                     });
             }
             return null;

@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 
 using CryptoCompare.Extensions;
 using CryptoCompare.Helpers;
+using CryptoCompare.Responses;
 
 using JetBrains.Annotations;
 
@@ -42,6 +44,26 @@ namespace CryptoCompare.Core
                 new Dictionary<string, string>()
                 {
                     { nameof(id), id.ToString() }
+                });
+        }
+
+        public static Uri PriceHistorical(
+            string fsym,
+            IEnumerable<string> tsyms,
+            DateTimeOffset ts,
+            CalculationType? calculationType,
+            bool? tryConversion,
+            string e)
+        {
+            return new Uri(MinApiEndpoint, "pricehistorical").ApplyParameters(
+                new Dictionary<string, string>()
+                {
+                    { nameof(fsym), fsym },
+                    { nameof(tsyms), tsyms.ToJoinedList() },
+                    { nameof(ts), ts.ToUnixTime().ToString(CultureInfo.InvariantCulture) },
+                    { nameof(calculationType), calculationType?.ToString("G") },
+                    { nameof(tryConversion), tryConversion?.ToString() },
+                    { nameof(e), e }
                 });
         }
 

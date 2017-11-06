@@ -1,10 +1,35 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
+
+using CryptoCompare.Responses;
 
 namespace CryptoCompare.Clients
 {
     public interface IPricesClient : IApiClient
     {
+        /// <summary>
+        /// Get the price of any cryptocurrency in any other currency that you need at a given timestamp.
+        /// The price comes from the daily info - so it would be the price at the end of the day GMT based on the requested TS.
+        /// If the crypto does not trade directly into the toSymbol requested, BTC will be used for conversion.
+        /// Tries to get direct trading pair data, if there is none or it is more than 10 days before the ts requested, it uses BTC conversion.
+        /// If the oposite pair trades we invert it (eg.: BTC-XMR)The calculation types are: Close - a Close of the day close price,MidHighLow - the average between the 24 H high and low.VolFVolT - the total volume to / the total volume from
+        /// </summary>
+        /// <param name="fromSymbol">from symbol.</param>
+        /// <param name="toSymbols">to symbols.</param>
+        /// <param name="requestedDate">The requested date.</param>
+        /// <param name="calculationType">(Optional) Type of the calculation.</param>
+        /// <param name="tryConversion">(Optional) If set to false, it will try to get values without
+        /// using any conversion at all (defaultVal:true)</param>
+        /// <param name="exchangeName">(Optional) Exchange name default => CCCAGG.</param>
+        Task<IDictionary<string, IDictionary<string, decimal>>> Historical(
+            string fromSymbol,
+            IEnumerable<string> toSymbols,
+            DateTimeOffset requestedDate,
+            CalculationType? calculationType = null,
+            bool? tryConversion = null,
+            string exchangeName = null);
+
         /// <summary>
         /// Same as single API path but with multiple from symbols.
         /// </summary>

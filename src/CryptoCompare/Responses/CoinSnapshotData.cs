@@ -4,7 +4,7 @@ namespace CryptoCompare
 {
     public class CoinSnapshotData
     {
-        public CoinSnapshotAggregatedData AggregatedData { get; set; }
+        public CoinAggregatedData AggregatedData { get; set; }
 
         public string Algorithm { get; set; }
 
@@ -12,7 +12,7 @@ namespace CryptoCompare
 
         public double BlockReward { get; set; }
 
-        public IEnumerable<CoinSnapshotExchange> Exchanges { get; set; }
+        public IEnumerable<AggregatedData> Exchanges { get; set; }
 
         public double NetHashesPerSecond { get; set; }
 

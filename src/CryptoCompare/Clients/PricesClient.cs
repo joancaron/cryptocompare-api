@@ -72,6 +72,19 @@ namespace CryptoCompare
                        ApiUrls.PriceMulti(fromSymbols, toSymbols, tryConversion, exchangeName));
         }
 
+        public async Task<PriceMultiFull> MultiFull(
+            IEnumerable<string> fromSymbols,
+            IEnumerable<string> toSymbols,
+            bool? tryConversion = null,
+            string exchangeName = null)
+        {
+            Check.NotEmpty(toSymbols, nameof(toSymbols));
+            Check.NotEmpty(fromSymbols, nameof(fromSymbols));
+
+            return await this.GetAsync<PriceMultiFull>(
+                       ApiUrls.PriceMultiFull(fromSymbols, toSymbols, tryConversion, exchangeName));
+        }
+
         /// <summary>
         /// Get the current price of any cryptocurrency in any other currency that you need.
         /// If the crypto does not trade directly into the toSymbol requested, BTC will be

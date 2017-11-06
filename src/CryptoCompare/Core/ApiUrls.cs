@@ -85,6 +85,25 @@ namespace CryptoCompare
                 });
         }
 
+        public static Uri PriceMultiFull(
+            IEnumerable<string> fsyms,
+            IEnumerable<string> tsyms,
+            bool? tryConversion,
+            string e)
+        {
+            Check.NotEmpty(fsyms, nameof(fsyms));
+            Check.NotEmpty(tsyms, nameof(tsyms));
+
+            return new Uri(MinApiEndpoint, "pricemultifull").ApplyParameters(
+                new Dictionary<string, string>()
+                {
+                    { nameof(fsyms), fsyms.ToJoinedList() },
+                    { nameof(tsyms), tsyms.ToJoinedList() },
+                    { nameof(tryConversion), tryConversion?.ToString() },
+                    { nameof(e), e }
+                });
+        }
+
         public static Uri PriceSingle(
             [NotNull] string fsym,
             [NotNull] IEnumerable<string> tsyms,

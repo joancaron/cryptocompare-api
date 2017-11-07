@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 
 using Xunit;
 
@@ -34,7 +35,7 @@ namespace CryptoCompare.Tests.Helpers
         /// NotNull should not throw ArgumentNullException when object is not null.
         /// </summary>
         [Fact]
-        public void NotNullShouldNotThrowArgumentNullExceptionWhenObjectIsNotNull()
+        public async Task NotNullShouldNotThrowArgumentNullExceptionWhenObjectIsNotNull()
         {
             Check.NotNull<int?>(1, Blah);
         }

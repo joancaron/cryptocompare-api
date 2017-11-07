@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 
 namespace CryptoCompare
 {
-    public class PriceMultiFull
+    public class PriceMultiFullResponse
     {
         [JsonProperty("RAW")]
         public IDictionary<string, IDictionary<string, CoinFullAggregatedData>> Raw { get; set; }

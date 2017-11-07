@@ -53,7 +53,7 @@ namespace CryptoCompare
         /// <param name="tryConversion">(Optional) If set to false, it will try to get values without
         /// using any conversion at all (defaultVal:true)</param>
         /// <param name="exchangeName">(Optional) Exchange name default => CCCAGG.</param>
-        Task<PriceMultiFull> MultiFull(
+        Task<PriceMultiFullResponse> MultiFull(
             IEnumerable<string> fromSymbols,
             IEnumerable<string> toSymbols,
             bool? tryConversion = null,
@@ -73,5 +73,11 @@ namespace CryptoCompare
             IEnumerable<string> toSymbols,
             bool? tryConversion = null,
             string exchangeName = null);
+
+        Task<PriceAverageResponse> Average(
+            string fromSymbol,
+            string toSymbol,
+            IEnumerable<string> exchangeNames,
+            bool? tryConversion = null);
     }
 }

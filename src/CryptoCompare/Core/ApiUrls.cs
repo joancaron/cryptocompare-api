@@ -43,6 +43,26 @@ namespace CryptoCompare
                 });
         }
 
+        public static Uri PriceAverage(
+            [NotNull] string fsym,
+            [NotNull] string tsym,
+            [NotNull] IEnumerable<string> e,
+            bool? tryConversion)
+        {
+            Check.NotNullOrWhiteSpace(fsym, nameof(fsym));
+            Check.NotNullOrWhiteSpace(tsym, nameof(tsym));
+            Check.NotEmpty(e, nameof(e));
+
+            return new Uri(MinApiEndpoint, "generateAvg").ApplyParameters(
+                new Dictionary<string, string>()
+                {
+                    { nameof(fsym), fsym },
+                    { nameof(tsym), tsym },
+                    { nameof(e), e.ToJoinedList() },
+                    { nameof(tryConversion), tryConversion?.ToString() }
+                });
+        }
+
         public static Uri PriceHistorical(
             string fsym,
             IEnumerable<string> tsyms,

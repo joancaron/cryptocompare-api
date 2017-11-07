@@ -14,6 +14,20 @@ namespace CryptoCompare
         {
         }
 
+        public async Task<PriceAverageResponse> Average(
+            [NotNull] string fromSymbol,
+            [NotNull] string toSymbol,
+            [NotNull] IEnumerable<string> exchangeNames,
+            bool? tryConversion = null)
+        {
+            Check.NotNullOrWhiteSpace(fromSymbol, nameof(fromSymbol));
+            Check.NotNullOrWhiteSpace(toSymbol, nameof(toSymbol));
+            Check.NotEmpty(exchangeNames, nameof(exchangeNames));
+
+            return await this.GetAsync<PriceAverageResponse>(
+                       ApiUrls.PriceAverage(fromSymbol, toSymbol, exchangeNames, tryConversion));
+        }
+
         /// <summary>
         /// Get the price of any cryptocurrency in any other currency that you need at a given timestamp.
         /// The price comes from the daily info - so it would be the price at the end of the day GMT based on the requested TS.
@@ -72,7 +86,7 @@ namespace CryptoCompare
                        ApiUrls.PriceMulti(fromSymbols, toSymbols, tryConversion, exchangeName));
         }
 
-        public async Task<PriceMultiFull> MultiFull(
+        public async Task<PriceMultiFullResponse> MultiFull(
             IEnumerable<string> fromSymbols,
             IEnumerable<string> toSymbols,
             bool? tryConversion = null,
@@ -81,7 +95,7 @@ namespace CryptoCompare
             Check.NotEmpty(toSymbols, nameof(toSymbols));
             Check.NotEmpty(fromSymbols, nameof(fromSymbols));
 
-            return await this.GetAsync<PriceMultiFull>(
+            return await this.GetAsync<PriceMultiFullResponse>(
                        ApiUrls.PriceMultiFull(fromSymbols, toSymbols, tryConversion, exchangeName));
         }
 

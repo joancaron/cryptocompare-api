@@ -38,7 +38,6 @@ namespace CryptoCompare.Tests.Helpers
         public async Task NotNullShouldNotThrowArgumentNullExceptionWhenObjectIsNotNull()
         {
             Check.NotNull<int?>(1, Blah);
-            var e = CryptoCompareClient.Instance.Exchanges.ListAsync().Result;
         }
 
         /// <summary>

@@ -12,7 +12,7 @@ namespace CryptoCompare
 
         public double BlockReward { get; set; }
 
-        public IEnumerable<AggregatedData> Exchanges { get; set; }
+        public IReadOnlyList<AggregatedData> Exchanges { get; set; }
 
         public double NetHashesPerSecond { get; set; }
 

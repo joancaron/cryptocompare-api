@@ -24,9 +24,9 @@ namespace CryptoCompare
         /// Returns all the coins that CryptoCompare has added to the website.
         /// </summary>
         /// <seealso cref="M:CryptoCompare.Clients.ICoinsClient.AllCoinsAsync()"/>
-        public async Task<CoinList> ListAsync()
+        public async Task<CoinListResponse> ListAsync()
         {
-            return await this.GetAsync<CoinList>(ApiUrls.AllCoins());
+            return await this.GetAsync<CoinListResponse>(ApiUrls.AllCoins());
         }
 
         /// <summary>
@@ -36,11 +36,11 @@ namespace CryptoCompare
         /// <param name="fromSymbol">The symbol of the currency you want to get that for.</param>
         /// <param name="toSymbol">The symbol of the currency that data will be in.</param>
         /// <seealso cref="M:CryptoCompare.Clients.ICoinsClient.SnapshotAsync(string,string)"/>
-        public async Task<CoinSnapshot> SnapshotAsync([NotNull] string fromSymbol, [NotNull] string toSymbol)
+        public async Task<CoinSnapshotResponse> SnapshotAsync([NotNull] string fromSymbol, [NotNull] string toSymbol)
         {
             Check.NotNull(toSymbol, nameof(toSymbol));
             Check.NotNull(fromSymbol, nameof(fromSymbol));
-            return await this.GetAsync<CoinSnapshot>(ApiUrls.CoinSnapshot(fromSymbol, toSymbol));
+            return await this.GetAsync<CoinSnapshotResponse>(ApiUrls.CoinSnapshot(fromSymbol, toSymbol));
         }
 
         /// <summary>
@@ -51,9 +51,9 @@ namespace CryptoCompare
         /// <returns>
         /// The asynchronous result that yields a full CoinSnapshot.
         /// </returns>
-        public async Task<CoinSnapshotFull> SnapshotFullAsync(int id)
+        public async Task<CoinSnapshotFullResponse> SnapshotFullAsync(int id)
         {
-            return await this.GetAsync<CoinSnapshotFull>(ApiUrls.CoinSnapshotFull(id));
+            return await this.GetAsync<CoinSnapshotFullResponse>(ApiUrls.CoinSnapshotFull(id));
         }
     }
 }

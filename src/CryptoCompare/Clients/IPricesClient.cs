@@ -20,7 +20,7 @@ namespace CryptoCompare
         /// <param name="tryConversion">(Optional) If set to false, it will try to get values without
         /// using any conversion at all (defaultVal:true)</param>
         /// <param name="exchangeName">(Optional) Exchange name default => CCCAGG.</param>
-        Task<IDictionary<string, IDictionary<string, decimal>>> Historical(
+        Task<PriceHistoricalReponse> Historical(
             string fromSymbol,
             IEnumerable<string> toSymbols,
             DateTimeOffset requestedDate,
@@ -36,7 +36,7 @@ namespace CryptoCompare
         /// <param name="tryConversion">(Optional) If set to false, it will try to get values without
         /// using any conversion at all (defaultVal:true)</param>
         /// <param name="exchangeName">(Optional) Exchange name defult => CCCAGG.</param>
-        Task<IDictionary<string, IDictionary<string, decimal>>> Multi(
+        Task<PriceMultiResponse> Multi(
             IEnumerable<string> fromSymbols,
             IEnumerable<string> toSymbols,
             bool? tryConversion = null,
@@ -68,7 +68,7 @@ namespace CryptoCompare
         /// <param name="toSymbols">to symbols.</param>
         /// <param name="tryConversion">If set to false, it will try to get values without using any conversion at all (defaultVal:true)</param>
         /// <param name="exchangeName">Exchange name defult => CCCAGG</param>
-        Task<IDictionary<string, decimal>> Single(
+        Task<PriceSingleResponse> Single(
             string fromSymbol,
             IEnumerable<string> toSymbols,
             bool? tryConversion = null,

@@ -51,7 +51,7 @@ namespace CryptoCompare
         public string ProofType { get; set; }
 
         [JsonConverter(typeof(IsoDateTimeConverter))]
-        public DateTime StartDate { get; set; }
+        public DateTimeOffset StartDate { get; set; }
 
         public string Symbol { get; set; }
 

@@ -1,15 +1,13 @@
-﻿using System.Collections.Generic;
-
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace CryptoCompare
 {
     public class PriceMultiFullResponse
     {
-        [JsonProperty("RAW")]
-        public IDictionary<string, IDictionary<string, CoinFullAggregatedData>> Raw { get; set; }
-
         [JsonProperty("DISPLAY")]
-        public IDictionary<string, IDictionary<string, CoinFullAggregatedDataDisplay>> Display { get; set; }
+        public PriceMultiFullDisplay Display { get; set; }
+
+        [JsonProperty("RAW")]
+        public PriceMultiFullRaw Raw { get; set; }
     }
 }

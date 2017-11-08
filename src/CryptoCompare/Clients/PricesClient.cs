@@ -43,7 +43,7 @@ namespace CryptoCompare
         /// using any conversion at all (defaultVal:true)</param>
         /// <param name="exchangeName">(Optional) Exchange name default =&gt; CCCAGG.</param>
         /// <seealso cref="M:CryptoCompare.Clients.IPricesClient.Historical(string,IEnumerable{string},DateTimeOffset,CalculationType?,bool?,string)"/>
-        public async Task<IDictionary<string, IDictionary<string, decimal>>> Historical(
+        public async Task<PriceHistoricalReponse> Historical(
             [NotNull] string fromSymbol,
             [NotNull] IEnumerable<string> toSymbols,
             DateTimeOffset requestedDate,
@@ -54,7 +54,7 @@ namespace CryptoCompare
             Check.NotNullOrWhiteSpace(fromSymbol, nameof(fromSymbol));
             Check.NotEmpty(toSymbols, nameof(toSymbols));
 
-            return await this.GetAsync<IDictionary<string, IDictionary<string, decimal>>>(
+            return await this.GetAsync<PriceHistoricalReponse>(
                        ApiUrls.PriceHistorical(
                            fromSymbol,
                            toSymbols,
@@ -73,7 +73,7 @@ namespace CryptoCompare
         /// using any conversion at all (defaultVal:true)</param>
         /// <param name="exchangeName">(Optional) Exchange name defult =&gt; CCCAGG.</param>
         /// <seealso cref="M:CryptoCompare.Clients.IPricesClient.Multi(IEnumerable{string},IEnumerable{string},bool?,string)"/>
-        public async Task<IDictionary<string, IDictionary<string, decimal>>> Multi(
+        public async Task<PriceMultiResponse> Multi(
             [NotNull] IEnumerable<string> fromSymbols,
             [NotNull] IEnumerable<string> toSymbols,
             bool? tryConversion = null,
@@ -82,7 +82,7 @@ namespace CryptoCompare
             Check.NotEmpty(toSymbols, nameof(toSymbols));
             Check.NotEmpty(fromSymbols, nameof(fromSymbols));
 
-            return await this.GetAsync<IDictionary<string, IDictionary<string, decimal>>>(
+            return await this.GetAsync<PriceMultiResponse>(
                        ApiUrls.PriceMulti(fromSymbols, toSymbols, tryConversion, exchangeName));
         }
 
@@ -109,7 +109,7 @@ namespace CryptoCompare
         /// <param name="tryConversion"></param>
         /// <param name="exchangeName">Exchange name default = CCC</param>
         /// <seealso cref="M:CryptoCompare.Clients.IPricesClient.Single(string,IEnumerable{string})"/>
-        public async Task<IDictionary<string, decimal>> Single(
+        public async Task<PriceSingleResponse> Single(
             [NotNull] string fromSymbol,
             [NotNull] IEnumerable<string> toSymbols,
             bool? tryConversion = null,
@@ -118,7 +118,7 @@ namespace CryptoCompare
             Check.NotNull(fromSymbol, nameof(fromSymbol));
             Check.NotEmpty(toSymbols, nameof(toSymbols));
 
-            return await this.GetAsync<IDictionary<string, decimal>>(
+            return await this.GetAsync<PriceSingleResponse>(
                        ApiUrls.PriceSingle(fromSymbol, toSymbols, tryConversion, exchangeName));
         }
     }

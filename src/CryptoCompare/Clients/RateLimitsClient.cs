@@ -26,9 +26,9 @@ namespace CryptoCompare
         /// current hour.
         /// </summary>
         /// <seealso cref="M:CryptoCompare.Clients.IRateLimitsClient.Hour()"/>
-        public async Task<RateLimit> CurrentHourAsync()
+        public async Task<RateLimitResponse> CurrentHourAsync()
         {
-            return await this.GetAsync<RateLimit>(ApiUrls.RateLimitsByHour());
+            return await this.GetAsync<RateLimitResponse>(ApiUrls.RateLimitsByHour());
         }
 
         /// <summary>
@@ -36,9 +36,9 @@ namespace CryptoCompare
         /// current minute.
         /// </summary>
         /// <seealso cref="M:CryptoCompare.Clients.IRateLimitsClient.Minute()"/>
-        public async Task<RateLimit> CurrentMinuteAsync()
+        public async Task<RateLimitResponse> CurrentMinuteAsync()
         {
-            return await this.GetAsync<RateLimit>(ApiUrls.RateLimitsByMinute());
+            return await this.GetAsync<RateLimitResponse>(ApiUrls.RateLimitsByMinute());
         }
 
         /// <summary>
@@ -46,9 +46,9 @@ namespace CryptoCompare
         /// current second.
         /// </summary>
         /// <seealso cref="M:CryptoCompare.Clients.IRateLimitsClient.Second()"/>
-        public async Task<RateLimit> CurrentSecondAsync()
+        public async Task<RateLimitResponse> CurrentSecondAsync()
         {
-            return await this.GetAsync<RateLimit>(ApiUrls.RateLimitsBySecond());
+            return await this.GetAsync<RateLimitResponse>(ApiUrls.RateLimitsBySecond());
         }
     }
 }

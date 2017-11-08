@@ -4,7 +4,7 @@
     /// A rate limit.
     /// </summary>
     /// <seealso cref="T:CryptoCompare.Responses.BaseApiResponse"/>
-    public class RateLimit : BaseApiResponse
+    public class RateLimitResponse : BaseApiResponse
     {
         /// <summary>
         /// Gets or sets the calls left.

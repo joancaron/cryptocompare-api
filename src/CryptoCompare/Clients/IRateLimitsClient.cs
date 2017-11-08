@@ -10,16 +10,16 @@ namespace CryptoCompare
         /// <summary>
         /// Gets the rate limits left for you on the histo, price and news paths in the current hour..
         /// </summary>
-        Task<RateLimit> CurrentHourAsync();
+        Task<RateLimitResponse> CurrentHourAsync();
 
         /// <summary>
         /// Gets the rate limits left for you on the histo, price and news paths in the current minute.
         /// </summary>
-        Task<RateLimit> CurrentMinuteAsync();
+        Task<RateLimitResponse> CurrentMinuteAsync();
 
         /// <summary>
         /// Gets the rate limits left for you on the histo, price and news paths in the current second.
         /// </summary>
-        Task<RateLimit> CurrentSecondAsync();
+        Task<RateLimitResponse> CurrentSecondAsync();
     }
 }

@@ -20,7 +20,7 @@ namespace CryptoCompare
         /// <seealso cref="M:Newtonsoft.Json.JsonConverter.CanConvert(Type)"/>
         public override bool CanConvert(Type objectType)
         {
-            return objectType == typeof(IEnumerable<Sub>);
+            return objectType == typeof(IReadOnlyList<Sub>);
         }
 
         /// <summary>
@@ -60,7 +60,7 @@ namespace CryptoCompare
                                    };
                         }
                         return default(Sub);
-                    });
+                    }).ToList();
             }
             return null;
         }

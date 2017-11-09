@@ -10,7 +10,7 @@ namespace CryptoCompare.Tests.Models.Responses
         /// Can deserialize error.
         /// </summary>
         [Fact]
-        public void CanDeserializeError()
+        public void Can_deserialize_error()
         {
             var model = TestHelper.ReadFixture("Error").DeserializeJson<BaseApiResponse>();
 

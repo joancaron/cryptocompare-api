@@ -4,9 +4,6 @@ namespace CryptoCompare
 {
     public class CoinAggregatedData : AggregatedData
     {
-        [JsonProperty("FROMSYMBOL")]
-        public string FromSymbol { get; set; }
-
         [JsonProperty("HIGHDAY")]
         public decimal HighDay { get; set; }
 

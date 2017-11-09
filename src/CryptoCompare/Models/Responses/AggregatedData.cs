@@ -10,7 +10,7 @@ namespace CryptoCompare
         public string Flags { get; set; }
 
         [JsonProperty("FROMSYMBOL")]
-        public string Fromsymbol { get; set; }
+        public string FromSymbol { get; set; }
 
         [JsonProperty("HIGH24HOUR")]
         public decimal High24Hour { get; set; }

@@ -46,4 +46,3 @@ foreach ($unitTestFolder in $unitTestFolders) {
 }
 
 exec { & dotnet pack .\src\CryptoCompare\CryptoCompare.csproj -c Release -o .\artifacts --include-symbols --no-build --version-suffix=$suffix }
-exec { & dotnet pack .\src\CryptoCompare.WebSocket\CryptoCompare.WebSocket.csproj -c Release -o .\artifacts --include-symbols --no-build --version-suffix=$suffix }

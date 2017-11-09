@@ -14,7 +14,7 @@ namespace CryptoCompare
         public decimal ChangePCT24Hour { get; set; }
 
         [JsonProperty("CHANGEPCTDAY")]
-        public decimal ChangePCTday { get; set; }
+        public decimal ChangePCTDay { get; set; }
 
         [JsonProperty("MKTCAP")]
         public decimal MarketCap { get; set; }

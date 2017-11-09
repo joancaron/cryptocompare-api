@@ -14,7 +14,7 @@ namespace CryptoCompare
         public string ChangePCT24Hour { get; set; }
 
         [JsonProperty("CHANGEPCTDAY")]
-        public string ChangePCTday { get; set; }
+        public string ChangePCTDay { get; set; }
 
         [JsonProperty("FROMSYMBOL")]
         public string FromSymbol { get; set; }
@@ -29,7 +29,7 @@ namespace CryptoCompare
         public string LastMarket { get; set; }
 
         [JsonProperty("LASTTRADEID")]
-        public string LastTradeid { get; set; }
+        public string LastTradeId { get; set; }
 
         [JsonProperty("LASTUPDATE")]
         public string LastUpdate { get; set; }

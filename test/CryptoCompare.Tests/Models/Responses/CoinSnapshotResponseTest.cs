@@ -9,7 +9,7 @@ using Xunit;
 
 namespace CryptoCompare.Tests.Models.Responses
 {
-    public class CoinSnapshotTest
+    public class CoinSnapshotResponseTest
     {
         /// <summary>
         /// Cam deserialize CoinSnapshotResponse.

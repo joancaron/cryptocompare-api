@@ -1,5 +1,7 @@
 ﻿using CryptoCompare.Tests.Infrastructure;
 
+using FluentAssertions;
+
 using Xunit;
 
 namespace CryptoCompare.Tests.Models.Responses
@@ -14,12 +16,12 @@ namespace CryptoCompare.Tests.Models.Responses
         {
             var model = TestHelper.ReadFixture("Error").DeserializeJson<BaseApiResponse>();
 
-            Assert.False(model.IsSuccessfulResponse);
-            Assert.Equal("Error", model.Status);
-            Assert.Equal("Message", model.StatusMessage);
-            Assert.Equal(1, model.StatusType);
-            Assert.Equal("/stats/", model.Path);
-            Assert.Equal("Not implemented", model.ErrorsSummary);
+            model.IsSuccessfulResponse.Should().BeFalse();
+            model.Status.Should().NotBeNullOrWhiteSpace();
+            model.StatusMessage.Should().NotBeNullOrWhiteSpace();
+            model.StatusType.Should().BePositive();
+            model.Path.Should().NotBeNullOrWhiteSpace();
+            model.ErrorsSummary.Should().NotBeNullOrWhiteSpace();
         }
     }
 }

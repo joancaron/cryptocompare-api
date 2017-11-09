@@ -2,6 +2,8 @@
 
 using CryptoCompare.Tests.Infrastructure;
 
+using FluentAssertions;
+
 using Xunit;
 
 namespace CryptoCompare.Tests.Models.Responses
@@ -16,24 +18,24 @@ namespace CryptoCompare.Tests.Models.Responses
         {
             var model = TestHelper.ReadFixture("Coins.List").DeserializeJson<CoinListResponse>();
 
-            Assert.True(model.IsSuccessfulResponse);
-            Assert.NotNull(model.BaseImageUrl);
-            Assert.NotNull(model.BaseLinkUrl);
-            Assert.NotEmpty(model.Coins);
+            model.IsSuccessfulResponse.Should().BeTrue();
+            model.BaseImageUrl.Should().NotBeNullOrWhiteSpace();
+            model.BaseLinkUrl.Should().NotBeNullOrWhiteSpace();
+            model.Coins.Should().NotBeEmpty();
 
             var coin = model.Coins.First();
-            Assert.NotNull(coin.Value.Id);
-            Assert.NotNull(coin.Value.Url);
-            Assert.NotNull(coin.Value.ImageUrl);
-            Assert.NotNull(coin.Value.CoinName);
-            Assert.NotNull(coin.Value.FullName);
-            Assert.NotNull(coin.Value.Algorithm);
-            Assert.NotNull(coin.Value.ProofType);
-            Assert.NotNull(coin.Value.FullyPremined);
-            Assert.NotNull(coin.Value.TotalCoinSupply);
-            Assert.NotNull(coin.Value.PreMinedValue);
-            Assert.NotNull(coin.Value.TotalCoinsFreeFloat);
-            Assert.True(coin.Value.SortOrder > 0);
+            coin.Value.Id.Should().NotBeNullOrWhiteSpace();
+            coin.Value.Url.Should().NotBeNullOrWhiteSpace();
+            coin.Value.ImageUrl.Should().NotBeNullOrWhiteSpace();
+            coin.Value.CoinName.Should().NotBeNullOrWhiteSpace();
+            coin.Value.FullName.Should().NotBeNullOrWhiteSpace();
+            coin.Value.Algorithm.Should().NotBeNullOrWhiteSpace();
+            coin.Value.ProofType.Should().NotBeNullOrWhiteSpace();
+            coin.Value.FullyPremined.Should().NotBeNullOrWhiteSpace();
+            coin.Value.TotalCoinSupply.Should().NotBeNullOrWhiteSpace();
+            coin.Value.PreMinedValue.Should().NotBeNullOrWhiteSpace();
+            coin.Value.TotalCoinsFreeFloat.Should().NotBeNullOrWhiteSpace();
+            coin.Value.SortOrder.Should().BePositive();
         }
     }
 }

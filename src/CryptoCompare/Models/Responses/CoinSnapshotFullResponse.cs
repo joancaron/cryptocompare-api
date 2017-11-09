@@ -1,6 +1,6 @@
 ﻿namespace CryptoCompare
 {
-    public class CoinSnapshotFull : BaseApiResponse
+    public class CoinSnapshotFullResponse : BaseApiResponse
     {
         public CoinSnapshotFullData Data { get; set; }
     }

@@ -10,7 +10,7 @@ namespace CryptoCompare
         /// <summary>
         /// Returns all the coins that CryptoCompare has added to the website. 
         /// </summary>
-        Task<CoinList> ListAsync();
+        Task<CoinListResponse> ListAsync();
 
         /// <summary>
         /// Gets data for a currency pair. 
@@ -18,7 +18,7 @@ namespace CryptoCompare
         /// </summary>
         /// <param name="fromSymbol">The symbol of the currency you want to get that for.</param>
         /// <param name="toSymbol">The symbol of the currency that data will be in.</param>
-        Task<CoinSnapshot> SnapshotAsync(string fromSymbol, string toSymbol);
+        Task<CoinSnapshotResponse> SnapshotAsync(string fromSymbol, string toSymbol);
 
         /// <summary>
         /// Get the general, subs (used to connect to the streamer and to figure out what exchanges we have data for and what are the exact coin pairs of the coin) 
@@ -28,6 +28,6 @@ namespace CryptoCompare
         /// <returns>
         /// The asynchronous result that yields a full CoinSnapshot.
         /// </returns>
-        Task<CoinSnapshotFull> SnapshotFullAsync(int id);
+        Task<CoinSnapshotFullResponse> SnapshotFullAsync(int id);
     }
 }

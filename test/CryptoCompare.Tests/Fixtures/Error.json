@@ -1,0 +1,9 @@
+{
+  "Response": "Error",
+  "Message": "Message",
+  "Type": 1,
+  "Aggregated": false,
+  "Data": [],
+  "Path": "/stats/",
+  "ErrorsSummary": "Not implemented"
+}

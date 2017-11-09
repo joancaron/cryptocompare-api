@@ -35,7 +35,7 @@ namespace CryptoCompare.Tests.Helpers
         /// NotNull should not throw ArgumentNullException when object is not null.
         /// </summary>
         [Fact]
-        public async Task NotNullShouldNotThrowArgumentNullExceptionWhenObjectIsNotNull()
+        public void NotNullShouldNotThrowArgumentNullExceptionWhenObjectIsNotNull()
         {
             Check.NotNull<int?>(1, Blah);
         }

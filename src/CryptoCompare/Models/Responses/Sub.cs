@@ -4,7 +4,7 @@ namespace CryptoCompare
 {
     public struct Sub
     {
-        public Sub([NotNull] string exchange, [NotNull]string fromSymbol, SubId subId, [NotNull]string toSymbol)
+        public Sub([NotNull] string exchange, [NotNull] string fromSymbol, SubId subId, [NotNull] string toSymbol)
         {
             Check.NotNullOrWhiteSpace(exchange, nameof(exchange));
             Check.NotNullOrWhiteSpace(fromSymbol, nameof(fromSymbol));

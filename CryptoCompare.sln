@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2005
+VisualStudioVersion = 15.0.27004.2008
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CryptoCompare", "src\CryptoCompare\CryptoCompare.csproj", "{74DE4A18-AFE5-485F-A205-5C38CA3BD0BB}"
 EndProject
@@ -22,13 +22,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{CAAC477E-7
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CryptoCompare.Tests", "test\CryptoCompare.Tests\CryptoCompare.Tests.csproj", "{E352A047-C22D-4AB6-9737-47700656B4C4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CryptoCompare.WebSocket", "src\CryptoCompare.WebSocket\CryptoCompare.WebSocket.csproj", "{7AB690D4-E6BB-4B2F-B37D-2A452D385478}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CryptoCompare.WebSocket.Tests", "test\CryptoCompare.WebSocket.Tests\CryptoCompare.WebSocket.Tests.csproj", "{CD718BE1-87BE-4B78-B379-6F83640FF836}"
-	ProjectSection(ProjectDependencies) = postProject
-		{74DE4A18-AFE5-485F-A205-5C38CA3BD0BB} = {74DE4A18-AFE5-485F-A205-5C38CA3BD0BB}
-		{7AB690D4-E6BB-4B2F-B37D-2A452D385478} = {7AB690D4-E6BB-4B2F-B37D-2A452D385478}
-	EndProjectSection
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{5849F63C-8D5B-424A-BAB5-4A43A3A0A915}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -44,21 +38,13 @@ Global
 		{E352A047-C22D-4AB6-9737-47700656B4C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E352A047-C22D-4AB6-9737-47700656B4C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E352A047-C22D-4AB6-9737-47700656B4C4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7AB690D4-E6BB-4B2F-B37D-2A452D385478}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7AB690D4-E6BB-4B2F-B37D-2A452D385478}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7AB690D4-E6BB-4B2F-B37D-2A452D385478}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7AB690D4-E6BB-4B2F-B37D-2A452D385478}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CD718BE1-87BE-4B78-B379-6F83640FF836}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CD718BE1-87BE-4B78-B379-6F83640FF836}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CD718BE1-87BE-4B78-B379-6F83640FF836}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CD718BE1-87BE-4B78-B379-6F83640FF836}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{74DE4A18-AFE5-485F-A205-5C38CA3BD0BB} = {5849F63C-8D5B-424A-BAB5-4A43A3A0A915}
 		{E352A047-C22D-4AB6-9737-47700656B4C4} = {CAAC477E-7487-42CB-9DEB-AE8860A3B03F}
-		{CD718BE1-87BE-4B78-B379-6F83640FF836} = {CAAC477E-7487-42CB-9DEB-AE8860A3B03F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3F131DCD-33E4-47BA-8829-65E49F744112}

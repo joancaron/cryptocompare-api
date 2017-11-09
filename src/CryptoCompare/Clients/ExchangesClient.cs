@@ -26,10 +26,9 @@ namespace CryptoCompare
         /// all the exchanges that CryptoCompare has integrated with.
         /// </summary>
         /// <seealso cref="M:CryptoCompare.Clients.ICoinsClient.AllExchangesAsync()"/>
-        public async Task<IDictionary<string, IDictionary<string, IEnumerable<string>>>> ListAsync()
+        public async Task<ExchangeListResponse> ListAsync()
         {
-            return await this.GetAsync<IDictionary<string, IDictionary<string, IEnumerable<string>>>>(
-                       ApiUrls.AllExchanges());
+            return await this.GetAsync<ExchangeListResponse>(ApiUrls.AllExchanges());
         }
     }
 }

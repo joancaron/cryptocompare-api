@@ -12,9 +12,9 @@ namespace CryptoCompare
 
         public SEO SEO { get; set; }
 
-        public string[] StreamerDataRaw { get; set; }
+        public IReadOnlyList<string> StreamerDataRaw { get; set; }
 
         [JsonConverter(typeof(StringToSubConverter))]
-        public IEnumerable<Sub> Subs { get; set; }
+        public IReadOnlyList<Sub> Subs { get; set; }
     }
 }

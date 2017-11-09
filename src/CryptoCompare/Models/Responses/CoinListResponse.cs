@@ -8,12 +8,12 @@ namespace CryptoCompare
     /// List of coins.
     /// </summary>
     /// <seealso cref="T:CryptoCompare.Responses.BaseApiResponse"/>
-    public class CoinList : BaseApiResponse
+    public class CoinListResponse : BaseApiResponse
     {
         /// <summary>
         /// Gets or sets the coins data.
         /// </summary>
         [JsonProperty("Data")]
-        public IDictionary<string, CoinInfo> Coins { get; set; }
+        public IReadOnlyDictionary<string, CoinInfo> Coins { get; set; }
     }
 }

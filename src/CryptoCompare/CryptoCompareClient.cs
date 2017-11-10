@@ -57,6 +57,12 @@ namespace CryptoCompare
         public IExchangesClient Exchanges => new ExchangesClient(this._httpClient);
 
         /// <summary>
+        /// Gets the api client for market history.
+        /// </summary>
+        /// <seealso cref="P:CryptoCompare.ICryptoCompareClient.History"/>
+        public HistoryClient History  => new HistoryClient(this._httpClient);
+
+        /// <summary>
         /// Gets the api client for cryptocurrency prices.
         /// </summary>
         /// <seealso cref="P:CryptoCompare.ICryptoCompareClient.Prices"/>

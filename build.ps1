@@ -24,25 +24,31 @@ if(Test-Path .\src\*\artifacts) { Remove-Item .\src\*\artifacts -Force -Recurse 
 
 exec { & dotnet restore }
 
-$tag = $(git tag -l --points-at HEAD)
-$revision = @{ $true = "{0:00000}" -f [convert]::ToInt32("0" + $env:APPVEYOR_BUILD_NUMBER, 10); $false = "local" }[$env:APPVEYOR_BUILD_NUMBER -ne $NULL];
-$suffix = @{ $true = ""; $false = "ci-$revision"}[$tag -ne $NULL -and $revision -ne "local"]
-$commitHash = $(git rev-parse --short HEAD)
-$buildSuffix = @{ $true = "$($suffix)-$($commitHash)"; $false = "$($branch)-$($commitHash)" }[$suffix -ne ""]
+Write-Host "BEGIN dotnet build"
 
-exec { & dotnet build CryptoCompare.sln -c Release --version-suffix=$buildSuffix -v q /nologo }
+exec { & dotnet build CryptoCompare.sln -c Release -v q /nologo }
+
+Write-Host "END dotnet build"
 
 #skip integration tests
-$unitTestFolders = Get-ChildItem .\test\CryptoCompare.*.Tests
+$unitTestFolders = Get-ChildItem .\test\*.Tests
 
 foreach ($unitTestFolder in $unitTestFolders) {
+
+    Write-Host "BEGIN tests on" $unitTestFolder
     Push-Location -Path $unitTestFolder
     
     $testName = Split-Path $unitTestFolder -leaf
 
     exec { & dotnet xunit -configuration Release }
 
+    Write-Host "END tests on" $unitTestFolder
+   
     Pop-Location
 }
 
-exec { & dotnet pack .\src\CryptoCompare\CryptoCompare.csproj -c Release -o .\artifacts --include-symbols --no-build --version-suffix=$suffix }
+Write-Host "BEGIN dotnet pack"
+
+exec { & dotnet pack .\src\CryptoCompare\CryptoCompare.csproj -c Release -o .\artifacts --include-symbols --no-build }
+
+Write-Host "END dotnet pack"

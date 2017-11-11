@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Net.Http;
-
+using System.Threading.Tasks;
 using JetBrains.Annotations;
 
 namespace CryptoCompare
@@ -60,7 +60,9 @@ namespace CryptoCompare
         /// Gets the api client for market history.
         /// </summary>
         /// <seealso cref="P:CryptoCompare.ICryptoCompareClient.History"/>
-        public HistoryClient History  => new HistoryClient(this._httpClient);
+        public IHistoryClient History  => new HistoryClient(this._httpClient);
+
+        public ITopsClient Tops => new TopsClient(this._httpClient);
 
         /// <summary>
         /// Gets the api client for cryptocurrency prices.

@@ -6,7 +6,7 @@ using JetBrains.Annotations;
 
 namespace CryptoCompare
 {
-    public interface IHistoryClient
+    public interface IHistoryClient : IApiClient
     {
         /// <summary>
         /// Get open, high, low, close, volumefrom and volumeto from the daily historical data.

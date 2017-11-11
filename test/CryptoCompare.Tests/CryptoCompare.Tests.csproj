@@ -22,4 +22,8 @@
     <ProjectReference Include="..\..\src\CryptoCompare\CryptoCompare.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Fixtures\Tops\" />
+  </ItemGroup>
+
 </Project>

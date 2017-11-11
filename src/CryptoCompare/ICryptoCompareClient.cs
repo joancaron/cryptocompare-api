@@ -30,6 +30,11 @@ namespace CryptoCompare
         /// <summary>
         /// Gets the api client for market history.
         /// </summary>
-        HistoryClient History { get; }
+        IHistoryClient History { get; }
+
+        /// <summary>
+        /// Gets the api client for "tops" endpoints.
+        /// </summary>
+        ITopsClient Tops { get; }
     }
 }

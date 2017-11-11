@@ -1,0 +1,40 @@
+{
+  "Response": "Success",
+  "Data": [
+    {
+      "exchange": "Bitfinex",
+      "fromSymbol": "BTC",
+      "toSymbol": "USD",
+      "volume24h": 66956.52141693055,
+      "volume24hTo": 451870946.09877497
+    },
+    {
+      "exchange": "Coinbase",
+      "fromSymbol": "BTC",
+      "toSymbol": "USD",
+      "volume24h": 32472.322517769957,
+      "volume24hTo": 218649980.63792574
+    },
+    {
+      "exchange": "Bitstamp",
+      "fromSymbol": "BTC",
+      "toSymbol": "USD",
+      "volume24h": 25837.93559126997,
+      "volume24hTo": 174471197.30855668
+    },
+    {
+      "exchange": "Gemini",
+      "fromSymbol": "BTC",
+      "toSymbol": "USD",
+      "volume24h": 16695.90166230977,
+      "volume24hTo": 112377615.97376533
+    },
+    {
+      "exchange": "Poloniex",
+      "fromSymbol": "BTC",
+      "toSymbol": "USD",
+      "volume24h": 14167.06983311996,
+      "volume24hTo": 94792981.1747301
+    }
+  ]
+}

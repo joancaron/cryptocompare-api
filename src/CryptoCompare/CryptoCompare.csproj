@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  
+  <Import Project="../../CryptoCompare.targets" />
+  
+  <PropertyGroup>
+    <PackageId>CryptoCompare</PackageId>
+    <AssemblyTitle>CryptoCompare</AssemblyTitle>
+    <AssemblyName>CryptoCompare</AssemblyName>
+    <RootNamespace>CryptoCompare</RootNamespace>
+    <Description>An async-based CryptoCompare API client library for .NET and .NET Core</Description>
+    <TargetFrameworks>netstandard1.1;netstandard1.3;net45</TargetFrameworks>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
+  </ItemGroup>
+
+</Project>

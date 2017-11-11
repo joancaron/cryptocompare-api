@@ -1,0 +1,13 @@
+{
+  "Message": "Total Rate limit hour stats",
+  "CallsMade": {
+    "Histo": 1,
+    "Price": 2,
+    "News": 3
+  },
+  "CallsLeft": {
+    "Histo": 6000,
+    "Price": 150000,
+    "News": 30000
+  }
+}

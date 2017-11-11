@@ -1,0 +1,176 @@
+{
+  "Data": [
+    {
+      "SYMBOL": "BCH",
+      "SUPPLY": 16782100,
+      "FULLNAME": "Bitcoin Cash / BCC (BCH)",
+      "NAME": "Bitcoin Cash / BCC",
+      "ID": "202330",
+      "VOLUME24HOURTO": 102038.76248122271
+    },
+    {
+      "SYMBOL": "ETH",
+      "SUPPLY": 95654671.7178,
+      "FULLNAME": "Ethereum  (ETH)",
+      "NAME": "Ethereum ",
+      "ID": "7605",
+      "VOLUME24HOURTO": 30183.401868678375
+    },
+    {
+      "SYMBOL": "LTC",
+      "SUPPLY": 53774682.3718871,
+      "FULLNAME": "Litecoin (LTC)",
+      "NAME": "Litecoin",
+      "ID": "3808",
+      "VOLUME24HOURTO": 8157.039285380534
+    },
+    {
+      "SYMBOL": "DASH",
+      "SUPPLY": 7683811.2325024,
+      "FULLNAME": "DigitalCash (DASH)",
+      "NAME": "DigitalCash",
+      "ID": "3807",
+      "VOLUME24HOURTO": 8156.799524894274
+    },
+    {
+      "SYMBOL": "ETC",
+      "SUPPLY": 97330138,
+      "FULLNAME": "Ethereum Classic (ETC)",
+      "NAME": "Ethereum Classic",
+      "ID": "5324",
+      "VOLUME24HOURTO": 7670.1259579314965
+    },
+    {
+      "SYMBOL": "NEO",
+      "SUPPLY": 65000000,
+      "FULLNAME": "NEO (NEO)",
+      "NAME": "NEO",
+      "ID": "27368",
+      "VOLUME24HOURTO": 4965.130533035821
+    },
+    {
+      "SYMBOL": "XMR",
+      "SUPPLY": 15337181.700408,
+      "FULLNAME": "Monero (XMR)",
+      "NAME": "Monero",
+      "ID": "5038",
+      "VOLUME24HOURTO": 4883.781238836406
+    },
+    {
+      "SYMBOL": "XRP",
+      "SUPPLY": 38305873865,
+      "FULLNAME": "Ripple (XRP)",
+      "NAME": "Ripple",
+      "ID": "5031",
+      "VOLUME24HOURTO": 4377.114479630421
+    },
+    {
+      "SYMBOL": "ZEC",
+      "SUPPLY": 2594731.25,
+      "FULLNAME": "ZCash (ZEC)",
+      "NAME": "ZCash",
+      "ID": "24854",
+      "VOLUME24HOURTO": 4180.042298527131
+    },
+    {
+      "SYMBOL": "BTG",
+      "SUPPLY": 0,
+      "FULLNAME": "Bitcoin Gold (BTG)",
+      "NAME": "Bitcoin Gold",
+      "ID": "347235",
+      "VOLUME24HOURTO": 3531.150939963117
+    },
+    {
+      "SYMBOL": "XLM",
+      "SUPPLY": 16588351568,
+      "FULLNAME": "Stellar (XLM)",
+      "NAME": "Stellar",
+      "ID": "4614",
+      "VOLUME24HOURTO": 3148.147874443838
+    },
+    {
+      "SYMBOL": "VTC",
+      "SUPPLY": 41115000,
+      "FULLNAME": "VertCoin (VTC)",
+      "NAME": "VertCoin",
+      "ID": "5018",
+      "VOLUME24HOURTO": 2381.5387898979398
+    },
+    {
+      "SYMBOL": "OMG",
+      "SUPPLY": 140245398.245133,
+      "FULLNAME": "OmiseGo (OMG)",
+      "NAME": "OmiseGo",
+      "ID": "187440",
+      "VOLUME24HOURTO": 2312.4827162004394
+    },
+    {
+      "SYMBOL": "WAVES",
+      "SUPPLY": 100000000,
+      "FULLNAME": "Waves (WAVES)",
+      "NAME": "Waves",
+      "ID": "20131",
+      "VOLUME24HOURTO": 1955.2709938922085
+    },
+    {
+      "SYMBOL": "QTUM",
+      "SUPPLY": 100000000,
+      "FULLNAME": "QTUM (QTUM)",
+      "NAME": "QTUM",
+      "ID": "112392",
+      "VOLUME24HOURTO": 1870.6325285899998
+    },
+    {
+      "SYMBOL": "LSK",
+      "SUPPLY": 114719850,
+      "FULLNAME": "Lisk (LSK)",
+      "NAME": "Lisk",
+      "ID": "19745",
+      "VOLUME24HOURTO": 1668.3700973069597
+    },
+    {
+      "SYMBOL": "WTC",
+      "SUPPLY": 70000000,
+      "FULLNAME": "Waltonchain (WTC)",
+      "NAME": "Waltonchain",
+      "ID": "299397",
+      "VOLUME24HOURTO": 1664.0064774300015
+    },
+    {
+      "SYMBOL": "XEM",
+      "SUPPLY": 8999999999,
+      "FULLNAME": "NEM (XEM)",
+      "NAME": "NEM",
+      "ID": "5285",
+      "VOLUME24HOURTO": 1413.8880955148081
+    },
+    {
+      "SYMBOL": "EOS",
+      "SUPPLY": 1000000000,
+      "FULLNAME": "EOS (EOS)",
+      "NAME": "EOS",
+      "ID": "166503",
+      "VOLUME24HOURTO": 1244.0018416604307
+    },
+    {
+      "SYMBOL": "IOT",
+      "SUPPLY": 2779530283,
+      "FULLNAME": "IOTA (IOT)",
+      "NAME": "IOTA",
+      "ID": "127356",
+      "VOLUME24HOURTO": 1220.0712229137403
+    },
+    {
+      "SYMBOL": "STRAT",
+      "SUPPLY": 98617355.2517599,
+      "FULLNAME": "Stratis (STRAT)",
+      "NAME": "Stratis",
+      "ID": "24294",
+      "VOLUME24HOURTO": 1141.264374372906
+    }
+  ],
+  "Type": 100,
+  "Response": "Success",
+  "VolSymbol": "BTC",
+  "Message": "All ok"
+}

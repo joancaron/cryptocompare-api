@@ -1,0 +1,40 @@
+{
+  "Response": "Success",
+  "Data": [
+    {
+      "exchange": "CCCAGG",
+      "fromSymbol": "ETH",
+      "toSymbol": "USD",
+      "volume24h": 761103.5856361026,
+      "volume24hTo": 230471269.47210646
+    },
+    {
+      "exchange": "CCCAGG",
+      "fromSymbol": "ETH",
+      "toSymbol": "BTC",
+      "volume24h": 660344.1649576704,
+      "volume24hTo": 29777.18480600227
+    },
+    {
+      "exchange": "CCCAGG",
+      "fromSymbol": "ETH",
+      "toSymbol": "KRW",
+      "volume24h": 558775.7860914357,
+      "volume24hTo": 194386491543.6665
+    },
+    {
+      "exchange": "CCCAGG",
+      "fromSymbol": "ETH",
+      "toSymbol": "EUR",
+      "volume24h": 100493.24450350003,
+      "volume24hTo": 26336223.86090936
+    },
+    {
+      "exchange": "CCCAGG",
+      "fromSymbol": "ETH",
+      "toSymbol": "JPY",
+      "volume24h": 30085.146016239996,
+      "volume24hTo": 1029713585.1832205
+    }
+  ]
+}

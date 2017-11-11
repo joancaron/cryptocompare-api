@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2008
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CryptoCompare", "src\CryptoCompare\CryptoCompare.csproj", "{74DE4A18-AFE5-485F-A205-5C38CA3BD0BB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B4B8ECDB-63A4-431A-8313-2D90142033C1}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		appveyor.yml = appveyor.yml
+		build.ps1 = build.ps1
+		CryptoCompare.targets = CryptoCompare.targets
+		LICENSE = LICENSE
+		README.md = README.md
+		Settings.StyleCop = Settings.StyleCop
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{CAAC477E-7487-42CB-9DEB-AE8860A3B03F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CryptoCompare.Tests", "test\CryptoCompare.Tests\CryptoCompare.Tests.csproj", "{E352A047-C22D-4AB6-9737-47700656B4C4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{5849F63C-8D5B-424A-BAB5-4A43A3A0A915}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{74DE4A18-AFE5-485F-A205-5C38CA3BD0BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74DE4A18-AFE5-485F-A205-5C38CA3BD0BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74DE4A18-AFE5-485F-A205-5C38CA3BD0BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74DE4A18-AFE5-485F-A205-5C38CA3BD0BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E352A047-C22D-4AB6-9737-47700656B4C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E352A047-C22D-4AB6-9737-47700656B4C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E352A047-C22D-4AB6-9737-47700656B4C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E352A047-C22D-4AB6-9737-47700656B4C4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{74DE4A18-AFE5-485F-A205-5C38CA3BD0BB} = {5849F63C-8D5B-424A-BAB5-4A43A3A0A915}
+		{E352A047-C22D-4AB6-9737-47700656B4C4} = {CAAC477E-7487-42CB-9DEB-AE8860A3B03F}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3F131DCD-33E4-47BA-8829-65E49F744112}
+	EndGlobalSection
+EndGlobal

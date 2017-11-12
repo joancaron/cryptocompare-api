@@ -32,7 +32,7 @@ An async-based CryptoCompare API client library for .NET and .NET Core
 - [x] [Top pairs](https://min-api.cryptocompare.com/data/top/pairs?fsym=ETH)
 - [x] [Top exchanges](https://min-api.cryptocompare.com/data/top/exchanges?fsym=BTC&tsym=USD)
 - [x] [Top volumes](https://min-api.cryptocompare.com/data/top/volumes?tsym=BTC)
-- [ ] [Streamer subscription channels](https://min-api.cryptocompare.com/data/subs?fsym=BTC&tsyms=USD)
+- [x] [Streamer subscription channels](https://min-api.cryptocompare.com/data/subs?fsym=BTC&tsyms=USD)
 - [ ] [Subscription channels watchlist](https://min-api.cryptocompare.com/data/subsWatchlist?fsyms=BTC,ETH,XMR,MLN,DASH&tsym=USD&extraParams=your_app_name)
 - [ ] [News providers](https://min-api.cryptocompare.com/data/news/providers)
 - [ ] [News](https://min-api.cryptocompare.com/data/news/)

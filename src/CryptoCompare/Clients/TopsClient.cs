@@ -1,10 +1,10 @@
 ﻿using System.Net.Http;
+using System.Threading.Tasks;
+
 using JetBrains.Annotations;
 
 namespace CryptoCompare
 {
-    using System.Threading.Tasks;
-
     /// <summary>
     /// Client for "tops" endpoints (Exchanges, volumes, pairs).
     /// </summary>
@@ -16,24 +16,9 @@ namespace CryptoCompare
         /// Initializes a new instance of the CryptoCompare.TopsClient class.
         /// </summary>
         /// <param name="httpClient">The HTTP client. This cannot be null.</param>
-        public TopsClient([NotNull] HttpClient httpClient) : base(httpClient)
+        public TopsClient([NotNull] HttpClient httpClient)
+            : base(httpClient)
         {
-        }
-
-        /// <summary>
-        /// Get top pairs by volume for a currency (always uses our aggregated data).
-        /// The number of pairs you get is the minimum of the limit you set (default 5) and the total number of pairs available.
-        /// </summary>
-        /// <param name="fromSymbol">from symbol.</param>
-        /// <param name="limit">(Optional) The limit.</param>
-        /// <returns>
-        /// An asynchronous result that yields a TopResponse.
-        /// </returns>
-        /// <seealso cref="M:CryptoCompare.ITopsClient.Pairs(string,int?)"/>
-        public async Task<TopResponse> Pairs([NotNull] string fromSymbol, int? limit = null)
-        {
-            Check.NotNullOrWhiteSpace(fromSymbol, nameof(fromSymbol));
-            return await this.GetAsync<TopResponse>(ApiUrls.TopPairs(fromSymbol, limit));
         }
 
         /// <summary>
@@ -47,11 +32,31 @@ namespace CryptoCompare
         /// An asynchronous result that yields a TopResponse.
         /// </returns>
         /// <seealso cref="M:CryptoCompare.ITopsClient.Exchanges(string,string,int?)"/>
-        public async Task<TopResponse> Exchanges([NotNull] string fromSymbol, [NotNull] string toSymbol, int? limit = null)
+        public async Task<TopResponse> ExchangesAsync(
+            [NotNull] string fromSymbol,
+            [NotNull] string toSymbol,
+            int? limit = null)
         {
             Check.NotNullOrWhiteSpace(toSymbol, nameof(toSymbol));
             Check.NotNullOrWhiteSpace(fromSymbol, nameof(fromSymbol));
-            return await this.GetAsync<TopResponse>(ApiUrls.TopExchanges(fromSymbol, toSymbol, limit));
+            return await this.GetAsync<TopResponse>(ApiUrls.TopExchanges(fromSymbol, toSymbol, limit))
+                       .ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Get top pairs by volume for a currency (always uses our aggregated data).
+        /// The number of pairs you get is the minimum of the limit you set (default 5) and the total number of pairs available.
+        /// </summary>
+        /// <param name="fromSymbol">from symbol.</param>
+        /// <param name="limit">(Optional) The limit.</param>
+        /// <returns>
+        /// An asynchronous result that yields a TopResponse.
+        /// </returns>
+        /// <seealso cref="M:CryptoCompare.ITopsClient.Pairs(string,int?)"/>
+        public async Task<TopResponse> PairsAsync([NotNull] string fromSymbol, int? limit = null)
+        {
+            Check.NotNullOrWhiteSpace(fromSymbol, nameof(fromSymbol));
+            return await this.GetAsync<TopResponse>(ApiUrls.TopPairs(fromSymbol, limit)).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -64,10 +69,10 @@ namespace CryptoCompare
         /// An asynchronous result that yields a TopVolumesResponse.
         /// </returns>
         /// <seealso cref="M:CryptoCompare.ITopsClient.Volumes(string,int?)"/>
-        public async Task<TopVolumesResponse> Volumes([NotNull] string toSymbol, int? limit = null)
+        public async Task<TopVolumesResponse> VolumesAsync([NotNull] string toSymbol, int? limit = null)
         {
             Check.NotNullOrWhiteSpace(toSymbol, nameof(toSymbol));
-            return await this.GetAsync<TopVolumesResponse>(ApiUrls.TopVolumes(toSymbol, limit));
+            return await this.GetAsync<TopVolumesResponse>(ApiUrls.TopVolumes(toSymbol, limit)).ConfigureAwait(false);
         }
     }
 }

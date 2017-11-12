@@ -27,7 +27,7 @@ namespace CryptoCompare
             Check.NotNull(tsym, nameof(tsym));
             Check.NotNull(fsym, nameof(fsym));
             return new Uri(SiteApiEndpoint, "coinsnapshot").ApplyParameters(
-                new Dictionary<string, string>()
+                new Dictionary<string, string>
                 {
                     { nameof(fsym), fsym },
                     { nameof(tsym), tsym }
@@ -37,7 +37,7 @@ namespace CryptoCompare
         public static Uri CoinSnapshotFull(int id)
         {
             return new Uri(SiteApiEndpoint, "coinsnapshotfullbyid").ApplyParameters(
-                new Dictionary<string, string>()
+                new Dictionary<string, string>
                 {
                     { nameof(id), id.ToString() }
                 });
@@ -58,12 +58,15 @@ namespace CryptoCompare
             Check.NotNullOrWhiteSpace(tsym, nameof(tsym));
 
             return new Uri(MinApiEndpoint, $"histo{method}").ApplyParameters(
-                new Dictionary<string, string>()
+                new Dictionary<string, string>
                 {
                     { nameof(fsym), fsym },
                     { nameof(tsym), tsym },
                     { nameof(limit), limit.ToString() },
-                    { nameof(toTs), toTs?.ToUnixTime().ToString(CultureInfo.InvariantCulture) },
+                    {
+                        nameof(toTs),
+                        toTs?.ToUnixTime().ToString(CultureInfo.InvariantCulture)
+                    },
                     { nameof(tryConversion), tryConversion?.ToString() },
                     { nameof(e), e?.ToJoinedList() },
                     { nameof(allData), allData?.ToString() },
@@ -82,7 +85,7 @@ namespace CryptoCompare
             Check.NotEmpty(e, nameof(e));
 
             return new Uri(MinApiEndpoint, "generateAvg").ApplyParameters(
-                new Dictionary<string, string>()
+                new Dictionary<string, string>
                 {
                     { nameof(fsym), fsym },
                     { nameof(tsym), tsym },
@@ -100,7 +103,7 @@ namespace CryptoCompare
             string e)
         {
             return new Uri(MinApiEndpoint, "pricehistorical").ApplyParameters(
-                new Dictionary<string, string>()
+                new Dictionary<string, string>
                 {
                     { nameof(fsym), fsym },
                     { nameof(tsyms), tsyms.ToJoinedList() },
@@ -124,7 +127,7 @@ namespace CryptoCompare
             Check.NotEmpty(tsyms, nameof(tsyms));
 
             return new Uri(MinApiEndpoint, "pricemulti").ApplyParameters(
-                new Dictionary<string, string>()
+                new Dictionary<string, string>
                 {
                     { nameof(fsyms), fsyms.ToJoinedList() },
                     { nameof(tsyms), tsyms.ToJoinedList() },
@@ -143,7 +146,7 @@ namespace CryptoCompare
             Check.NotEmpty(tsyms, nameof(tsyms));
 
             return new Uri(MinApiEndpoint, "pricemultifull").ApplyParameters(
-                new Dictionary<string, string>()
+                new Dictionary<string, string>
                 {
                     { nameof(fsyms), fsyms.ToJoinedList() },
                     { nameof(tsyms), tsyms.ToJoinedList() },
@@ -162,7 +165,7 @@ namespace CryptoCompare
             Check.NotEmpty(tsyms, nameof(tsyms));
 
             return new Uri(MinApiEndpoint, "price").ApplyParameters(
-                new Dictionary<string, string>()
+                new Dictionary<string, string>
                 {
                     { nameof(fsym), fsym },
                     { nameof(tsyms), tsyms.ToJoinedList() },
@@ -177,14 +180,15 @@ namespace CryptoCompare
 
         public static Uri RateLimitsBySecond() => new Uri(MinApiEndpoint, string.Format(RateLimitsUrl, "second"));
 
-        public static Uri TopPairs([NotNull] string fsym, int? limit)
+        public static Uri SubsList([NotNull] string fsym, [NotNull] IEnumerable<string> tsyms)
         {
-            Check.NotNullOrWhiteSpace(fsym, nameof(fsym));
-            return new Uri(MinApiEndpoint, "top/pairs").ApplyParameters(
-                new Dictionary<string, string>()
+            Check.NotEmpty(tsyms, nameof(tsyms));
+            Check.NotNull(fsym, nameof(fsym));
+            return new Uri(MinApiEndpoint, "subs").ApplyParameters(
+                new Dictionary<string, string>
                 {
                     { nameof(fsym), fsym },
-                    { nameof(limit), limit.ToString() },
+                    { nameof(tsyms), tsyms.ToJoinedList() }
                 });
         }
 
@@ -193,11 +197,22 @@ namespace CryptoCompare
             Check.NotNullOrWhiteSpace(tsym, nameof(tsym));
             Check.NotNullOrWhiteSpace(fsym, nameof(fsym));
             return new Uri(MinApiEndpoint, "top/exchanges").ApplyParameters(
-                new Dictionary<string, string>()
+                new Dictionary<string, string>
                 {
                     { nameof(fsym), fsym },
                     { nameof(tsym), tsym },
-                    { nameof(limit), limit.ToString() },
+                    { nameof(limit), limit.ToString() }
+                });
+        }
+
+        public static Uri TopPairs([NotNull] string fsym, int? limit)
+        {
+            Check.NotNullOrWhiteSpace(fsym, nameof(fsym));
+            return new Uri(MinApiEndpoint, "top/pairs").ApplyParameters(
+                new Dictionary<string, string>
+                {
+                    { nameof(fsym), fsym },
+                    { nameof(limit), limit.ToString() }
                 });
         }
 
@@ -205,10 +220,10 @@ namespace CryptoCompare
         {
             Check.NotNullOrWhiteSpace(tsym, nameof(tsym));
             return new Uri(MinApiEndpoint, "top/volumes").ApplyParameters(
-                new Dictionary<string, string>()
+                new Dictionary<string, string>
                 {
                     { nameof(tsym), tsym },
-                    { nameof(limit), limit.ToString() },
+                    { nameof(limit), limit.ToString() }
                 });
         }
     }

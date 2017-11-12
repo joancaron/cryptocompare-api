@@ -20,7 +20,7 @@ namespace CryptoCompare
         /// <param name="allData">(Optional) retrieve all data.</param>
         /// <param name="aggregate">(Optional) aggregates result.</param>
         /// <param name="tryConversion">(Optional) tries conversion.</param>
-        Task<HistoryResponse> Day(
+        Task<HistoryResponse> DayAsync(
             [NotNull] string fromSymbol,
             [NotNull] string toSymbol,
             int? limit,
@@ -42,7 +42,7 @@ namespace CryptoCompare
         /// <param name="allData">(Optional) retrieve all data.</param>
         /// <param name="aggregate">(Optional) aggregates result.</param>
         /// <param name="tryConversion">(Optional) tries conversion.</param>
-        Task<HistoryResponse> Hour(
+        Task<HistoryResponse> HourAsync(
             [NotNull] string fromSymbol,
             [NotNull] string toSymbol,
             int? limit,
@@ -65,7 +65,7 @@ namespace CryptoCompare
         /// <param name="allData">(Optional) retrieve all data.</param>
         /// <param name="aggregate">(Optional) aggregates result.</param>
         /// <param name="tryConversion">(Optional) tries conversion.</param>
-        Task<HistoryResponse> Minute(
+        Task<HistoryResponse> MinuteAsync(
             [NotNull] string fromSymbol,
             [NotNull] string toSymbol,
             int? limit,

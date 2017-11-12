@@ -15,6 +15,6 @@
         /// <summary>
         /// Quote update aggregated over the last 24 hours of a currency pair from a specific exchange.
         /// </summary>
-        CurrentAgg = 4
+        CurrentAgg = 5
     }
 }

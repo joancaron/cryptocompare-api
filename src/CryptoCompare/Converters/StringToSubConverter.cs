@@ -75,13 +75,11 @@ namespace CryptoCompare
             if (values.Length == 4)
             {
                 Enum.TryParse(values.ElementAtOrDefault(0), out SubId subId);
-                return new Sub
-                       {
-                           SubId = subId,
-                           Exchange = values.ElementAtOrDefault(1),
-                           FromSymbol = values.ElementAtOrDefault(2),
-                           ToSymbol = values.ElementAtOrDefault(3)
-                       };
+                return new Sub(
+                    values.ElementAtOrDefault(1),
+                    values.ElementAtOrDefault(2),
+                    subId,
+                    values.ElementAtOrDefault(3));
             }
             return default(Sub);
         }

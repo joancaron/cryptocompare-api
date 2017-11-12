@@ -1,11 +1,11 @@
-﻿namespace CryptoCompare
+﻿using System.Collections.Generic;
+using System.Net.Http;
+using System.Threading.Tasks;
+
+using JetBrains.Annotations;
+
+namespace CryptoCompare
 {
-    using System.Collections.Generic;
-    using System.Net.Http;
-    using System.Threading.Tasks;
-
-    using JetBrains.Annotations;
-
     public class SubsClient : BaseApiClient, ISubsClient
     {
         /// <summary>
@@ -26,11 +26,13 @@
         /// An asynchronous result that yields the list of subs.
         /// </returns>
         /// <seealso cref="M:CryptoCompare.ISubsClient.ListAsync(string,IEnumerable{string})"/>
-        public async Task<SubListResponse> ListAsync([NotNull] string fromSymbol, [NotNull] IEnumerable<string> toSymbols)
+        public async Task<SubListResponse> ListAsync(
+            [NotNull] string fromSymbol,
+            [NotNull] IEnumerable<string> toSymbols)
         {
             Check.NotEmpty(toSymbols, nameof(toSymbols));
             Check.NotNull(fromSymbol, nameof(fromSymbol));
-            return await this.GetAsync<SubListResponse>(ApiUrls.SubsList(fromSymbol, toSymbols));
+            return await this.GetAsync<SubListResponse>(ApiUrls.SubsList(fromSymbol, toSymbols)).ConfigureAwait(false);
         }
     }
 }

@@ -63,7 +63,10 @@ namespace CryptoCompare
                     { nameof(fsym), fsym },
                     { nameof(tsym), tsym },
                     { nameof(limit), limit.ToString() },
-                    { nameof(toTs), toTs?.ToUnixTime().ToString(CultureInfo.InvariantCulture) },
+                    {
+                        nameof(toTs),
+                        toTs?.ToUnixTime().ToString(CultureInfo.InvariantCulture)
+                    },
                     { nameof(tryConversion), tryConversion?.ToString() },
                     { nameof(e), e?.ToJoinedList() },
                     { nameof(allData), allData?.ToString() },
@@ -177,14 +180,15 @@ namespace CryptoCompare
 
         public static Uri RateLimitsBySecond() => new Uri(MinApiEndpoint, string.Format(RateLimitsUrl, "second"));
 
-        public static Uri TopPairs([NotNull] string fsym, int? limit)
+        public static Uri SubsList([NotNull] string fsym, [NotNull] IEnumerable<string> tsyms)
         {
-            Check.NotNullOrWhiteSpace(fsym, nameof(fsym));
-            return new Uri(MinApiEndpoint, "top/pairs").ApplyParameters(
+            Check.NotEmpty(tsyms, nameof(tsyms));
+            Check.NotNull(fsym, nameof(fsym));
+            return new Uri(MinApiEndpoint, "subs").ApplyParameters(
                 new Dictionary<string, string>
                 {
                     { nameof(fsym), fsym },
-                    { nameof(limit), limit.ToString() }
+                    { nameof(tsyms), tsyms.ToJoinedList() }
                 });
         }
 
@@ -201,6 +205,17 @@ namespace CryptoCompare
                 });
         }
 
+        public static Uri TopPairs([NotNull] string fsym, int? limit)
+        {
+            Check.NotNullOrWhiteSpace(fsym, nameof(fsym));
+            return new Uri(MinApiEndpoint, "top/pairs").ApplyParameters(
+                new Dictionary<string, string>
+                {
+                    { nameof(fsym), fsym },
+                    { nameof(limit), limit.ToString() }
+                });
+        }
+
         public static Uri TopVolumes([NotNull] string tsym, int? limit)
         {
             Check.NotNullOrWhiteSpace(tsym, nameof(tsym));
@@ -209,18 +224,6 @@ namespace CryptoCompare
                 {
                     { nameof(tsym), tsym },
                     { nameof(limit), limit.ToString() }
-                });
-        }
-
-        public static Uri SubsList([NotNull] string fsym, [NotNull] IEnumerable<string> tsyms)
-        {
-            Check.NotEmpty(tsyms, nameof(tsyms));
-            Check.NotNull(fsym, nameof(fsym));
-            return new Uri(MinApiEndpoint, "subs").ApplyParameters(
-                new Dictionary<string, string>
-                {
-                    { nameof(fsym), fsym },
-                    { nameof(tsyms), tsyms.ToJoinedList() }
                 });
         }
     }

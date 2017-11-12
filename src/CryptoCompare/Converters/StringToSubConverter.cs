@@ -40,7 +40,6 @@ namespace CryptoCompare
             object existingValue,
             JsonSerializer serializer)
         {
-
             if (reader.TokenType == JsonToken.String)
             {
                 return this.GetTokenFromString(reader.Value.ToString());
@@ -51,12 +50,23 @@ namespace CryptoCompare
                 var tokens = JArray.Load(reader);
                 if (tokens?.HasValues ?? false)
                 {
-                    return tokens.Values().Select(
-                        token => this.GetTokenFromString(token.ToString())).ToList();
+                    return tokens.Values().Select(token => this.GetTokenFromString(token.ToString())).ToList();
                 }
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Writes the JSON representation of the object.
+        /// </summary>
+        /// <param name="writer">The <see cref="T:Newtonsoft.Json.JsonWriter" /> to write to.</param>
+        /// <param name="value">The value.</param>
+        /// <param name="serializer">The calling serializer.</param>
+        /// <seealso cref="M:Newtonsoft.Json.JsonConverter.WriteJson(JsonWriter,object,JsonSerializer)"/>
+        public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
+        {
+            throw new NotImplementedException();
         }
 
         private Sub GetTokenFromString(string token)
@@ -74,18 +84,6 @@ namespace CryptoCompare
                        };
             }
             return default(Sub);
-        }
-
-        /// <summary>
-        /// Writes the JSON representation of the object.
-        /// </summary>
-        /// <param name="writer">The <see cref="T:Newtonsoft.Json.JsonWriter" /> to write to.</param>
-        /// <param name="value">The value.</param>
-        /// <param name="serializer">The calling serializer.</param>
-        /// <seealso cref="M:Newtonsoft.Json.JsonConverter.WriteJson(JsonWriter,object,JsonSerializer)"/>
-        public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
-        {
-            throw new NotImplementedException();
         }
     }
 }

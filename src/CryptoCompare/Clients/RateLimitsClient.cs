@@ -28,7 +28,7 @@ namespace CryptoCompare
         /// <seealso cref="M:CryptoCompare.Clients.IRateLimitsClient.Hour()"/>
         public async Task<RateLimitResponse> CurrentHourAsync()
         {
-            return await this.GetAsync<RateLimitResponse>(ApiUrls.RateLimitsByHour());
+            return await this.GetAsync<RateLimitResponse>(ApiUrls.RateLimitsByHour()).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -38,7 +38,7 @@ namespace CryptoCompare
         /// <seealso cref="M:CryptoCompare.Clients.IRateLimitsClient.Minute()"/>
         public async Task<RateLimitResponse> CurrentMinuteAsync()
         {
-            return await this.GetAsync<RateLimitResponse>(ApiUrls.RateLimitsByMinute());
+            return await this.GetAsync<RateLimitResponse>(ApiUrls.RateLimitsByMinute()).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -48,7 +48,7 @@ namespace CryptoCompare
         /// <seealso cref="M:CryptoCompare.Clients.IRateLimitsClient.Second()"/>
         public async Task<RateLimitResponse> CurrentSecondAsync()
         {
-            return await this.GetAsync<RateLimitResponse>(ApiUrls.RateLimitsBySecond());
+            return await this.GetAsync<RateLimitResponse>(ApiUrls.RateLimitsBySecond()).ConfigureAwait(false);
         }
     }
 }

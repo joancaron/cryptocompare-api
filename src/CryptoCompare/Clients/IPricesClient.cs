@@ -7,6 +7,20 @@ namespace CryptoCompare
     public interface IPricesClient : IApiClient
     {
         /// <summary>
+        /// Compute the current trading info (price, vol, open, high, low etc) of the requested pair as a volume weighted average based on the exchanges requested.
+        /// </summary>
+        /// <param name="fromSymbol">from symbol.</param>
+        /// <param name="toSymbol">to symbol.</param>
+        /// <param name="exchangeNames">List of names of the exchanges.</param>
+        /// <param name="tryConversion">(Optional) If set to false, it will try to get values without
+        /// using any conversion at all (defaultVal:true)</param>
+        Task<PriceAverageResponse> AverageAsync(
+            string fromSymbol,
+            string toSymbol,
+            IEnumerable<string> exchangeNames,
+            bool? tryConversion = null);
+
+        /// <summary>
         /// Get the price of any cryptocurrency in any other currency that you need at a given timestamp.
         /// The price comes from the daily info - so it would be the price at the end of the day GMT based on the requested TS.
         /// If the crypto does not trade directly into the toSymbol requested, BTC will be used for conversion.
@@ -20,7 +34,7 @@ namespace CryptoCompare
         /// <param name="tryConversion">(Optional) If set to false, it will try to get values without
         /// using any conversion at all (defaultVal:true)</param>
         /// <param name="exchangeName">(Optional) Exchange name default => CCCAGG.</param>
-        Task<PriceHistoricalReponse> Historical(
+        Task<PriceHistoricalReponse> HistoricalAsync(
             string fromSymbol,
             IEnumerable<string> toSymbols,
             DateTimeOffset requestedDate,
@@ -36,7 +50,7 @@ namespace CryptoCompare
         /// <param name="tryConversion">(Optional) If set to false, it will try to get values without
         /// using any conversion at all (defaultVal:true)</param>
         /// <param name="exchangeName">(Optional) Exchange name defult => CCCAGG.</param>
-        Task<PriceMultiResponse> Multi(
+        Task<PriceMultiResponse> MultiAsync(
             IEnumerable<string> fromSymbols,
             IEnumerable<string> toSymbols,
             bool? tryConversion = null,
@@ -53,7 +67,7 @@ namespace CryptoCompare
         /// <param name="tryConversion">(Optional) If set to false, it will try to get values without
         /// using any conversion at all (defaultVal:true)</param>
         /// <param name="exchangeName">(Optional) Exchange name default => CCCAGG.</param>
-        Task<PriceMultiFullResponse> MultiFull(
+        Task<PriceMultiFullResponse> MultiFullAsync(
             IEnumerable<string> fromSymbols,
             IEnumerable<string> toSymbols,
             bool? tryConversion = null,
@@ -68,16 +82,10 @@ namespace CryptoCompare
         /// <param name="toSymbols">to symbols.</param>
         /// <param name="tryConversion">If set to false, it will try to get values without using any conversion at all (defaultVal:true)</param>
         /// <param name="exchangeName">Exchange name defult => CCCAGG</param>
-        Task<PriceSingleResponse> Single(
+        Task<PriceSingleResponse> SingleAsync(
             string fromSymbol,
             IEnumerable<string> toSymbols,
             bool? tryConversion = null,
             string exchangeName = null);
-
-        Task<PriceAverageResponse> Average(
-            string fromSymbol,
-            string toSymbol,
-            IEnumerable<string> exchangeNames,
-            bool? tryConversion = null);
     }
 }

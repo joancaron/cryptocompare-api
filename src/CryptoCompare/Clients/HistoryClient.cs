@@ -26,7 +26,7 @@ namespace CryptoCompare
         /// <param name="allData">(Optional) retrieve all data.</param>
         /// <param name="aggregate">(Optional) aggregates result.</param>
         /// <param name="tryConversion">(Optional) tries conversion.</param>
-        public async Task<HistoryResponse> Day(
+        public async Task<HistoryResponse> DayAsync(
             [NotNull] string fromSymbol,
             [NotNull] string toSymbol,
             int? limit = null,
@@ -45,7 +45,7 @@ namespace CryptoCompare
                        toDate,
                        allData,
                        aggregate,
-                       tryConversion);
+                       tryConversion).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -60,7 +60,7 @@ namespace CryptoCompare
         /// <param name="allData">(Optional) retrieve all data.</param>
         /// <param name="aggregate">(Optional) aggregates result.</param>
         /// <param name="tryConversion">(Optional) tries conversion.</param>
-        public async Task<HistoryResponse> Hour(
+        public async Task<HistoryResponse> HourAsync(
             [NotNull] string fromSymbol,
             [NotNull] string toSymbol,
             int? limit = null,
@@ -79,7 +79,7 @@ namespace CryptoCompare
                        toDate,
                        allData,
                        aggregate,
-                       tryConversion);
+                       tryConversion).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -95,7 +95,7 @@ namespace CryptoCompare
         /// <param name="allData">(Optional) retrieve all data.</param>
         /// <param name="aggregate">(Optional) aggregates result.</param>
         /// <param name="tryConversion">(Optional) tries conversion.</param>
-        public async Task<HistoryResponse> Minute(
+        public async Task<HistoryResponse> MinuteAsync(
             [NotNull] string fromSymbol,
             [NotNull] string toSymbol,
             int? limit = null,
@@ -114,7 +114,7 @@ namespace CryptoCompare
                        toDate,
                        allData,
                        aggregate,
-                       tryConversion);
+                       tryConversion).ConfigureAwait(false);
         }
 
         private async Task<HistoryResponse> History(
@@ -142,7 +142,7 @@ namespace CryptoCompare
                            toDate,
                            allData,
                            aggregate,
-                           tryConversion));
+                           tryConversion)).ConfigureAwait(false);
         }
     }
 }

@@ -18,6 +18,11 @@ namespace CryptoCompare
         IExchangesClient Exchanges { get; }
 
         /// <summary>
+        /// Gets the api client for market history.
+        /// </summary>
+        IHistoryClient History { get; }
+
+        /// <summary>
         /// Gets the api client for cryptocurrency prices.
         /// </summary>
         IPricesClient Prices { get; }
@@ -28,18 +33,13 @@ namespace CryptoCompare
         IRateLimitsClient RateLimits { get; }
 
         /// <summary>
-        /// Gets the api client for market history.
+        /// Gets the api client for subs endpoints.
         /// </summary>
-        IHistoryClient History { get; }
+        ISubsClient Subs { get; }
 
         /// <summary>
         /// Gets the api client for "tops" endpoints.
         /// </summary>
         ITopsClient Tops { get; }
-
-        /// <summary>
-        /// Gets the api client for subs endpoints.
-        /// </summary>
-        ISubsClient Subs { get; }
     }
 }

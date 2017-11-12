@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Net.Http;
-using System.Threading.Tasks;
+
 using JetBrains.Annotations;
 
 namespace CryptoCompare
@@ -60,18 +60,7 @@ namespace CryptoCompare
         /// Gets the api client for market history.
         /// </summary>
         /// <seealso cref="P:CryptoCompare.ICryptoCompareClient.History"/>
-        public IHistoryClient History  => new HistoryClient(this._httpClient);
-
-        /// <summary>
-        /// Gets the api client for "tops" endpoints.
-        /// </summary>
-        /// <seealso cref="P:CryptoCompare.ICryptoCompareClient.Tops"/>
-        public ITopsClient Tops => new TopsClient(this._httpClient);
-
-        /// <summary>
-        /// The subs.
-        /// </summary>
-        public ISubsClient Subs  => new SubsClient(this._httpClient);
+        public IHistoryClient History => new HistoryClient(this._httpClient);
 
         /// <summary>
         /// Gets the api client for cryptocurrency prices.
@@ -84,6 +73,17 @@ namespace CryptoCompare
         /// </summary>
         /// <seealso cref="P:CryptoCompare.ICryptoCompareClient.RateLimits"/>
         public IRateLimitsClient RateLimits => new RateLimitsClient(this._httpClient);
+
+        /// <summary>
+        /// The subs.
+        /// </summary>
+        public ISubsClient Subs => new SubsClient(this._httpClient);
+
+        /// <summary>
+        /// Gets the api client for "tops" endpoints.
+        /// </summary>
+        /// <seealso cref="P:CryptoCompare.ICryptoCompareClient.Tops"/>
+        public ITopsClient Tops => new TopsClient(this._httpClient);
 
         /// <summary>
         /// Performs application-defined tasks associated with freeing, releasing, or

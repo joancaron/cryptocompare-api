@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Net.Http;
+﻿using System.Net.Http;
 using System.Threading.Tasks;
 
 using JetBrains.Annotations;
@@ -28,7 +27,7 @@ namespace CryptoCompare
         /// <seealso cref="M:CryptoCompare.Clients.ICoinsClient.AllExchangesAsync()"/>
         public async Task<ExchangeListResponse> ListAsync()
         {
-            return await this.GetAsync<ExchangeListResponse>(ApiUrls.AllExchanges());
+            return await this.GetAsync<ExchangeListResponse>(ApiUrls.AllExchanges()).ConfigureAwait(false);
         }
     }
 }

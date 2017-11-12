@@ -20,7 +20,7 @@ namespace CryptoCompare
         /// <seealso cref="M:Newtonsoft.Json.JsonConverter.CanConvert(Type)"/>
         public override bool CanConvert(Type objectType)
         {
-            return objectType == typeof(IReadOnlyList<Sub>);
+            return objectType == typeof(IReadOnlyList<Sub>) || objectType == typeof(Sub);
         }
 
         /// <summary>
@@ -40,29 +40,40 @@ namespace CryptoCompare
             object existingValue,
             JsonSerializer serializer)
         {
-            JArray tokens = JArray.Load(reader);
 
-            if (tokens?.HasValues ?? false)
+            if (reader.TokenType == JsonToken.String)
             {
-                return tokens.Values().Select(
-                    token =>
-                    {
-                        var values = token.ToString().Split('~');
-                        if (values.Length == 4)
-                        {
-                            Enum.TryParse(values.ElementAtOrDefault(0), out SubId subId);
-                            return new Sub()
-                                   {
-                                       SubId = subId,
-                                       Exchange = values.ElementAtOrDefault(1),
-                                       FromSymbol = values.ElementAtOrDefault(2),
-                                       ToSymbol = values.ElementAtOrDefault(3)
-                                   };
-                        }
-                        return default(Sub);
-                    }).ToList();
+                return this.GetTokenFromString(reader.Value.ToString());
             }
+
+            if (reader.TokenType == JsonToken.StartArray)
+            {
+                var tokens = JArray.Load(reader);
+                if (tokens?.HasValues ?? false)
+                {
+                    return tokens.Values().Select(
+                        token => this.GetTokenFromString(token.ToString())).ToList();
+                }
+            }
+
             return null;
+        }
+
+        private Sub GetTokenFromString(string token)
+        {
+            var values = token.Split('~');
+            if (values.Length == 4)
+            {
+                Enum.TryParse(values.ElementAtOrDefault(0), out SubId subId);
+                return new Sub
+                       {
+                           SubId = subId,
+                           Exchange = values.ElementAtOrDefault(1),
+                           FromSymbol = values.ElementAtOrDefault(2),
+                           ToSymbol = values.ElementAtOrDefault(3)
+                       };
+            }
+            return default(Sub);
         }
 
         /// <summary>

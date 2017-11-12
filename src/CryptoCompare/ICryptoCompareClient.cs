@@ -36,5 +36,10 @@ namespace CryptoCompare
         /// Gets the api client for "tops" endpoints.
         /// </summary>
         ITopsClient Tops { get; }
+
+        /// <summary>
+        /// Gets the api client for subs endpoints.
+        /// </summary>
+        ISubsClient Subs { get; }
     }
 }

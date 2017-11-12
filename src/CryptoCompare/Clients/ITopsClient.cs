@@ -25,7 +25,7 @@
         /// <returns>
         /// An asynchronous result that yields a TopResponse.
         /// </returns>
-        Task<TopResponse> Exchanges(string fromSymbol,string toSymbol, int? limit = null);
+        Task<TopResponse> Exchanges(string fromSymbol, string toSymbol, int? limit = null);
 
         /// <summary>
         /// Get top coins by volume for the to currency. It returns volume24hto and total supply (where available). 

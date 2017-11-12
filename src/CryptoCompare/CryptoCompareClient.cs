@@ -62,7 +62,16 @@ namespace CryptoCompare
         /// <seealso cref="P:CryptoCompare.ICryptoCompareClient.History"/>
         public IHistoryClient History  => new HistoryClient(this._httpClient);
 
+        /// <summary>
+        /// Gets the api client for "tops" endpoints.
+        /// </summary>
+        /// <seealso cref="P:CryptoCompare.ICryptoCompareClient.Tops"/>
         public ITopsClient Tops => new TopsClient(this._httpClient);
+
+        /// <summary>
+        /// The subs.
+        /// </summary>
+        public ISubsClient Subs  => new SubsClient(this._httpClient);
 
         /// <summary>
         /// Gets the api client for cryptocurrency prices.

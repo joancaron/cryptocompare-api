@@ -100,7 +100,7 @@ namespace CryptoCompare
             DateTimeOffset ts,
             CalculationType? calculationType,
             bool? tryConversion,
-            string e)
+            IEnumerable<string> markets)
         {
             return new Uri(MinApiEndpoint, "pricehistorical").ApplyParameters(
                 new Dictionary<string, string>
@@ -113,7 +113,7 @@ namespace CryptoCompare
                     },
                     { nameof(calculationType), calculationType?.ToString("G") },
                     { nameof(tryConversion), tryConversion?.ToString() },
-                    { nameof(e), e }
+                    { nameof(markets), markets.ToJoinedList() }
                 });
         }
 

@@ -40,7 +40,7 @@ namespace CryptoCompare
             DateTimeOffset requestedDate,
             CalculationType? calculationType = null,
             bool? tryConversion = null,
-            string exchangeName = null);
+            IEnumerable<string> markets = null);
 
         /// <summary>
         /// Same as single API path but with multiple from symbols.
@@ -81,7 +81,7 @@ namespace CryptoCompare
         /// <param name="fromSymbol">from symbol.</param>
         /// <param name="toSymbols">to symbols.</param>
         /// <param name="tryConversion">If set to false, it will try to get values without using any conversion at all (defaultVal:true)</param>
-        /// <param name="exchangeName">Exchange name defult => CCCAGG</param>
+        /// <param name="exchangeName">Exchange name default => CCCAGG</param>
         Task<PriceSingleResponse> SingleAsync(
             string fromSymbol,
             IEnumerable<string> toSymbols,

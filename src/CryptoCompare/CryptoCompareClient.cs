@@ -86,6 +86,12 @@ namespace CryptoCompare
         public ITopsClient Tops => new TopsClient(this._httpClient);
 
         /// <summary>
+        /// Gets the api client for "social" endpoints.
+        /// </summary>
+        /// <seealso cref="P:CryptoCompare.ICryptoCompareClient.Social"/>
+        public ISocialStatsClient SocialStats => new SocialStatsClient(this._httpClient);
+
+        /// <summary>
         /// Performs application-defined tasks associated with freeing, releasing, or
         /// resetting unmanaged resources.
         /// </summary>

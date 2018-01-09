@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 
 namespace CryptoCompare
 {
-    public partial class SocialStatsResponse
+    public class SocialStatsResponse
     {
         [JsonProperty("Response")]
         public string Response { get; set; }
@@ -20,7 +20,7 @@ namespace CryptoCompare
         public SocialStats SocialStats { get; set; }
     }
 
-    public partial class SocialStats
+    public class SocialStats
     {
         [JsonProperty("General")]
         public General General { get; set; }
@@ -41,7 +41,7 @@ namespace CryptoCompare
         public CodeRepository CodeRepository { get; set; }
     }
 
-    public partial class CryptoCompare
+    public class CryptoCompare
     {
         [JsonProperty("SimilarItems")]
         public SimilarItem[] SimilarItems { get; set; }
@@ -68,7 +68,7 @@ namespace CryptoCompare
         public long PageViews { get; set; }
     }
 
-    public partial class SimilarItem
+    public class SimilarItem
     {
         [JsonProperty("Id")]
         public long Id { get; set; }
@@ -89,7 +89,7 @@ namespace CryptoCompare
         public long FollowingType { get; set; }
     }
 
-    public partial class PageViewsSplit
+    public class PageViewsSplit
     {
         [JsonProperty("Overview")]
         public long Overview { get; set; }
@@ -116,7 +116,7 @@ namespace CryptoCompare
         public long Influence { get; set; }
     }
 
-    public partial class CryptopianFollower
+    public class CryptopianFollower
     {
         [JsonProperty("Id")]
         public long Id { get; set; }
@@ -134,7 +134,7 @@ namespace CryptoCompare
         public string Type { get; set; }
     }
 
-    public partial class General
+    public class General
     {
         [JsonProperty("Name")]
         public string Name { get; set; }
@@ -148,7 +148,7 @@ namespace CryptoCompare
         [JsonProperty("Points")]
         public long Points { get; set; }
     }
-    public partial class Twitter
+    public class Twitter
     {
         [JsonProperty("following")]
         public string Following { get; set; }
@@ -178,7 +178,7 @@ namespace CryptoCompare
         public long Points { get; set; }
     }
 
-    public partial class Reddit
+    public class Reddit
     {
         [JsonProperty("posts_per_hour")]
         public string PostsPerHour { get; set; }
@@ -211,7 +211,7 @@ namespace CryptoCompare
         public long Points { get; set; }
     }
 
-    public partial class Facebook
+    public class Facebook
     {
         [JsonProperty("likes")]
         public long Likes { get; set; }
@@ -232,7 +232,7 @@ namespace CryptoCompare
         public long Points { get; set; }
     }
 
-    public partial class CodeRepository
+    public class CodeRepository
     {
         [JsonProperty("List")]
         public Repository[] Repositories { get; set; }
@@ -241,7 +241,7 @@ namespace CryptoCompare
         public long Points { get; set; }
     }
 
-    public partial class Parent
+    public class Parent
     {
         [JsonProperty("Name")]
         public string Name { get; set; }
@@ -253,7 +253,7 @@ namespace CryptoCompare
         public long InternalId { get; set; }
     }
 
-    public partial class Repository
+    public class Repository
     {
         [JsonProperty("created_at")]
         public string CreatedAt { get; set; }

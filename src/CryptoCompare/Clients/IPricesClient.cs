@@ -11,13 +11,13 @@ namespace CryptoCompare
         /// </summary>
         /// <param name="fromSymbol">from symbol.</param>
         /// <param name="toSymbol">to symbol.</param>
-        /// <param name="exchangeNames">List of names of the exchanges.</param>
+        /// <param name="markets">List of names of the exchanges.</param>
         /// <param name="tryConversion">(Optional) If set to false, it will try to get values without
         /// using any conversion at all (defaultVal:true)</param>
         Task<PriceAverageResponse> AverageAsync(
             string fromSymbol,
             string toSymbol,
-            IEnumerable<string> exchangeNames,
+            IEnumerable<string> markets,
             bool? tryConversion = null);
 
         /// <summary>
@@ -33,14 +33,14 @@ namespace CryptoCompare
         /// <param name="calculationType">(Optional) Type of the calculation.</param>
         /// <param name="tryConversion">(Optional) If set to false, it will try to get values without
         /// using any conversion at all (defaultVal:true)</param>
-        /// <param name="exchangeName">(Optional) Exchange name default => CCCAGG.</param>
+        /// <param name="markets">(Optional) Names of Exchanges default => CCCAGG.</param>
         Task<PriceHistoricalReponse> HistoricalAsync(
             string fromSymbol,
             IEnumerable<string> toSymbols,
+            IEnumerable<string> markets,
             DateTimeOffset requestedDate,
             CalculationType? calculationType = null,
-            bool? tryConversion = null,
-            string exchangeName = null);
+            bool? tryConversion = null);
 
         /// <summary>
         /// Same as single API path but with multiple from symbols.
@@ -81,7 +81,7 @@ namespace CryptoCompare
         /// <param name="fromSymbol">from symbol.</param>
         /// <param name="toSymbols">to symbols.</param>
         /// <param name="tryConversion">If set to false, it will try to get values without using any conversion at all (defaultVal:true)</param>
-        /// <param name="exchangeName">Exchange name defult => CCCAGG</param>
+        /// <param name="exchangeName">Exchange name default => CCCAGG</param>
         Task<PriceSingleResponse> SingleAsync(
             string fromSymbol,
             IEnumerable<string> toSymbols,

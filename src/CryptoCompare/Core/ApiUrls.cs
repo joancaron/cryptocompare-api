@@ -77,19 +77,19 @@ namespace CryptoCompare
         public static Uri PriceAverage(
             [NotNull] string fsym,
             [NotNull] string tsym,
-            [NotNull] IEnumerable<string> e,
+            [NotNull] IEnumerable<string> markets,
             bool? tryConversion)
         {
             Check.NotNullOrWhiteSpace(fsym, nameof(fsym));
             Check.NotNullOrWhiteSpace(tsym, nameof(tsym));
-            Check.NotEmpty(e, nameof(e));
+            Check.NotEmpty(markets, nameof(markets));
 
             return new Uri(MinApiEndpoint, "generateAvg").ApplyParameters(
                 new Dictionary<string, string>
                 {
                     { nameof(fsym), fsym },
                     { nameof(tsym), tsym },
-                    { nameof(e), e.ToJoinedList() },
+                    { nameof(markets), markets.ToJoinedList() },
                     { nameof(tryConversion), tryConversion?.ToString() }
                 });
         }
@@ -97,10 +97,10 @@ namespace CryptoCompare
         public static Uri PriceHistorical(
             string fsym,
             IEnumerable<string> tsyms,
+            IEnumerable<string> markets,
             DateTimeOffset ts,
             CalculationType? calculationType,
-            bool? tryConversion,
-            string e)
+            bool? tryConversion)
         {
             return new Uri(MinApiEndpoint, "pricehistorical").ApplyParameters(
                 new Dictionary<string, string>
@@ -111,9 +111,10 @@ namespace CryptoCompare
                         nameof(ts),
                         ts.ToUnixTime().ToString(CultureInfo.InvariantCulture)
                     },
+                    { nameof(markets), markets.ToJoinedList() },
                     { nameof(calculationType), calculationType?.ToString("G") },
-                    { nameof(tryConversion), tryConversion?.ToString() },
-                    { nameof(e), e }
+                    { nameof(tryConversion), tryConversion?.ToString() }
+                  
                 });
         }
 

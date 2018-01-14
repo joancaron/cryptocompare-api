@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Net.Http;
-
+using CryptoCompareApi.News;
 using JetBrains.Annotations;
 
 namespace CryptoCompare
@@ -84,6 +84,13 @@ namespace CryptoCompare
         /// </summary>
         /// <seealso cref="P:CryptoCompare.ICryptoCompareClient.Tops"/>
         public ITopsClient Tops => new TopsClient(this._httpClient);
+
+
+        /// <summary>
+        /// Gets the api client for news endpoints.
+        /// </summary>
+        /// <seealso cref="P:CryptoCompare.ICryptoCompareClient.News"/>
+        public INewsClient News => new NewsClient(this._httpClient);
 
         /// <summary>
         /// Performs application-defined tasks associated with freeing, releasing, or

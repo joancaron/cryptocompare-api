@@ -1,4 +1,5 @@
 ﻿using System;
+using CryptoCompareApi.News;
 
 namespace CryptoCompare
 {
@@ -41,5 +42,10 @@ namespace CryptoCompare
         /// Gets the api client for "tops" endpoints.
         /// </summary>
         ITopsClient Tops { get; }
+
+        /// <summary>
+        /// Gets the api client for news endpoints.
+        /// </summary>
+        INewsClient News { get; }
     }
 }

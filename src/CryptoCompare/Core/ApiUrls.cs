@@ -226,5 +226,21 @@ namespace CryptoCompare
                     { nameof(limit), limit.ToString() }
                 });
         }
+
+        public static Uri NewsProviders()
+        {
+            return new Uri(MinApiEndpoint, "news/providers");
+        }
+
+        public static Uri News(string lang = null, long? lTs = null, string[] feeds = null, bool? sign = null)
+        {
+            return new Uri(MinApiEndpoint, "news/").ApplyParameters(new Dictionary<string, string>
+            {
+                {nameof(lang),lang },
+                {nameof(lTs),lTs?.ToString() },
+                {nameof(feeds),feeds != null ? string.Join(",", feeds) : null },
+                {nameof(sign),sign?.ToString() },
+            });
+        }
     }
 }

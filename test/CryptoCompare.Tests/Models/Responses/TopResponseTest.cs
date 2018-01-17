@@ -1,13 +1,13 @@
-﻿namespace CryptoCompare.Tests.Models.Responses
+﻿using System.Linq;
+
+using CryptoCompare.Tests.Infrastructure;
+
+using FluentAssertions;
+
+using Xunit;
+
+namespace CryptoCompare.Tests.Models.Responses
 {
-    using System.Linq;
-
-    using CryptoCompare.Tests.Infrastructure;
-
-    using FluentAssertions;
-
-    using Xunit;
-
     public class TopResponseTest
     {
         /// <summary>

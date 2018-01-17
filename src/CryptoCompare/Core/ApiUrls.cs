@@ -226,5 +226,15 @@ namespace CryptoCompare
                     { nameof(limit), limit.ToString() }
                 });
         }
+
+        public static Uri SocialStats([NotNull] int id)
+        {
+            Check.NotNull(id, nameof(id));
+            return new Uri(SiteApiEndpoint, "socialstats").ApplyParameters(
+                new Dictionary<string, string>
+                {
+                    { nameof(id), id.ToString() }
+                });
+        }
     }
 }

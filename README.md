@@ -78,8 +78,8 @@ Console.WriteLine(eth.Data.General.Name);
 - [x] [Top volumes](https://min-api.cryptocompare.com/data/top/volumes?tsym=BTC)
 - [x] [Streamer subscription channels](https://min-api.cryptocompare.com/data/subs?fsym=BTC&tsyms=USD)
 - [ ] [Subscription channels watchlist](https://min-api.cryptocompare.com/data/subsWatchlist?fsyms=BTC,ETH,XMR,MLN,DASH&tsym=USD&extraParams=your_app_name)
-- [ ] [News providers](https://min-api.cryptocompare.com/data/news/providers)
-- [ ] [News](https://min-api.cryptocompare.com/data/news/)
+- [x] [News providers](https://min-api.cryptocompare.com/data/news/providers)
+- [x] [News](https://min-api.cryptocompare.com/data/news/)
 
 
 ----------

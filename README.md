@@ -67,7 +67,7 @@ Console.WriteLine(eth.Data.General.Name);
 - [x] [Price historical](https://min-api.cryptocompare.com/data/pricehistorical?fsym=BTC&tsyms=USD,EUR&ts=1452680400)
 - [x] [Generate Average price](https://min-api.cryptocompare.com/data/generateAvg?fsym=BTC&tsym=USD&e=Coinbase,Kraken,Bitstamp,Bitfinex)
 - [ ] [Day average price](https://min-api.cryptocompare.com/data/dayAvg?fsym=ETH&tsym=GBP&toTs=1487116800&extraParams=your_app_name)
-- [ ] [Social stats](https://www.cryptocompare.com/api/data/socialstats/?id=1182)
+- [x] [Social stats](https://www.cryptocompare.com/api/data/socialstats/?id=1182)
 - [x] [History (minute)](https://min-api.cryptocompare.com/data/histominute?fsym=BTC&tsym=USD&limit=60&aggregate=3&e=CCCAGG)
 - [x] [History (hour)](https://min-api.cryptocompare.com/data/histohour?fsym=BTC&tsym=USD&limit=60&aggregate=3&e=CCCAGG)
 - [x] [History (day)](https://min-api.cryptocompare.com/data/histoday?fsym=BTC&tsym=USD&limit=60&aggregate=3&e=CCCAGG)

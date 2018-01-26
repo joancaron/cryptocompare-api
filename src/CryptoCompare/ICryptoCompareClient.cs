@@ -47,5 +47,11 @@ namespace CryptoCompare
         /// Gets the api client for news endpoints.
         /// </summary>
         INewsClient News { get; }
+
+        /// <summary>
+        /// Gets the api client for "social stats" endpoints.
+        /// </summary>
+        ISocialStatsClient SocialStats { get; }
+
     }
 }

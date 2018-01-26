@@ -228,6 +228,7 @@ namespace CryptoCompare
                 });
         }
 
+
         public static Uri NewsProviders()
         {
             return new Uri(MinApiEndpoint, "news/providers");
@@ -242,6 +243,16 @@ namespace CryptoCompare
                 {nameof(feeds),feeds != null ? string.Join(",", feeds) : null },
                 {nameof(sign),sign?.ToString() },
             });
+        }
+
+        public static Uri SocialStats([NotNull] int id)
+        {
+            Check.NotNull(id, nameof(id));
+            return new Uri(SiteApiEndpoint, "socialstats").ApplyParameters(
+                new Dictionary<string, string>
+                {
+                    { nameof(id), id.ToString() }
+                });
         }
     }
 }

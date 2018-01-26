@@ -37,8 +37,8 @@ namespace CryptoCompare
         Task<PriceHistoricalReponse> HistoricalAsync(
             string fromSymbol,
             IEnumerable<string> toSymbols,
-            IEnumerable<string> markets,
             DateTimeOffset requestedDate,
+            IEnumerable<string> markets = null,
             CalculationType? calculationType = null,
             bool? tryConversion = null);
 

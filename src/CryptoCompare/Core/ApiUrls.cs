@@ -48,7 +48,7 @@ namespace CryptoCompare
             string fsym,
             string tsym,
             int? limit,
-            IEnumerable<string> e,
+            string e,
             DateTimeOffset? toTs,
             bool? allData,
             int? aggregate,
@@ -68,7 +68,7 @@ namespace CryptoCompare
                         toTs?.ToUnixTime().ToString(CultureInfo.InvariantCulture)
                     },
                     { nameof(tryConversion), tryConversion?.ToString() },
-                    { nameof(e), e?.ToJoinedList() },
+                    { nameof(e), e },
                     { nameof(allData), allData?.ToString() },
                     { nameof(aggregate), aggregate?.ToString() }
                 });
@@ -77,19 +77,19 @@ namespace CryptoCompare
         public static Uri PriceAverage(
             [NotNull] string fsym,
             [NotNull] string tsym,
-            [NotNull] IEnumerable<string> markets,
+            [NotNull] IEnumerable<string> e,
             bool? tryConversion)
         {
             Check.NotNullOrWhiteSpace(fsym, nameof(fsym));
             Check.NotNullOrWhiteSpace(tsym, nameof(tsym));
-            Check.NotEmpty(markets, nameof(markets));
+            Check.NotEmpty(e, nameof(e));
 
             return new Uri(MinApiEndpoint, "generateAvg").ApplyParameters(
                 new Dictionary<string, string>
                 {
                     { nameof(fsym), fsym },
                     { nameof(tsym), tsym },
-                    { nameof(markets), markets.ToJoinedList() },
+                    { nameof(e), e?.ToJoinedList() },
                     { nameof(tryConversion), tryConversion?.ToString() }
                 });
         }
@@ -111,7 +111,7 @@ namespace CryptoCompare
                         nameof(ts),
                         ts.ToUnixTime().ToString(CultureInfo.InvariantCulture)
                     },
-                    { nameof(markets), markets.ToJoinedList() },
+                    { nameof(markets), markets?.ToJoinedList() },
                     { nameof(calculationType), calculationType?.ToString("G") },
                     { nameof(tryConversion), tryConversion?.ToString() }
                   

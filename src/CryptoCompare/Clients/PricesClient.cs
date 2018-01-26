@@ -62,14 +62,13 @@ namespace CryptoCompare
         public async Task<PriceHistoricalReponse> HistoricalAsync(
             [NotNull] string fromSymbol,
             [NotNull] IEnumerable<string> toSymbols,
-            [NotNull] IEnumerable<string> markets,
             DateTimeOffset requestedDate,
+            IEnumerable<string> markets = null,
             CalculationType? calculationType = null,
             bool? tryConversion = null)
         {
             Check.NotNullOrWhiteSpace(fromSymbol, nameof(fromSymbol));
             Check.NotEmpty(toSymbols, nameof(toSymbols));
-            Check.NotEmpty(markets, nameof(markets));
 
             return await this.GetAsync<PriceHistoricalReponse>(
                        ApiUrls.PriceHistorical(
@@ -80,6 +79,7 @@ namespace CryptoCompare
                            calculationType,
                            tryConversion)).ConfigureAwait(false);
         }
+  
 
         /// <summary>
         /// Same as single API path but with multiple from symbols.

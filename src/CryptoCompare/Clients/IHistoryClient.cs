@@ -45,9 +45,9 @@ namespace CryptoCompare
         Task<HistoryResponse> HourAsync(
             [NotNull] string fromSymbol,
             [NotNull] string toSymbol,
-            int? limit,
-            string exchangeName,
-            DateTimeOffset? toDate,
+            int? limit = null,
+            string exchangeName = null,
+            DateTimeOffset? toDate = null,
             bool? allData = null,
             int? aggregate = null,
             bool? tryConversion = null);

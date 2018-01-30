@@ -44,7 +44,7 @@ namespace CryptoCompare
 
         public string SecurityAuditCompany { get; set; }
 
-        public decimal StartPrice { get; set; }
+        public string StartPrice { get; set; }
 
         public string StartPriceCurrency { get; set; }
 

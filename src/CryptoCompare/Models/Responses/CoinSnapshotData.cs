@@ -8,13 +8,13 @@ namespace CryptoCompare
 
         public string Algorithm { get; set; }
 
-        public long BlockNumber { get; set; }
+        public long? BlockNumber { get; set; }
 
-        public double BlockReward { get; set; }
+        public double? BlockReward { get; set; }
 
         public IReadOnlyList<AggregatedData> Exchanges { get; set; }
 
-        public double NetHashesPerSecond { get; set; }
+        public double? NetHashesPerSecond { get; set; }
 
         public string ProofType { get; set; }
 

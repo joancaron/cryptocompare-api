@@ -8,7 +8,9 @@ namespace CryptoCompare
     {
         public override bool CanConvert(Type objectType)
         {
-            return objectType == typeof(DateTime);
+            return objectType == typeof(DateTime) || objectType == typeof(DateTime?)
+                                                  || objectType == typeof(DateTimeOffset)
+                                                  || objectType == typeof(DateTimeOffset?);
         }
 
         public override object ReadJson(
@@ -17,10 +19,11 @@ namespace CryptoCompare
             object existingValue,
             JsonSerializer serializer)
         {
-            if (reader.Value == null)
+            if (string.IsNullOrWhiteSpace(reader.Value?.ToString()))
             {
                 return null;
             }
+
             return Convert.ToInt64(reader.Value).FromUnixTime();
         }
 

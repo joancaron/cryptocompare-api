@@ -21,7 +21,7 @@ namespace CryptoCompare
         /// <param name="fromSymbol">from symbol. This cannot be null.</param>
         /// <param name="toSymbol">to symbol. This cannot be null.</param>
         /// <param name="limit">The limit number of returned results.</param>
-        /// <param name="exchangeNames">List of exchanges names.</param>
+        /// <param name="exchangeName">List of exchanges names.</param>
         /// <param name="toDate">to date.</param>
         /// <param name="allData">(Optional) retrieve all data.</param>
         /// <param name="aggregate">(Optional) aggregates result.</param>
@@ -30,7 +30,7 @@ namespace CryptoCompare
             [NotNull] string fromSymbol,
             [NotNull] string toSymbol,
             int? limit = null,
-            IEnumerable<string> exchangeNames = null,
+            string exchangeName = null,
             DateTimeOffset? toDate = null,
             bool? allData = null,
             int? aggregate = null,
@@ -41,7 +41,7 @@ namespace CryptoCompare
                        fromSymbol,
                        toSymbol,
                        limit,
-                       exchangeNames,
+                       exchangeName,
                        toDate,
                        allData,
                        aggregate,
@@ -55,7 +55,7 @@ namespace CryptoCompare
         /// <param name="fromSymbol">from symbol. This cannot be null.</param>
         /// <param name="toSymbol">to symbol. This cannot be null.</param>
         /// <param name="limit">The limit number of returned results.</param>
-        /// <param name="exchangeNames">List of exchanges names.</param>
+        /// <param name="exchangeName">List of exchanges names.</param>
         /// <param name="toDate">to date.</param>
         /// <param name="allData">(Optional) retrieve all data.</param>
         /// <param name="aggregate">(Optional) aggregates result.</param>
@@ -64,7 +64,7 @@ namespace CryptoCompare
             [NotNull] string fromSymbol,
             [NotNull] string toSymbol,
             int? limit = null,
-            IEnumerable<string> exchangeNames = null,
+            string exchangeName = null,
             DateTimeOffset? toDate = null,
             bool? allData = null,
             int? aggregate = null,
@@ -75,7 +75,7 @@ namespace CryptoCompare
                        fromSymbol,
                        toSymbol,
                        limit,
-                       exchangeNames,
+                       exchangeName,
                        toDate,
                        allData,
                        aggregate,
@@ -90,7 +90,7 @@ namespace CryptoCompare
         /// <param name="fromSymbol">from symbol. This cannot be null.</param>
         /// <param name="toSymbol">to symbol. This cannot be null.</param>
         /// <param name="limit">The limit number of returned results.</param>
-        /// <param name="exchangeNames">List of exchanges names.</param>
+        /// <param name="exchangeName">List of exchanges names.</param>
         /// <param name="toDate">to date.</param>
         /// <param name="allData">(Optional) retrieve all data.</param>
         /// <param name="aggregate">(Optional) aggregates result.</param>
@@ -99,7 +99,7 @@ namespace CryptoCompare
             [NotNull] string fromSymbol,
             [NotNull] string toSymbol,
             int? limit = null,
-            IEnumerable<string> exchangeNames = null,
+            string exchangeName = null,
             DateTimeOffset? toDate = null,
             bool? allData = null,
             int? aggregate = null,
@@ -110,7 +110,7 @@ namespace CryptoCompare
                        fromSymbol,
                        toSymbol,
                        limit,
-                       exchangeNames,
+                       exchangeName,
                        toDate,
                        allData,
                        aggregate,
@@ -122,7 +122,7 @@ namespace CryptoCompare
             [NotNull] string fromSymbol,
             [NotNull] string toSymbol,
             int? limit = null,
-            IEnumerable<string> exchangeNames = null,
+            string exchangeName = null,
             DateTimeOffset? toDate = null,
             bool? allData = null,
             int? aggregate = null,
@@ -138,7 +138,7 @@ namespace CryptoCompare
                            fromSymbol,
                            toSymbol,
                            limit,
-                           exchangeNames,
+                           exchangeName,
                            toDate,
                            allData,
                            aggregate,

@@ -48,7 +48,7 @@ namespace CryptoCompare
             string fsym,
             string tsym,
             int? limit,
-            IEnumerable<string> e,
+            string e,
             DateTimeOffset? toTs,
             bool? allData,
             int? aggregate,
@@ -68,7 +68,7 @@ namespace CryptoCompare
                         toTs?.ToUnixTime().ToString(CultureInfo.InvariantCulture)
                     },
                     { nameof(tryConversion), tryConversion?.ToString() },
-                    { nameof(e), e?.ToJoinedList() },
+                    { nameof(e), e },
                     { nameof(allData), allData?.ToString() },
                     { nameof(aggregate), aggregate?.ToString() }
                 });
@@ -89,7 +89,7 @@ namespace CryptoCompare
                 {
                     { nameof(fsym), fsym },
                     { nameof(tsym), tsym },
-                    { nameof(e), e.ToJoinedList() },
+                    { nameof(e), e?.ToJoinedList() },
                     { nameof(tryConversion), tryConversion?.ToString() }
                 });
         }
@@ -97,10 +97,10 @@ namespace CryptoCompare
         public static Uri PriceHistorical(
             string fsym,
             IEnumerable<string> tsyms,
+            IEnumerable<string> markets,
             DateTimeOffset ts,
             CalculationType? calculationType,
-            bool? tryConversion,
-            string e)
+            bool? tryConversion)
         {
             return new Uri(MinApiEndpoint, "pricehistorical").ApplyParameters(
                 new Dictionary<string, string>
@@ -111,9 +111,10 @@ namespace CryptoCompare
                         nameof(ts),
                         ts.ToUnixTime().ToString(CultureInfo.InvariantCulture)
                     },
+                    { nameof(markets), markets?.ToJoinedList() },
                     { nameof(calculationType), calculationType?.ToString("G") },
-                    { nameof(tryConversion), tryConversion?.ToString() },
-                    { nameof(e), e }
+                    { nameof(tryConversion), tryConversion?.ToString() }
+                  
                 });
         }
 
@@ -225,6 +226,23 @@ namespace CryptoCompare
                     { nameof(tsym), tsym },
                     { nameof(limit), limit.ToString() }
                 });
+        }
+
+
+        public static Uri NewsProviders()
+        {
+            return new Uri(MinApiEndpoint, "news/providers");
+        }
+
+        public static Uri News(string lang = null, long? lTs = null, string[] feeds = null, bool? sign = null)
+        {
+            return new Uri(MinApiEndpoint, "news/").ApplyParameters(new Dictionary<string, string>
+            {
+                {nameof(lang),lang },
+                {nameof(lTs),lTs?.ToString() },
+                {nameof(feeds),feeds != null ? string.Join(",", feeds) : null },
+                {nameof(sign),sign?.ToString() },
+            });
         }
 
         public static Uri SocialStats([NotNull] int id)

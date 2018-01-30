@@ -1,0 +1,59 @@
+{
+  "Response": "Success",
+  "Message": "Coin full snapshot successfully returned",
+  "Data": {
+    "SEO": {
+      "PageTitle": "365Coin (365) - Live streaming prices and market cap",
+      "PageDescription": "Live 365Coin prices from all markets and 365 coin market Capitalization. Stay up to date with the latest 365Coin price movements and forum discussion. Check out our snapshot charts and see when there is an opportunity to buy or sell.",
+      "BaseUrl": "https://www.cryptocompare.com",
+      "BaseImageUrl": "https://www.cryptocompare.com",
+      "OgImageUrl": "/media/352070/365.png",
+      "OgImageWidth": "300",
+      "OgImageHeight": "300"
+    },
+    "General": {
+      "Id": "33639",
+      "DocumentType": "Webpagecoinp",
+      "H1Text": "365Coin (365)",
+      "DangerTop": "",
+      "WarningTop": "",
+      "InfoTop": "",
+      "Symbol": "365",
+      "Url": "/coins/365/",
+      "BaseAngularUrl": "/coins/365/",
+      "Name": "365Coin",
+      "ImageUrl": "/media/352070/365.png",
+      "Description": "<p>365Coin is a Proof of Work and Proof of Stake cryptocurrency. This coin has a 50% APR in staking rewards and a 11% premine (299 million coins)</p>",
+      "Features": "",
+      "Technology": "",
+      "TotalCoinSupply": "2300000000",
+      "Algorithm": "X11",
+      "ProofType": "PoW/PoS",
+      "StartDate": "02/11/2016",
+      "Twitter": "",
+      "Website": "-",
+      "AffiliateUrl": "-",
+      "Sponsor": {
+        "TextTop": "Sponsored by",
+        "Link": "http://wepowernetwork.go2cloud.org/aff_c?offer_id=2&aff_id=1001",
+        "ImageUrl": "/media/20780605/2.png"
+      },
+      "LastBlockExplorerUpdateTS": "",
+      "DifficultyAdjustment": "",
+      "BlockRewardReduction": "",
+      "BlockNumber": "",
+      "BlockTime": "",
+      "NetHashesPerSecond": "",
+      "TotalCoinsMined": "",
+      "PreviousTotalCoinsMined": "",
+      "BlockReward": ""
+    },
+    "ICO": {
+      "Status": "N/A",
+      "WhitePaper": "-"
+    },
+    "Subs": [ "2~Yobit~365~WAVES", "2~Yobit~365~RUR", "2~Yobit~365~USD", "2~Yobit~365~DOGE", "2~Yobit~365~ETH", "2~Yobit~365~BTC" ],
+    "StreamerDataRaw": [ "5~CCCAGG~365~WAVES~4~0.00003~1515507644~195.56304897~0.0058668914691~182926328~0~0~0~0~0.00003~0.00003~0.00003~0.00003~0.00003~0.00003~Yobit~7ffe9", "5~CCCAGG~365~RUR~4~0.01589989~1517181861~6.30193039~0.1001999999886571~200000102~0~0~0~0~0.0159~0.0159~0.01589989~0.01589989~0.01589989~0.01589989~Yobit~7ffe9", "5~CCCAGG~365~USD~4~0.0002~1515614371~30000~6~183746512~0~0~0~0~0.0002~0.0002~0.0002~0.0002~0.0002~0.0002~Yobit~7ffe9", "5~CCCAGG~365~DOGE~4~0.06855447~1517159007~146.0152671~10.009999247948937~200000027~0~0~0~0~0.06855~0.06855447~0.06855~0.06855447~0.06855447~0.06855447~Yobit~7ffe9", "5~CCCAGG~365~ETH~4~5e-8~1515427792~35272.99974827~0.0017636499874134999~182326930~0~0~0~0~5e-8~5e-8~5e-8~5e-8~5e-8~5e-8~Yobit~7ffe9", "5~CCCAGG~365~BTC~4~1e-8~1517236412~100000~0.001~200000074~0~0~120000~0.0014~1e-8~1e-8~1e-8~1e-8~2e-8~1e-8~Yobit~7ffe9" ]
+  },
+  "Type": 100
+}

@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Linq;
+using System.Runtime.InteropServices;
+using System.Threading;
 
 using CryptoCompare.Tests.Infrastructure;
 
@@ -17,6 +19,7 @@ namespace CryptoCompare.Tests.Models.Responses
         [Fact]
         public void Can_deserialize_CoinSnapshotFullResponse()
         {
+            
             var model = TestHelper.ReadFixture("Coins.SnapshotFull").DeserializeJson<CoinSnapshotFullResponse>();
 
             model.IsSuccessfulResponse.Should().BeTrue();
@@ -49,7 +52,7 @@ namespace CryptoCompare.Tests.Models.Responses
             model.Data.General.TotalCoinsMined.Should().BePositive();
             model.Data.General.Algorithm.Should().NotBeNullOrWhiteSpace();
             model.Data.General.ProofType.Should().NotBeNullOrWhiteSpace();
-            model.Data.General.StartDate.Should().BeAfter(DateTimeOffset.MinValue);
+            model.Data.General.StartDate.Should().BeAfter(DateTime.MinValue);
             model.Data.General.Twitter.Should().NotBeNullOrWhiteSpace();
             model.Data.General.AffiliateUrl.Should().NotBeNullOrWhiteSpace();
             model.Data.General.Website.Should().NotBeNullOrWhiteSpace();
@@ -83,7 +86,7 @@ namespace CryptoCompare.Tests.Models.Responses
             model.Data.ICO.EndDate.Should().BeAfter(DateTimeOffset.MinValue);
             model.Data.ICO.FundsRaisedList.Should().NotBeNullOrWhiteSpace();
             model.Data.ICO.FundsRaisedUSD.Should().NotBeNullOrWhiteSpace();
-            model.Data.ICO.StartPrice.Should().BePositive();
+            model.Data.ICO.StartPrice.Should().NotBeNullOrWhiteSpace();
             model.Data.ICO.StartPriceCurrency.Should().NotBeNullOrWhiteSpace();
             model.Data.ICO.PaymentMethod.Should().NotBeNullOrWhiteSpace();
             model.Data.ICO.Jurisdiction.Should().NotBeNullOrWhiteSpace();
@@ -106,6 +109,15 @@ namespace CryptoCompare.Tests.Models.Responses
             sub.Exchange.Should().NotBeNullOrWhiteSpace();
             sub.FromSymbol.Should().NotBeNullOrWhiteSpace();
             sub.ToSymbol.Should().NotBeNullOrWhiteSpace();
+        }
+
+        /// <summary>
+        /// BugFix_8_Should not raise exception when deserialize json.
+        /// </summary>
+        [Fact]
+        public void BugFix_8_Should_not_raise_exception_when_deserializes_json()
+        {
+            var coin = TestHelper.ReadFixture("Coins.BugFix-8_SnapshotFull-33639").DeserializeJson<CoinSnapshotFullResponse>();
         }
     }
 }

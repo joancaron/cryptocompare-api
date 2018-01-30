@@ -1,7 +1,7 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Authors>Joan Caron</Authors>
-    <Version>0.0.4</Version>
+    <Version>0.0.5</Version>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/joancaron/cryptocompare-api</RepositoryUrl>
     <PackageProjectUrl>https://github.com/joancaron/cryptocompare-api</PackageProjectUrl>

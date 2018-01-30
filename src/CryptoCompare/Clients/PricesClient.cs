@@ -23,7 +23,7 @@ namespace CryptoCompare
         /// </summary>
         /// <param name="fromSymbol">from symbol.</param>
         /// <param name="toSymbol">to symbol.</param>
-        /// <param name="exchangeNames">List of names of the exchanges.</param>
+        /// <param name="markets">List of names of the exchanges.</param>
         /// <param name="tryConversion">(Optional) If set to false, it will try to get values without
         /// using any conversion at all (defaultVal:true)</param>
         /// <returns>
@@ -33,15 +33,15 @@ namespace CryptoCompare
         public async Task<PriceAverageResponse> AverageAsync(
             [NotNull] string fromSymbol,
             [NotNull] string toSymbol,
-            [NotNull] IEnumerable<string> exchangeNames,
+            [NotNull] IEnumerable<string> markets,
             bool? tryConversion = null)
         {
             Check.NotNullOrWhiteSpace(fromSymbol, nameof(fromSymbol));
             Check.NotNullOrWhiteSpace(toSymbol, nameof(toSymbol));
-            Check.NotEmpty(exchangeNames, nameof(exchangeNames));
+            Check.NotEmpty(markets, nameof(markets));
 
             return await this.GetAsync<PriceAverageResponse>(
-                       ApiUrls.PriceAverage(fromSymbol, toSymbol, exchangeNames, tryConversion)).ConfigureAwait(false);
+                       ApiUrls.PriceAverage(fromSymbol, toSymbol, markets, tryConversion)).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -53,19 +53,19 @@ namespace CryptoCompare
         /// </summary>
         /// <param name="fromSymbol">from symbol.</param>
         /// <param name="toSymbols">to symbols.</param>
+        /// <param name="markets">(Optional) Exchange name default =&gt; CCCAGG.</param>
         /// <param name="requestedDate">The requested date.</param>
         /// <param name="calculationType">(Optional) Type of the calculation.</param>
         /// <param name="tryConversion">(Optional) If set to false, it will try to get values without
         /// using any conversion at all (defaultVal:true)</param>
-        /// <param name="exchangeName">(Optional) Exchange name default =&gt; CCCAGG.</param>
         /// <seealso cref="M:CryptoCompare.Clients.IPricesClient.Historical(string,IEnumerable{string},DateTimeOffset,CalculationType?,bool?,string)"/>
         public async Task<PriceHistoricalReponse> HistoricalAsync(
             [NotNull] string fromSymbol,
             [NotNull] IEnumerable<string> toSymbols,
             DateTimeOffset requestedDate,
+            IEnumerable<string> markets = null,
             CalculationType? calculationType = null,
-            bool? tryConversion = null,
-            string exchangeName = null)
+            bool? tryConversion = null)
         {
             Check.NotNullOrWhiteSpace(fromSymbol, nameof(fromSymbol));
             Check.NotEmpty(toSymbols, nameof(toSymbols));
@@ -74,11 +74,12 @@ namespace CryptoCompare
                        ApiUrls.PriceHistorical(
                            fromSymbol,
                            toSymbols,
+                           markets,
                            requestedDate,
                            calculationType,
-                           tryConversion,
-                           exchangeName)).ConfigureAwait(false);
+                           tryConversion)).ConfigureAwait(false);
         }
+  
 
         /// <summary>
         /// Same as single API path but with multiple from symbols.

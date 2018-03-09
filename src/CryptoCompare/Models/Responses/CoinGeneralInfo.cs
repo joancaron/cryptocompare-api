@@ -12,13 +12,13 @@ namespace CryptoCompare
 
         public string BaseAngularUrl { get; set; }
 
-        public long BlockNumber { get; set; }
+        public long? BlockNumber { get; set; }
 
-        public long BlockReward { get; set; }
+        public long? BlockReward { get; set; }
 
         public string BlockRewardReduction { get; set; }
 
-        public long BlockTime { get; set; }
+        public long? BlockTime { get; set; }
 
         public string DangerTop { get; set; }
 
@@ -39,26 +39,26 @@ namespace CryptoCompare
         public string InfoTop { get; set; }
 
         [JsonConverter(typeof(UnixTimeConverter))]
-        public DateTimeOffset LastBlockExplorerUpdateTS { get; set; }
+        public DateTimeOffset? LastBlockExplorerUpdateTS { get; set; }
 
         public string Name { get; set; }
 
-        public double NetHashesPerSecond { get; set; }
+        public double? NetHashesPerSecond { get; set; }
 
-        public double PreviousTotalCoinsMined { get; set; }
+        public double? PreviousTotalCoinsMined { get; set; }
 
         public string ProofType { get; set; }
 
         [JsonConverter(typeof(IsoDateTimeWithFormatConverter), "dd/MM/yyyy")]
-        public DateTimeOffset StartDate { get; set; }
+        public DateTime? StartDate { get; set; }
 
         public string Symbol { get; set; }
 
         public string Technology { get; set; }
 
-        public double TotalCoinsMined { get; set; }
+        public double? TotalCoinsMined { get; set; }
 
-        public long TotalCoinSupply { get; set; }
+        public string TotalCoinSupply { get; set; }
 
         public string Twitter { get; set; }
 

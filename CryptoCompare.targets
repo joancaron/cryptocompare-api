@@ -1,14 +1,14 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Authors>Joan Caron</Authors>
-    <Version>0.0.4</Version>
+    <Version>0.0.6</Version>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/joancaron/cryptocompare-api</RepositoryUrl>
     <PackageProjectUrl>https://github.com/joancaron/cryptocompare-api</PackageProjectUrl>
     <PackageIconUrl>https://raw.githubusercontent.com/joancaron/cryptocompare-api/master/cryptocompare_logo.png</PackageIconUrl>
     <PackageTags>cryptocompare-api;cryptocurrency;bitcoin;dotnet-core;dotnet-standard;dotnet;async;cryptocurrencies;cryptocompare</PackageTags>
     <PackageLicenseUrl>http://opensource.org/licenses/apache-2.0</PackageLicenseUrl>
-    <Copyright>Copyright Joan Caron 2017</Copyright>
+    <Copyright>Copyright Joan Caron 2018</Copyright>
   </PropertyGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'net45' ">

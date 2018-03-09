@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Net.Http;
+
 using CryptoCompareApi.News;
+
 using JetBrains.Annotations;
 
 namespace CryptoCompare
@@ -63,6 +65,21 @@ namespace CryptoCompare
         public IHistoryClient History => new HistoryClient(this._httpClient);
 
         /// <summary>
+        /// Gets the api client for "mining" endpoints.
+        /// </summary>
+        /// <value>
+        /// The mining client.
+        /// </value>
+        /// <seealso cref="P:CryptoCompare.ICryptoCompareClient.MiningClient"/>
+        public IMiningClient MiningClient => new MiningClient(this._httpClient);
+
+        /// <summary>
+        /// Gets the api client for news endpoints.
+        /// </summary>
+        /// <seealso cref="P:CryptoCompare.ICryptoCompareClient.News"/>
+        public INewsClient News => new NewsClient(this._httpClient);
+
+        /// <summary>
         /// Gets the api client for cryptocurrency prices.
         /// </summary>
         /// <seealso cref="P:CryptoCompare.ICryptoCompareClient.Prices"/>
@@ -75,6 +92,12 @@ namespace CryptoCompare
         public IRateLimitsClient RateLimits => new RateLimitsClient(this._httpClient);
 
         /// <summary>
+        /// Gets the api client for "social" endpoints.
+        /// </summary>
+        /// <seealso cref="P:CryptoCompare.ICryptoCompareClient.Social"/>
+        public ISocialStatsClient SocialStats => new SocialStatsClient(this._httpClient);
+
+        /// <summary>
         /// The subs.
         /// </summary>
         public ISubsClient Subs => new SubsClient(this._httpClient);
@@ -84,19 +107,6 @@ namespace CryptoCompare
         /// </summary>
         /// <seealso cref="P:CryptoCompare.ICryptoCompareClient.Tops"/>
         public ITopsClient Tops => new TopsClient(this._httpClient);
-
-
-        /// <summary>
-        /// Gets the api client for news endpoints.
-        /// </summary>
-        /// <seealso cref="P:CryptoCompare.ICryptoCompareClient.News"/>
-        public INewsClient News => new NewsClient(this._httpClient);
-
-        /// <summary>
-        /// Gets the api client for "social" endpoints.
-        /// </summary>
-        /// <seealso cref="P:CryptoCompare.ICryptoCompareClient.Social"/>
-        public ISocialStatsClient SocialStats => new SocialStatsClient(this._httpClient);
 
         /// <summary>
         /// Performs application-defined tasks associated with freeing, releasing, or

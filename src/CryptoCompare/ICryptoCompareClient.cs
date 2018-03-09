@@ -1,4 +1,5 @@
 ﻿using System;
+
 using CryptoCompareApi.News;
 
 namespace CryptoCompare
@@ -24,6 +25,16 @@ namespace CryptoCompare
         IHistoryClient History { get; }
 
         /// <summary>
+        /// Gets the api client for "mining" endpoints.
+        /// </summary>
+        IMiningClient MiningClient { get; }
+
+        /// <summary>
+        /// Gets the api client for news endpoints.
+        /// </summary>
+        INewsClient News { get; }
+
+        /// <summary>
         /// Gets the api client for cryptocurrency prices.
         /// </summary>
         IPricesClient Prices { get; }
@@ -34,6 +45,11 @@ namespace CryptoCompare
         IRateLimitsClient RateLimits { get; }
 
         /// <summary>
+        /// Gets the api client for "social stats" endpoints.
+        /// </summary>
+        ISocialStatsClient SocialStats { get; }
+
+        /// <summary>
         /// Gets the api client for subs endpoints.
         /// </summary>
         ISubsClient Subs { get; }
@@ -42,16 +58,5 @@ namespace CryptoCompare
         /// Gets the api client for "tops" endpoints.
         /// </summary>
         ITopsClient Tops { get; }
-
-        /// <summary>
-        /// Gets the api client for news endpoints.
-        /// </summary>
-        INewsClient News { get; }
-
-        /// <summary>
-        /// Gets the api client for "social stats" endpoints.
-        /// </summary>
-        ISocialStatsClient SocialStats { get; }
-
     }
 }

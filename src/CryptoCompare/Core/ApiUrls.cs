@@ -254,5 +254,9 @@ namespace CryptoCompare
                     { nameof(id), id.ToString() }
                 });
         }
+
+        public static Uri MiningEquipments() => new Uri(SiteApiEndpoint, "miningequipment");
+
+        public static Uri MiningContracts() => new Uri(SiteApiEndpoint, "miningcontracts");
     }
 }

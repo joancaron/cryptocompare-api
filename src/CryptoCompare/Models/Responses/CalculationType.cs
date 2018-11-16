@@ -3,6 +3,11 @@
     public enum CalculationType
     {
         /// <summary>
+        /// HourVWAP of hourly price
+        /// </summary>
+        HourVWAP,
+
+        /// <summary>
         /// The day close price.
         /// </summary>
         Close,

@@ -1,0 +1,75 @@
+queue:
+  name: Hosted VS2017
+  demands: vstest
+
+trigger:
+- master
+- develop
+- release/*
+- feature/*
+
+pr:
+- master
+- develop
+- release/*
+- feature/*
+
+variables:
+  TreatWarningsAsErrors: true
+  DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
+  BuildConfiguration: Release
+  BuildPlatform: Any CPU
+
+steps:
+- task: DotNetCoreCLI@2
+  displayName: 'Install NBGV tool'
+  inputs:
+    command: custom
+    custom: tool
+    arguments: 'install --tool-path . nbgv'
+
+- script: 'nbgv cloud' 
+  displayName: 'Set Version'
+
+- task: DotNetCoreCLI@2
+  displayName: Build
+  inputs:
+    projects: '**/*.csproj'
+    arguments: '--configuration $(BuildConfiguration)'
+
+- task: DotNetCoreCLI@2
+  displayName: Test
+  inputs:
+    command: test
+    projects: '**/*[Tt]ests/*.csproj'
+    arguments: '--configuration $(BuildConfiguration) --no-build --no-restore'
+    publishTestResults: true
+
+- task: DotNetCoreCLI@2
+  displayName: Pack
+  inputs:
+    command: pack
+    packDirectory: '$(build.artifactstagingdirectory)\packages'
+    nobuild: true
+    versioningScheme: byEnvVar
+    versionEnvVar: 'BUILD_BUILDNUMBER'
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish NuGet Artifacts'
+  inputs:
+    PathtoPublish: '$(build.artifactstagingdirectory)\packages'
+    ArtifactName: Packages
+
+- task: CopyFiles@2
+  displayName: 'Copy binaries to artifacts directory'
+  inputs:
+    Contents: '**\bin\**'
+    TargetFolder: '$(build.artifactstagingdirectory)\binaries'
+    CleanTargetFolder: true
+    OverWrite: true
+    flattenFolders: true
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish binaries'
+  inputs:
+    ArtifactName: Binaries

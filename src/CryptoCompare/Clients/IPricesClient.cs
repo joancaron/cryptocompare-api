@@ -6,19 +6,19 @@ namespace CryptoCompare
 {
     public interface IPricesClient : IApiClient
     {
-        /// <summary>
-        /// Compute the current trading info (price, vol, open, high, low etc) of the requested pair as a volume weighted average based on the exchanges requested.
-        /// </summary>
-        /// <param name="fromSymbol">from symbol.</param>
-        /// <param name="toSymbol">to symbol.</param>
-        /// <param name="markets">List of names of the exchanges.</param>
-        /// <param name="tryConversion">(Optional) If set to false, it will try to get values without
-        /// using any conversion at all (defaultVal:true)</param>
-        Task<PriceAverageResponse> AverageAsync(
-            string fromSymbol,
-            string toSymbol,
-            IEnumerable<string> markets,
-            bool? tryConversion = null);
+        ///// <summary>
+        ///// Compute the current trading info (price, vol, open, high, low etc) of the requested pair as a volume weighted average based on the exchanges requested.
+        ///// </summary>
+        ///// <param name="fromSymbol">from symbol.</param>
+        ///// <param name="toSymbol">to symbol.</param>
+        ///// <param name="markets">List of names of the exchanges.</param>
+        ///// <param name="tryConversion">(Optional) If set to false, it will try to get values without
+        ///// using any conversion at all (defaultVal:true)</param>
+        //Task<PriceAverageResponse> AverageAsync(
+        //    string fromSymbol,
+        //    string toSymbol,
+        //    IEnumerable<string> markets,
+        //    bool? tryConversion = null);
 
         /// <summary>
         /// Get the price of any cryptocurrency in any other currency that you need at a given timestamp.

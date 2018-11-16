@@ -24,6 +24,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CryptoCompare.Tests", "test
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{5849F63C-8D5B-424A-BAB5-4A43A3A0A915}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cryptocompare.Integration.Tests", "test\Cryptocompare.Integration.Tests\Cryptocompare.Integration.Tests.csproj", "{02014F73-1002-4970-AA85-7CBB1D2B8276}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,6 +40,10 @@ Global
 		{E352A047-C22D-4AB6-9737-47700656B4C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E352A047-C22D-4AB6-9737-47700656B4C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E352A047-C22D-4AB6-9737-47700656B4C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02014F73-1002-4970-AA85-7CBB1D2B8276}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02014F73-1002-4970-AA85-7CBB1D2B8276}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02014F73-1002-4970-AA85-7CBB1D2B8276}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02014F73-1002-4970-AA85-7CBB1D2B8276}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -45,6 +51,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{74DE4A18-AFE5-485F-A205-5C38CA3BD0BB} = {5849F63C-8D5B-424A-BAB5-4A43A3A0A915}
 		{E352A047-C22D-4AB6-9737-47700656B4C4} = {CAAC477E-7487-42CB-9DEB-AE8860A3B03F}
+		{02014F73-1002-4970-AA85-7CBB1D2B8276} = {CAAC477E-7487-42CB-9DEB-AE8860A3B03F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3F131DCD-33E4-47BA-8829-65E49F744112}

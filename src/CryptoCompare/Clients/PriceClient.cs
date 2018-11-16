@@ -7,13 +7,13 @@ using JetBrains.Annotations;
 
 namespace CryptoCompare
 {
-    public class PricesClient : BaseApiClient, IPricesClient
+    public class PriceClient : BaseApiClient, IPricesClient
     {
         /// <summary>
-        /// Initializes a new instance of the CryptoCompare.PricesClient class.
+        /// Initializes a new instance of the CryptoCompare.PriceClient class.
         /// </summary>
         /// <param name="httpClient">The HTTP client. This cannot be null.</param>
-        public PricesClient([NotNull] HttpClient httpClient)
+        public PriceClient([NotNull] HttpClient httpClient)
             : base(httpClient)
         {
         }
@@ -30,19 +30,19 @@ namespace CryptoCompare
         /// An asynchronous result that yields the average.
         /// </returns>
         /// <seealso cref="M:CryptoCompare.IPricesClient.AverageAsync(string,string,IEnumerable{string},bool?)"/>
-        public async Task<PriceAverageResponse> AverageAsync(
-            [NotNull] string fromSymbol,
-            [NotNull] string toSymbol,
-            [NotNull] IEnumerable<string> markets,
-            bool? tryConversion = null)
-        {
-            Check.NotNullOrWhiteSpace(fromSymbol, nameof(fromSymbol));
-            Check.NotNullOrWhiteSpace(toSymbol, nameof(toSymbol));
-            Check.NotEmpty(markets, nameof(markets));
+        //public async Task<PriceAverageResponse> AverageAsync(
+        //    [NotNull] string fromSymbol,
+        //    [NotNull] string toSymbol,
+        //    [NotNull] IEnumerable<string> markets,
+        //    bool? tryConversion = null)
+        //{
+        //    Check.NotNullOrWhiteSpace(fromSymbol, nameof(fromSymbol));
+        //    Check.NotNullOrWhiteSpace(toSymbol, nameof(toSymbol));
+        //    Check.NotEmpty(markets, nameof(markets));
 
-            return await this.GetAsync<PriceAverageResponse>(
-                       ApiUrls.PriceAverage(fromSymbol, toSymbol, markets, tryConversion)).ConfigureAwait(false);
-        }
+        //    return await this.GetAsync<PriceAverageResponse>(
+        //               ApiUrls.PriceAverage(fromSymbol, toSymbol, markets, tryConversion)).ConfigureAwait(false);
+        //}
 
         /// <summary>
         /// Get the price of any cryptocurrency in any other currency that you need at a given timestamp.

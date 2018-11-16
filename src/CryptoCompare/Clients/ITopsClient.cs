@@ -1,8 +1,12 @@
 ﻿using System.Threading.Tasks;
 
+using CryptoCompare.Models.Responses;
+
+using JetBrains.Annotations;
+
 namespace CryptoCompare
 {
-    public interface ITopsClient : IApiClient
+    public interface ITopListClient : IApiClient
     {
         /// <summary>
         /// Get top exchanges by volume for a currency pair. 
@@ -14,7 +18,7 @@ namespace CryptoCompare
         /// <returns>
         /// An asynchronous result that yields a TopResponse.
         /// </returns>
-        Task<TopResponse> ExchangesAsync(string fromSymbol, string toSymbol, int? limit = null);
+        Task<TopResponse> ExchangesVolumeDataByPairAsync([NotNull] string fromSymbol, [NotNull] string toSymbol, int? limit = null);
 
         /// <summary>
         /// Get top pairs by volume for a currency (always uses our aggregated data). 
@@ -25,7 +29,7 @@ namespace CryptoCompare
         /// <returns>
         /// An asynchronous result that yields a TopResponse.
         /// </returns>
-        Task<TopResponse> PairsAsync(string fromSymbol, int? limit = null);
+        Task<TopResponse> TradingPairsAsync([NotNull] string fromSymbol, int? limit = null);
 
         /// <summary>
         /// Get top coins by volume for the to currency. It returns volume24hto and total supply (where available). 
@@ -36,6 +40,15 @@ namespace CryptoCompare
         /// <returns>
         /// An asynchronous result that yields a TopVolumesResponse.
         /// </returns>
-        Task<TopVolumesResponse> VolumesAsync(string toSymbol, int? limit = null);
+        Task<TopVolumesResponse> ByPairVolumeAsync([NotNull] string toSymbol, int? limit = null);
+
+        /// <summary>
+        /// Get top exchanges by volume for a currency pair plus the full CCCAGG data. 
+        /// The number of exchanges you get is the minimum of the limit you set (default 5) and the total number of exchanges available.
+        /// </summary>
+        /// <param name="fromSymbol">The cryptocurrency symbol of interest </param>
+        /// <param name="toSymbol">The currency symbol to convert into</param>
+        /// <param name="limit">(Optional)The number of data points to return.</param>
+        Task<TopExchangeFullResponse> ExchangesFullDataByPairAsync([NotNull] string fromSymbol, [NotNull] string toSymbol, int? limit = null);
     }
 }

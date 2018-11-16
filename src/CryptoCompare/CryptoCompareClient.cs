@@ -71,7 +71,7 @@ namespace CryptoCompare
         /// The mining client.
         /// </value>
         /// <seealso cref="P:CryptoCompare.ICryptoCompareClient.MiningClient"/>
-        public IMiningClient MiningClient => new MiningClient(this._httpClient);
+        public IMiningClient Mining => new MiningClient(this._httpClient);
 
         /// <summary>
         /// Gets the api client for news endpoints.
@@ -83,13 +83,13 @@ namespace CryptoCompare
         /// Gets the api client for cryptocurrency prices.
         /// </summary>
         /// <seealso cref="P:CryptoCompare.ICryptoCompareClient.Prices"/>
-        public IPricesClient Prices => new PricesClient(this._httpClient);
+        public IPricesClient Prices => new PriceClient(this._httpClient);
 
         /// <summary>
         /// Gets or sets the client for api calls rate limits.
         /// </summary>
         /// <seealso cref="P:CryptoCompare.ICryptoCompareClient.RateLimits"/>
-        public IRateLimitsClient RateLimits => new RateLimitsClient(this._httpClient);
+        public IRateLimitClient RateLimits => new RateLimitClient(this._httpClient);
 
         /// <summary>
         /// Gets the api client for "social" endpoints.
@@ -106,7 +106,7 @@ namespace CryptoCompare
         /// Gets the api client for "tops" endpoints.
         /// </summary>
         /// <seealso cref="P:CryptoCompare.ICryptoCompareClient.Tops"/>
-        public ITopsClient Tops => new TopsClient(this._httpClient);
+        public ITopListClient Tops => new TopListClient(this._httpClient);
 
         /// <summary>
         /// Performs application-defined tasks associated with freeing, releasing, or

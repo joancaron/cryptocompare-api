@@ -27,7 +27,7 @@ namespace CryptoCompare
         /// <summary>
         /// Gets the api client for "mining" endpoints.
         /// </summary>
-        IMiningClient MiningClient { get; }
+        IMiningClient Mining { get; }
 
         /// <summary>
         /// Gets the api client for news endpoints.
@@ -42,7 +42,7 @@ namespace CryptoCompare
         /// <summary>
         /// Gets the api client for api calls rate limits.
         /// </summary>
-        IRateLimitsClient RateLimits { get; }
+        IRateLimitClient RateLimits { get; }
 
         /// <summary>
         /// Gets the api client for "social stats" endpoints.
@@ -57,6 +57,6 @@ namespace CryptoCompare
         /// <summary>
         /// Gets the api client for "tops" endpoints.
         /// </summary>
-        ITopsClient Tops { get; }
+        ITopListClient Tops { get; }
     }
 }

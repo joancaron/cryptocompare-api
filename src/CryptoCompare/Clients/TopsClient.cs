@@ -1,6 +1,8 @@
 ﻿using System.Net.Http;
 using System.Threading.Tasks;
 
+using CryptoCompare.Models.Responses;
+
 using JetBrains.Annotations;
 
 namespace CryptoCompare
@@ -10,13 +12,13 @@ namespace CryptoCompare
     /// </summary>
     /// <seealso cref="T:CryptoCompare.BaseApiClient"/>
     /// <seealso cref="T:CryptoCompare.ITopsClient"/>
-    public class TopsClient : BaseApiClient, ITopsClient
+    public class TopListClient : BaseApiClient, ITopListClient
     {
         /// <summary>
         /// Initializes a new instance of the CryptoCompare.TopsClient class.
         /// </summary>
         /// <param name="httpClient">The HTTP client. This cannot be null.</param>
-        public TopsClient([NotNull] HttpClient httpClient)
+        public TopListClient([NotNull] HttpClient httpClient)
             : base(httpClient)
         {
         }
@@ -32,14 +34,14 @@ namespace CryptoCompare
         /// An asynchronous result that yields a TopResponse.
         /// </returns>
         /// <seealso cref="M:CryptoCompare.ITopsClient.Exchanges(string,string,int?)"/>
-        public async Task<TopResponse> ExchangesAsync(
+        public async Task<TopResponse> ExchangesVolumeDataByPairAsync(
             [NotNull] string fromSymbol,
             [NotNull] string toSymbol,
             int? limit = null)
         {
             Check.NotNullOrWhiteSpace(toSymbol, nameof(toSymbol));
             Check.NotNullOrWhiteSpace(fromSymbol, nameof(fromSymbol));
-            return await this.GetAsync<TopResponse>(ApiUrls.TopExchanges(fromSymbol, toSymbol, limit))
+            return await this.GetAsync<TopResponse>(ApiUrls.TopExchangesVolumeDataByPair(fromSymbol, toSymbol, limit))
                        .ConfigureAwait(false);
         }
 
@@ -53,10 +55,10 @@ namespace CryptoCompare
         /// An asynchronous result that yields a TopResponse.
         /// </returns>
         /// <seealso cref="M:CryptoCompare.ITopsClient.Pairs(string,int?)"/>
-        public async Task<TopResponse> PairsAsync([NotNull] string fromSymbol, int? limit = null)
+        public async Task<TopResponse> TradingPairsAsync([NotNull] string fromSymbol, int? limit = null)
         {
             Check.NotNullOrWhiteSpace(fromSymbol, nameof(fromSymbol));
-            return await this.GetAsync<TopResponse>(ApiUrls.TopPairs(fromSymbol, limit)).ConfigureAwait(false);
+            return await this.GetAsync<TopResponse>(ApiUrls.TopOfTradingPairs(fromSymbol, limit)).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -69,10 +71,28 @@ namespace CryptoCompare
         /// An asynchronous result that yields a TopVolumesResponse.
         /// </returns>
         /// <seealso cref="M:CryptoCompare.ITopsClient.Volumes(string,int?)"/>
-        public async Task<TopVolumesResponse> VolumesAsync([NotNull] string toSymbol, int? limit = null)
+        public async Task<TopVolumesResponse> ByPairVolumeAsync([NotNull] string toSymbol, int? limit = null)
         {
             Check.NotNullOrWhiteSpace(toSymbol, nameof(toSymbol));
-            return await this.GetAsync<TopVolumesResponse>(ApiUrls.TopVolumes(toSymbol, limit)).ConfigureAwait(false);
+            return await this.GetAsync<TopVolumesResponse>(ApiUrls.TopByPairVolume(toSymbol, limit)).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Get top exchanges by volume for a currency pair plus the full CCCAGG data. The number of
+        /// exchanges you get is the minimum of the limit you set (default 5) and the total number of
+        /// exchanges available.
+        /// </summary>
+        /// <param name="fromSymbol">The cryptocurrency symbol of interest.</param>
+        /// <param name="toSymbol">The currency symbol to convert into.</param>
+        /// <param name="limit">(Optional)The number of data points to return.</param>
+        /// <returns>
+        /// The asynchronous result that yields a TopResponse.
+        /// </returns>
+        /// <seealso cref="M:CryptoCompare.ITopListClient.ExchangesFullDataByPairAsync(string,string,int?)"/>
+        public async Task<TopExchangeFullResponse> ExchangesFullDataByPairAsync(string fromSymbol, string toSymbol, int? limit = null)
+        {
+            Check.NotNullOrWhiteSpace(toSymbol, nameof(toSymbol));
+            return await this.GetAsync<TopExchangeFullResponse>(ApiUrls.ExchangesFullDataByPair(fromSymbol, toSymbol,limit)).ConfigureAwait(false);
         }
     }
 }

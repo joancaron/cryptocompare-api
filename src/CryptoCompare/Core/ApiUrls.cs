@@ -262,7 +262,7 @@ namespace CryptoCompare
                 });
         }
 
-        public static Uri TopExchanges([NotNull] string fsym, [NotNull] string tsym, int? limit)
+        public static Uri TopExchangesVolumeDataByPair([NotNull] string fsym, [NotNull] string tsym, int? limit)
         {
             Check.NotNullOrWhiteSpace(tsym, nameof(tsym));
             Check.NotNullOrWhiteSpace(fsym, nameof(fsym));
@@ -275,7 +275,7 @@ namespace CryptoCompare
                 });
         }
 
-        public static Uri TopPairs([NotNull] string fsym, int? limit)
+        public static Uri TopOfTradingPairs([NotNull] string fsym, int? limit)
         {
             Check.NotNullOrWhiteSpace(fsym, nameof(fsym));
             return new Uri(MinApiEndpoint, "top/pairs").ApplyParameters(
@@ -286,7 +286,7 @@ namespace CryptoCompare
                 });
         }
 
-        public static Uri TopVolumes([NotNull] string tsym, int? limit)
+        public static Uri TopByPairVolume([NotNull] string tsym, int? limit)
         {
             Check.NotNullOrWhiteSpace(tsym, nameof(tsym));
             return new Uri(MinApiEndpoint, "top/volumes").ApplyParameters(
@@ -294,6 +294,19 @@ namespace CryptoCompare
                 {
                     { nameof(tsym), tsym },
                     { nameof(limit), limit.ToString() }
+                });
+        }
+
+        public static Uri ExchangesFullDataByPair(string fsym, string tsym, int? limit)
+        {
+            Check.NotNullOrWhiteSpace(tsym, nameof(tsym));
+            Check.NotNullOrWhiteSpace(fsym, nameof(fsym));
+            return new Uri(MinApiEndpoint, "top/exchanges/full").ApplyParameters(
+                new Dictionary<string, string>
+                {
+                    { nameof(tsym), tsym },
+                    { nameof(fsym), fsym },
+                    { nameof(limit), limit?.ToString() }
                 });
         }
     }

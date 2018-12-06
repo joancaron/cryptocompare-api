@@ -94,5 +94,22 @@ namespace CryptoCompare
             Check.NotNullOrWhiteSpace(toSymbol, nameof(toSymbol));
             return await this.GetAsync<TopExchangeFullResponse>(ApiUrls.ExchangesFullDataByPair(fromSymbol, toSymbol,limit)).ConfigureAwait(false);
         }
+
+        /// <summary>
+        /// Get full data for the top coins ordered by market cap as expressed in a given currency.
+        /// </summary>
+        /// <param name="toSymbol">The symbol of the currency into which the market cap are expressed.</param>
+        /// <param name="limit">(Optional)The number currencies to return, default is 10.</param>
+        /// <param name="page">(Optional)The pagination for the request.</param>
+        /// <param name="sign">(Optional)If set to true, the server will sign the requests, this is useful for usage in smart contracts.</param>
+        /// <returns>
+        /// The asynchronous result that yields a CoinListResponse.
+        /// </returns>
+        /// <seealso cref="M:CryptoCompare.ITopListClient.ExchangesFullDataByMarketCap(string,int?,int?,bool?)"/>
+        public async Task<TopMarketCapResponse> CoinFullDataByMarketCap(string toSymbol, int? limit = null, int? page = null, bool? sign = null)
+        {
+            Check.NotNullOrWhiteSpace(toSymbol, nameof(toSymbol));
+            return await this.GetAsync<TopMarketCapResponse>(ApiUrls.TopByMarketCapFull(toSymbol, limit, page, sign)).ConfigureAwait(false);
+        }
     }
 }

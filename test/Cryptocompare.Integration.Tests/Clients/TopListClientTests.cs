@@ -35,5 +35,12 @@ namespace Cryptocompare.Integration.Tests.Clients
             var result = await CryptoCompareClient.Instance.Tops.TradingPairsAsync("BTC");
             Assert.NotNull(result);
         }
+
+        [Fact]
+        public async Task CanCallTopListCoinFullDataByMarketCap()
+        {
+            var result = await CryptoCompareClient.Instance.Tops.CoinFullDataByMarketCap("EUR", 20);
+            Assert.NotNull(result);
+        }
     }
 }

@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Net.Http;
-
+using System.Net.Http.Headers;
 using CryptoCompareApi.News;
 
 using JetBrains.Annotations;
@@ -24,18 +24,30 @@ namespace CryptoCompare
         /// Initializes a new instance of the CryptoCompare.CryptoCompareClient class.
         /// </summary>
         /// <param name="httpClientHandler">Custom HTTP client handler. Can be used to define proxy settigs</param>
-        public CryptoCompareClient([NotNull] HttpClientHandler httpClientHandler)
+        /// <param name="apiKey">The api key from cryptocompare</param>
+        public CryptoCompareClient([NotNull] HttpClientHandler httpClientHandler, string apiKey = null)
         {
             Check.NotNull(httpClientHandler, nameof(httpClientHandler));
             this._httpClient = new HttpClient(httpClientHandler, true);
+
+            if (!string.IsNullOrWhiteSpace(apiKey))
+            {
+                this.SetApiKey(apiKey);
+            }
         }
 
         /// <summary>
         /// Initializes a new instance of the CryptoCompare.CryptoCompareClient class.
         /// </summary>
-        public CryptoCompareClient()
-            : this(new HttpClientHandler())
+        public CryptoCompareClient(string apiKey = null)
+            : this(new HttpClientHandler(), apiKey)
         {
+        }
+
+        public void SetApiKey(string apiKey)
+        {
+            Check.NotNullOrWhiteSpace(apiKey, nameof(apiKey));
+            this._httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Apikey", apiKey);
         }
 
         /// <summary>

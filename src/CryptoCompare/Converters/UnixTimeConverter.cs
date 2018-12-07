@@ -29,7 +29,10 @@ namespace CryptoCompare
 
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
-            throw new NotImplementedException();
+            if (DateTimeOffset.TryParse(value?.ToString(), out var date))
+            {
+                writer.WriteValue(date.ToUnixTime());
+            }
         }
     }
 }

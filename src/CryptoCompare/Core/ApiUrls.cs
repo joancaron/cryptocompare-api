@@ -61,7 +61,7 @@ namespace CryptoCompare
                     { nameof(toTs), toTs?.ToString() },
                     { nameof(avgType), avgType?.ToString() },
                     { nameof(UTCHourDiff), UTCHourDiff?.ToString() },
-                    { nameof(tryConversion), tryConversion?.ToString() },
+                    { nameof(tryConversion), tryConversion?.ToString().ToLowerInvariant() },
                 });
         }
 
@@ -86,9 +86,9 @@ namespace CryptoCompare
                     { nameof(tsym), tsym },
                     { nameof(limit), limit.ToString() },
                     { nameof(toTs), toTs?.ToUnixTime().ToString(CultureInfo.InvariantCulture) },
-                    { nameof(tryConversion), tryConversion?.ToString() },
+                    { nameof(tryConversion), tryConversion?.ToString().ToLowerInvariant() },
                     { nameof(e), e },
-                    { nameof(allData), allData?.ToString() },
+                    { nameof(allData), allData?.ToString().ToLowerInvariant() },
                     { nameof(aggregate), aggregate?.ToString() }
                 });
         }
@@ -112,7 +112,7 @@ namespace CryptoCompare
                     { nameof(toTs), toTs?.ToUnixTime().ToString(CultureInfo.InvariantCulture) },
                     { nameof(e), e },
                     { nameof(aggregate), aggregate?.ToString() },
-                    { nameof(aggregatePredictableTimePeriods), aggregatePredictableTimePeriods?.ToString() }
+                    { nameof(aggregatePredictableTimePeriods), aggregatePredictableTimePeriods?.ToString().ToLowerInvariant() }
                 });
         }
 
@@ -128,7 +128,7 @@ namespace CryptoCompare
                     { nameof(lang), lang },
                     { nameof(lTs), lTs?.ToString() },
                     { nameof(feeds), feeds != null ? string.Join(",", feeds) : null },
-                    { nameof(sign), sign?.ToString() },
+                    { nameof(sign), sign?.ToString().ToLowerInvariant() },
                 });
         }
 
@@ -153,7 +153,7 @@ namespace CryptoCompare
                     { nameof(fsym), fsym },
                     { nameof(tsym), tsym },
                     { nameof(e), e?.ToJoinedList() },
-                    { nameof(tryConversion), tryConversion?.ToString() }
+                    { nameof(tryConversion), tryConversion?.ToString().ToLowerInvariant() }
                 });
         }
 
@@ -173,7 +173,7 @@ namespace CryptoCompare
                     { nameof(ts), ts.ToUnixTime().ToString(CultureInfo.InvariantCulture) },
                     { nameof(markets), markets?.ToJoinedList() },
                     { nameof(calculationType), calculationType?.ToString("G") },
-                    { nameof(tryConversion), tryConversion?.ToString() }
+                    { nameof(tryConversion), tryConversion?.ToString().ToLowerInvariant() }
                 });
         }
 
@@ -191,7 +191,7 @@ namespace CryptoCompare
                 {
                     { nameof(fsyms), fsyms.ToJoinedList() },
                     { nameof(tsyms), tsyms.ToJoinedList() },
-                    { nameof(tryConversion), tryConversion?.ToString() },
+                    { nameof(tryConversion), tryConversion?.ToString().ToLowerInvariant() },
                     { nameof(e), e }
                 });
         }
@@ -210,7 +210,7 @@ namespace CryptoCompare
                 {
                     { nameof(fsyms), fsyms.ToJoinedList() },
                     { nameof(tsyms), tsyms.ToJoinedList() },
-                    { nameof(tryConversion), tryConversion?.ToString() },
+                    { nameof(tryConversion), tryConversion?.ToString().ToLowerInvariant() },
                     { nameof(e), e }
                 });
         }
@@ -229,7 +229,7 @@ namespace CryptoCompare
                 {
                     { nameof(fsym), fsym },
                     { nameof(tsyms), tsyms.ToJoinedList() },
-                    { nameof(tryConversion), tryConversion?.ToString() },
+                    { nameof(tryConversion), tryConversion?.ToString().ToLowerInvariant() },
                     { nameof(e), e }
                 });
         }
@@ -294,6 +294,19 @@ namespace CryptoCompare
                 {
                     { nameof(tsym), tsym },
                     { nameof(limit), limit.ToString() }
+                });
+        }
+
+        public static Uri TopByMarketCapFull([NotNull] string tsym, int? limit, int? page, bool? sign)
+        {
+            Check.NotNullOrWhiteSpace(tsym, nameof(tsym));
+            return new Uri(MinApiEndpoint, "top/mktcapfull").ApplyParameters(
+                new Dictionary<string, string>
+                {
+                    { nameof(tsym), tsym },
+                    { nameof(limit), limit?.ToString() },
+                    { nameof(page), page?.ToString() },
+                    { nameof(sign), sign?.ToString().ToLowerInvariant() }
                 });
         }
 

@@ -33,7 +33,7 @@ namespace Cryptocompare.Integration.Tests.Clients
         [Fact]
         public async Task CanCallHistoricalDailyEndpoint()
         {
-            var result = await CryptoCompareClient.Instance.History.DailyAsync("BTC", "USD", 10);
+            var result = await CryptoCompareClient.Instance.History.DailyAsync("BTC", "USD", 10, allData: true);
             Assert.NotNull(result);
         }
 

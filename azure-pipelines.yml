@@ -4,39 +4,14 @@ variables:
   BuildConfiguration: Release
   BuildPlatform: Any CPU
 
-
 jobs:
 - job: macOS
   pool: Hosted macOS
-  strategy:
-    matrix:
-        netcoreapp11:
-            libFramework: netstandard1.1
-            framework: netcoreapp1.1
-        netcoreapp13:
-            libFramework: netstandard1.3
-            framework: netcoreapp1.3
-        netcoreapp20:
-            libFramework: netstandard2.0
-            framework: netcoreapp2.0
-    maxParallel: 3   
   steps:
   - template: ci/testfx.yml
 
 - job: Linux
   pool: Hosted Ubuntu 1604
-  strategy:
-    matrix:
-        netcoreapp11:
-            libFramework: netstandard1.1
-            framework: netcoreapp1.1
-        netcoreapp13:
-            libFramework: netstandard1.3
-            framework: netcoreapp1.3
-        netcoreapp20:
-            libFramework: netstandard2.0
-            framework: netcoreapp2.0
-    maxParallel: 3   
   steps:
   - template: ci/testfx.yml
 

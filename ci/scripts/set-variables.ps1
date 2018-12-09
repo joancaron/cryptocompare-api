@@ -1,3 +1,5 @@
+Get-ChildItem Env:
+
 $manifest = Get-Content .\package.json | Out-String | ConvertFrom-Json
 
 $isTriggeredByTag = $false
@@ -13,4 +15,3 @@ if ($Env:SourceBranch.StartsWith("refs/tags/v")) {
 Write-Host "##vso[task.setvariable variable=isTriggeredByTag]$isTriggeredByTag"
 Write-Host "##vso[build.updatebuildnumber]$version"
 
-Get-ChildItem Env:

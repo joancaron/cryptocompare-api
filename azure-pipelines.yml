@@ -11,10 +11,13 @@ jobs:
   strategy:
     matrix:
         netcoreapp11:
+            libFramework: netstandard1.1
             framework: netcoreapp1.1
         netcoreapp13:
+            libFramework: netstandard1.3
             framework: netcoreapp1.3
         netcoreapp20:
+            libFramework: netstandard2.0
             framework: netcoreapp2.0
     maxParallel: 3   
   steps:
@@ -25,10 +28,13 @@ jobs:
   strategy:
     matrix:
         netcoreapp11:
+            libFramework: netstandard1.1
             framework: netcoreapp1.1
         netcoreapp13:
+            libFramework: netstandard1.3
             framework: netcoreapp1.3
         netcoreapp20:
+            libFramework: netstandard2.0
             framework: netcoreapp2.0
     maxParallel: 3   
   steps:

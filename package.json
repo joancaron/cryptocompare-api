@@ -1,0 +1,30 @@
+{
+  "name": "cryptocompare-api",
+  "version": "1.1.0",
+  "description": "An async-based CryptoCompare API client library for .NET and .NET Core",
+  "scripts": {
+    "commit": "git-cz",
+    "dry-release": "standard-version --dry-run",
+    "release": "standard-version"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joancaron/cryptocompare-api.git"
+  },
+  "author": "Joan Caron",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/joancaron/cryptocompare-api/issues"
+  },
+  "homepage": "https://github.com/joancaron/cryptocompare-api#readme",
+  "devDependencies": {
+    "commitizen": "^3.0.4",
+    "cz-conventional-changelog": "^2.1.0",
+    "standard-version": "4.2.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}

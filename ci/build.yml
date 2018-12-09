@@ -1,4 +1,7 @@
 steps:
+- powershell: ./ci/scripts/set-variables.ps1
+  displayName: Set variables
+
 - task: DotNetCoreCLI@2
   displayName: Build
   inputs:

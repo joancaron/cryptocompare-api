@@ -30,6 +30,7 @@ steps:
   displayName: Pack
   inputs:
     command: pack
+    packagesToPack: 'src/**/*.csproj'
     packagesDirectory: '$(build.artifactstagingdirectory)\packages'
     nobuild: true
     versioningScheme: byEnvVar

@@ -9,7 +9,8 @@ if ($Env:BUILD_SOURCEBRANCH.StartsWith("refs/tags/v")) {
     $isTriggeredByTag = $true
     
 }else{
-    $version = $manifest.version + '-beta.$(rev:.r)'
+    $commitId = & git rev-parse --short HEAD
+    $version = $manifest.version + '+' + $commitId
 }
 
 Write-Host "##vso[task.setvariable variable=isTriggeredByTag]$isTriggeredByTag"

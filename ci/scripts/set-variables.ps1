@@ -7,7 +7,8 @@ $isPackable = '$(Build.SourceBranch)'.StartsWith("refs/tags/v") -and $(Build.Rea
 if ($isPackable) { 
     $version = $manifest.version
 }else{
-    $version = $manifest.version + '+' + $Env:BUILD_SOURCEVERSION.Substring(0, 6)
+    #$version = $manifest.version + '+' + $Env:BUILD_SOURCEVERSION.Substring(0, 6)
+    $version = $manifest.version
 }
 
 Write-Host "##vso[task.setvariable variable=isPackable]$isPackable"

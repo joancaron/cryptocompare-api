@@ -2,11 +2,12 @@ Get-ChildItem Env:
 
 $manifest = Get-Content .\package.json | Out-String | ConvertFrom-Json
 
-$isTriggeredByTag = $false
+$isPackable = $false
 $version = $manifest.version
 
-if ($Env:BUILD_SOURCEBRANCH.StartsWith("refs/tags/v")) { 
-    $isTriggeredByTag = $true
+if ($(Build.SourceBranch).StartsWith("refs/tags/v")
+    ) { 
+    $isPackable = $true
 }else{
     $version += '+' + $Env:BUILD_SOURCEVERSION.Substring(0, 6)
 }

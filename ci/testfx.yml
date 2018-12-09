@@ -10,6 +10,6 @@ steps:
   inputs:
     command: test
     projects: 'test/**/*[Tt]ests/*.csproj'
-    arguments: '-c $(BuildConfiguration) -f $(framework) --no-build --no-restore'
+    arguments: '-c $(BuildConfiguration) -f $(framework)'
     publishTestResults: true
     

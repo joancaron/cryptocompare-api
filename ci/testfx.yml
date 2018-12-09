@@ -2,14 +2,14 @@ steps:
 - task: DotNetCoreCLI@2
   displayName: Build
   inputs:
-    projects: '**/*.csproj'
+    projects: 'src/**/*.csproj'
     arguments: '-c $(BuildConfiguration) -f $(libFramework)'
 
 - task: DotNetCoreCLI@2
   displayName: Test
   inputs:
     command: test
-    projects: '**/*[Tt]ests/*.csproj'
+    projects: 'test/**/*[Tt]ests/*.csproj'
     arguments: '-c $(BuildConfiguration) -f $(framework) --no-build --no-restore'
     publishTestResults: true
     

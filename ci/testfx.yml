@@ -3,7 +3,7 @@ steps:
   displayName: Build
   inputs:
     projects: '**/*.csproj'
-    arguments: '-c $(BuildConfiguration) -f $(framework)'
+    arguments: '-c $(BuildConfiguration) -f'
 
 - task: DotNetCoreCLI@2
   displayName: Test

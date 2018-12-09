@@ -1,0 +1,25 @@
+strategy:
+  matrix:
+    netcoreapp11:
+        framework: netcoreapp1.1
+    netcoreapp13:
+        framework: netcoreapp1.3
+    netcoreapp20:
+        framework: netcoreapp2.0
+  maxParallel: 3
+
+steps:
+- task: DotNetCoreCLI@2
+  displayName: Build
+  inputs:
+    projects: '**/*.csproj'
+    arguments: '-c $(BuildConfiguration) -f $(framework)'
+
+- task: DotNetCoreCLI@2
+  displayName: Test
+  inputs:
+    command: test
+    projects: '**/*[Tt]ests/*.csproj'
+    arguments: '-c $(BuildConfiguration) -f $(framework) --no-build --no-restore'
+    publishTestResults: true
+    

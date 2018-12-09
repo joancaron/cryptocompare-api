@@ -1,0 +1,47 @@
+steps:
+- task: DotNetCoreCLI@2
+  displayName: Build
+  inputs:
+    projects: '**/*.csproj'
+    arguments: '-c $(BuildConfiguration)'
+
+- task: DotNetCoreCLI@2
+  displayName: Test
+  inputs:
+    command: test
+    projects: '**/*[Tt]ests/*.csproj'
+    arguments: '-c $(BuildConfiguration) --no-build --no-restore'
+    publishTestResults: true
+    
+- task: CopyFiles@2
+  displayName: 'Copy binaries to artifacts directory'
+  inputs:
+    Contents: '**\bin\**'
+    TargetFolder: '$(build.artifactstagingdirectory)\binaries'
+    CleanTargetFolder: true
+    OverWrite: true
+    flattenFolders: true
+  condition: and(ne(variables['Build.Reason'], 'PullRequest'), ne(variables['system.pullrequest.isfork'], true))
+
+- task: DotNetCoreCLI@2
+  displayName: Pack
+  inputs:
+    command: pack
+    packagesDirectory: '$(build.artifactstagingdirectory)\packages'
+    nobuild: true
+    versioningScheme: byEnvVar
+    versionEnvVar: 'BUILD_BUILDNUMBER'
+  condition: and(ne(variables['Build.Reason'], 'PullRequest'), ne(variables['system.pullrequest.isfork'], true))
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish NuGet Artifacts'
+  inputs:
+    PathtoPublish: '$(build.artifactstagingdirectory)\packages'
+    ArtifactName: Packages
+  condition: and(ne(variables['Build.Reason'], 'PullRequest'), ne(variables['system.pullrequest.isfork'], true))
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish binaries'
+  inputs:
+    ArtifactName: Binaries
+  condition: and(ne(variables['Build.Reason'], 'PullRequest'), ne(variables['system.pullrequest.isfork'], true))

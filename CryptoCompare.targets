@@ -10,8 +10,14 @@
     <PackageTags>cryptocompare-api;cryptocurrency;bitcoin;dotnet-core;dotnet-standard;dotnet;async;cryptocurrencies;cryptocompare</PackageTags>
     <PackageLicenseUrl>http://opensource.org/licenses/apache-2.0</PackageLicenseUrl>
     <Copyright>Copyright Joan Caron 2018</Copyright>
-  </PropertyGroup>
 
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0-beta-63127-02" PrivateAssets="All"/>
+  </ItemGroup>
   <ItemGroup Condition=" '$(TargetFramework)' == 'net45' ">
     <Reference Include="System.Net.Http" />
     <Reference Include="System" />

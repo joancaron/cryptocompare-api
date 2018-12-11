@@ -24,7 +24,7 @@ steps:
     CleanTargetFolder: true
     OverWrite: true
     flattenFolders: true
-  #condition: and(succeeded(), eq(variables['isPackable'], true))
+  condition: and(succeeded(), eq(variables['isPackable'], true))
 
 - task: DotNetCoreCLI@2
   displayName: Pack
@@ -32,21 +32,20 @@ steps:
     command: pack
     packagesToPack: 'src/**/*.csproj'
     packDirectory: '$(build.artifactstagingdirectory)\packages'
-    packagesDirectory: '$(build.artifactstagingdirectory)\packages'
     nobuild: true
     versioningScheme: byEnvVar
     versionEnvVar: 'BUILD_BUILDNUMBER'
-  #condition: and(succeeded(), eq(variables['isPackable'], true))
+  condition: and(succeeded(), eq(variables['isPackable'], true))
 
 - task: PublishBuildArtifacts@1
   displayName: 'Publish NuGet Artifacts'
   inputs:
     PathtoPublish: '$(build.artifactstagingdirectory)\packages'
     ArtifactName: Packages
-  #condition: and(succeeded(), eq(variables['isPackable'], true))
+  condition: and(succeeded(), eq(variables['isPackable'], true))
 
 - task: PublishBuildArtifacts@1
   displayName: 'Publish binaries'
   inputs:
     ArtifactName: Binaries
-  #condition: and(succeeded(), eq(variables['isPackable'], true))
+  condition: and(succeeded(), eq(variables['isPackable'], true))

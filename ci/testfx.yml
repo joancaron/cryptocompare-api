@@ -1,0 +1,15 @@
+steps:
+- task: DotNetCoreCLI@2
+  displayName: Build
+  inputs:
+    projects: 'src/**/*.csproj'
+    arguments: '-c $(BuildConfiguration) -f netstandard2.0'
+
+- task: DotNetCoreCLI@2
+  displayName: Test
+  inputs:
+    command: test
+    projects: 'test/**/*[Tt]ests/*.csproj'
+    arguments: '-c $(BuildConfiguration) -f netcoreapp2.1'
+    publishTestResults: true
+    

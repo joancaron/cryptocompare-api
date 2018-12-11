@@ -1,0 +1,51 @@
+steps:
+- powershell: ./ci/scripts/set-variables.ps1
+  displayName: Set variables
+
+- task: DotNetCoreCLI@2
+  displayName: Build
+  inputs:
+    projects: '**/*.csproj'
+    arguments: '-c $(BuildConfiguration)'
+
+- task: DotNetCoreCLI@2
+  displayName: Test
+  inputs:
+    command: test
+    projects: '**/*[Tt]ests/*.csproj'
+    arguments: '-c $(BuildConfiguration) --no-build --no-restore'
+    publishTestResults: true
+    
+- task: CopyFiles@2
+  displayName: 'Copy binaries to artifacts directory'
+  inputs:
+    Contents: '**\bin\**'
+    TargetFolder: '$(build.artifactstagingdirectory)\binaries'
+    CleanTargetFolder: true
+    OverWrite: true
+    flattenFolders: true
+  condition: and(succeeded(), eq(variables['isPackable'], true))
+
+- task: DotNetCoreCLI@2
+  displayName: Pack
+  inputs:
+    command: pack
+    packagesToPack: 'src/**/*.csproj'
+    packDirectory: '$(build.artifactstagingdirectory)\packages'
+    nobuild: true
+    versioningScheme: byEnvVar
+    versionEnvVar: 'BUILD_BUILDNUMBER'
+  condition: and(succeeded(), eq(variables['isPackable'], true))
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish NuGet Artifacts'
+  inputs:
+    PathtoPublish: '$(build.artifactstagingdirectory)\packages'
+    ArtifactName: Packages
+  condition: and(succeeded(), eq(variables['isPackable'], true))
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish binaries'
+  inputs:
+    ArtifactName: Binaries
+  condition: and(succeeded(), eq(variables['isPackable'], true))

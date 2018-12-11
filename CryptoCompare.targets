@@ -2,6 +2,7 @@
   <PropertyGroup>
     <Authors>Joan Caron</Authors>
     <Version>0.0.6</Version>
+    <IsPackable>true</IsPackable>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/joancaron/cryptocompare-api</RepositoryUrl>
     <PackageProjectUrl>https://github.com/joancaron/cryptocompare-api</PackageProjectUrl>

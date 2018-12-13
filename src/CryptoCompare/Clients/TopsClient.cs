@@ -103,13 +103,30 @@ namespace CryptoCompare
         /// <param name="page">(Optional)The pagination for the request.</param>
         /// <param name="sign">(Optional)If set to true, the server will sign the requests, this is useful for usage in smart contracts.</param>
         /// <returns>
-        /// The asynchronous result that yields a CoinListResponse.
+        /// The asynchronous result that yields a TopMarketCapResponse.
         /// </returns>
-        /// <seealso cref="M:CryptoCompare.ITopListClient.ExchangesFullDataByMarketCap(string,int?,int?,bool?)"/>
+        /// <seealso cref="M:CryptoCompare.ITopListClient.CoinFullDataByMarketCap(string,int?,int?,bool?)"/>
         public async Task<TopMarketCapResponse> CoinFullDataByMarketCap(string toSymbol, int? limit = null, int? page = null, bool? sign = null)
         {
             Check.NotNullOrWhiteSpace(toSymbol, nameof(toSymbol));
             return await this.GetAsync<TopMarketCapResponse>(ApiUrls.TopByMarketCapFull(toSymbol, limit, page, sign)).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Get full data for the top coins ordered by their total volume across all markets in the last 24 hours as expressed in a given currency.
+        /// </summary>
+        /// <param name="toSymbol">The symbol of the currency into which the market cap are expressed.</param>
+        /// <param name="limit">(Optional)The number currencies to return, default is 10.</param>
+        /// <param name="page">(Optional)The pagination for the request.</param>
+        /// <param name="sign">(Optional)If set to true, the server will sign the requests, this is useful for usage in smart contracts.</param>
+        /// <returns>
+        /// The asynchronous result that yields a TopVolume24HResponse.
+        /// </returns>
+        /// <seealso cref="M:CryptoCompare.ITopListClient.CoinFullDataBy24HVolume(string,int?,int?,bool?)"/>
+        public async Task<TopVolume24HResponse> CoinFullDataBy24HVolume(string toSymbol, int? limit = null, int? page = null, bool? sign = null)
+        {
+            Check.NotNullOrWhiteSpace(toSymbol, nameof(toSymbol));
+            return await this.GetAsync<TopVolume24HResponse>(ApiUrls.TopByVolume24HFull(toSymbol, limit, page, sign)).ConfigureAwait(false);
         }
     }
 }

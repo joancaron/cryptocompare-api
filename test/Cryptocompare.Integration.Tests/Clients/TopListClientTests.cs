@@ -42,5 +42,12 @@ namespace Cryptocompare.Integration.Tests.Clients
             var result = await CryptoCompareClient.Instance.Tops.CoinFullDataByMarketCap("EUR", 20);
             Assert.NotNull(result);
         }
+
+        [Fact]
+        public async Task CanCallTopListCoinFullDataBy24HVolume()
+        {
+            var result = await CryptoCompareClient.Instance.Tops.CoinFullDataBy24HVolume("EUR", 20);
+            Assert.NotNull(result);
+        }
     }
 }

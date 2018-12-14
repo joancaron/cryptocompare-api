@@ -297,6 +297,19 @@ namespace CryptoCompare
                 });
         }
 
+        public static Uri TopByVolume24HFull([NotNull] string tsym, int? limit, int? page, bool? sign)
+        {
+            Check.NotNullOrWhiteSpace(tsym, nameof(tsym));
+            return new Uri(MinApiEndpoint, "top/totalvolfull").ApplyParameters(
+                new Dictionary<string, string>
+                {
+                    { nameof(tsym), tsym },
+                    { nameof(limit), limit?.ToString() },
+                    { nameof(page), page?.ToString() },
+                    { nameof(sign), sign?.ToString().ToLowerInvariant() }
+                });
+        }
+
         public static Uri TopByMarketCapFull([NotNull] string tsym, int? limit, int? page, bool? sign)
         {
             Check.NotNullOrWhiteSpace(tsym, nameof(tsym));

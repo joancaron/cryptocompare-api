@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.3.2"></a>
+## [1.3.2](https://github.com/joancaron/cryptocompare-api/compare/v1.3.1...v1.3.2) (2018-12-15)
+
+
+### Bug Fixes
+
+* **build:** Fix Triggers ([80e1177](https://github.com/joancaron/cryptocompare-api/commit/80e1177))
+
+
+
 <a name="1.3.1"></a>
 ## [1.3.1](https://github.com/joancaron/cryptocompare-api/compare/v1.3.0...v1.3.1) (2018-12-15)
 

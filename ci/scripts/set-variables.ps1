@@ -1,5 +1,3 @@
-Get-ChildItem Env:
-
 $manifest = Get-Content .\package.json | Out-String | ConvertFrom-Json
 
 $canBePacked = '$(Build.SourceBranch)'.StartsWith("refs/tags/v") -and $(Build.Reason) -ne 'PullRequest' -and $(System.PullRequest.IsFork) -ne $true

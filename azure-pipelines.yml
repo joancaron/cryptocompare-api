@@ -1,6 +1,5 @@
-trigger:
-  pr:
-  - master
+pr:
+- master
 
 variables:
   TreatWarningsAsErrors: true

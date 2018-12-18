@@ -27,7 +27,7 @@ namespace CryptoCompare
         /// <param name="apiKey">The api key from cryptocompare</param>
         public CryptoCompareClient([NotNull] HttpClientHandler httpClientHandler, string apiKey = null)
         {
-            Check.NotNull(httpClientHandler, nameof(httpClientHandler));       
+            Check.NotNull(httpClientHandler, nameof(httpClientHandler));
             this._httpClient = new HttpClient(httpClientHandler, true);
 
             if (!string.IsNullOrWhiteSpace(apiKey))

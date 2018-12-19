@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace CryptoCompare.Models.Responses
+namespace CryptoCompare
 {
     public class TopExchangeInfo
     {

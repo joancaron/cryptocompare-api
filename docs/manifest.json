@@ -1,0 +1,1214 @@
+{
+  "homepages": [],
+  "source_base_path": "C:/Users/d-caj/Documents/source/cryptocompare-api",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      },
+      "is_incremental": false
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.AggregatedData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.AggregatedData.html",
+          "hash": "+W2+ro+Ldsqh5uZslYgHpw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.BaseApiClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.BaseApiClient.html",
+          "hash": "3jTnZk0vpQ3uhBwzj/4i2Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.BaseApiResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.BaseApiResponse.html",
+          "hash": "jhFd/R/8T9sWpmgJ9/ygJQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.CalculationType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.CalculationType.html",
+          "hash": "n3lBTPYwLpglmxRnlE78xQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.Calls.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.Calls.html",
+          "hash": "LpxGXCGwX3JIZJHcUsMwVg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.CandleData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.CandleData.html",
+          "hash": "XGeM5p4QSFzAVTjEy9Rytw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.CodeRepository.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.CodeRepository.html",
+          "hash": "J8CuYqTT5wu068DZPM/S/Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.CoinAggregatedData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.CoinAggregatedData.html",
+          "hash": "W6BkKQ0SSUqzuS6+4IwvSw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.CoinFullAggregatedData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.CoinFullAggregatedData.html",
+          "hash": "4Fl7KdT62V/LTJPINBviqg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.CoinFullAggregatedDataDisplay.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.CoinFullAggregatedDataDisplay.html",
+          "hash": "jmKDVYeFUx5+O7K5P7UH4w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.CoinGeneralInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.CoinGeneralInfo.html",
+          "hash": "zDoOwHtT+Cv9gJm6PVsFEA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.CoinInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.CoinInfo.html",
+          "hash": "pCX3Sw8oakcTVkM3Mj9EkQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.CoinListResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.CoinListResponse.html",
+          "hash": "YOIFCXCD8EflXE89sxEYCA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.CoinSnapshotData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.CoinSnapshotData.html",
+          "hash": "TgNRMi9wFk4NsjZQMcyx5w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.CoinSnapshotFullData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.CoinSnapshotFullData.html",
+          "hash": "BaNxkJAgjrYt5lbqXDgybA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.CoinSnapshotFullResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.CoinSnapshotFullResponse.html",
+          "hash": "rkbz4slBkTwZZ7uD/Zr8BA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.CoinSnapshotResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.CoinSnapshotResponse.html",
+          "hash": "RL1Jasx523Rmldt7zeG0Zw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.CoinsClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.CoinsClient.html",
+          "hash": "eX0/2OWAf3d516+clUoysA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.CryptoCompare.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.CryptoCompare.html",
+          "hash": "urHjgB4bK/jmDsudajiSYA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.CryptoCompareClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.CryptoCompareClient.html",
+          "hash": "jqPjZccdnipv39XoN/9KeA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.CryptoCompareException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.CryptoCompareException.html",
+          "hash": "yPSv/NnAWQqYu3lbeiC3IA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.CryptopianFollower.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.CryptopianFollower.html",
+          "hash": "a7jqnJlXGDZpP0C6Ly/V/Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.DateTimeExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.DateTimeExtensions.html",
+          "hash": "sT2wX5w23bFHqisAtwdVkQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.ExchangeHistoryData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.ExchangeHistoryData.html",
+          "hash": "4Mr2QWicUH9h8US3EucxmQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.ExchangeHistoryResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.ExchangeHistoryResponse.html",
+          "hash": "02rtzRuE95dFvMGDLk6rSg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.ExchangeListResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.ExchangeListResponse.html",
+          "hash": "h0wB61hBln7a7a3Srl5khQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.ExchangesClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.ExchangesClient.html",
+          "hash": "hudZDFaiY8kjrh9cDWUUyQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.Facebook.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.Facebook.html",
+          "hash": "+hFqOzpvVV4eVNUeERbtqA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.General.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.General.html",
+          "hash": "dLRmGtULAXqHWSFqGDwDBA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.HistoryClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.HistoryClient.html",
+          "hash": "+jiiFY4L4Pa8+oONq8lhXA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.HistoryDayAverageResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.HistoryDayAverageResponse.html",
+          "hash": "vJX2nEWQCLL2vdM01E3SDA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.HistoryResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.HistoryResponse.html",
+          "hash": "p4dvYoVwHmrdl0JRn1CBHg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.IApiClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.IApiClient.html",
+          "hash": "qDNIvG6i/iqnKRWxAsjtpA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.ICO.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.ICO.html",
+          "hash": "NfJiABTsYPOLPKLD4OzrMg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.ICoinsClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.ICoinsClient.html",
+          "hash": "CaUWjTahVHtDjxEWOeWKYA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.ICryptoCompareClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.ICryptoCompareClient.html",
+          "hash": "FIQlQGwdQGBpt19lum23KA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.IExchangesClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.IExchangesClient.html",
+          "hash": "1v3OoX7l/0z8igm8GjbTSA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.IHistoryClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.IHistoryClient.html",
+          "hash": "e6KmuM8C7FHJfSFidkxxeQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.IMiningClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.IMiningClient.html",
+          "hash": "sVuVYwzhh40Rv4Ix+W1oeA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.INewsClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.INewsClient.html",
+          "hash": "78ZMoneKYW7WlGqiEj4eJg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.IPricesClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.IPricesClient.html",
+          "hash": "l3pP7bcI6rfaiDcyMgsoIg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.IRateLimitClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.IRateLimitClient.html",
+          "hash": "6G1t7zrPx+L608zY+oOzew=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.ISocialStatsClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.ISocialStatsClient.html",
+          "hash": "/iSFhKvgDwKuviJvDKqCbw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.ISubsClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.ISubsClient.html",
+          "hash": "to+N7KB197pnpX01goEIyA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.ITopListClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.ITopListClient.html",
+          "hash": "RiA1JxPAw8uoKf98Q7vJyg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.IsoDateTimeWithFormatConverter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.IsoDateTimeWithFormatConverter.html",
+          "hash": "j7WpGxswWqYkKDkEbFV0CQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.MarketCapDisplay.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.MarketCapDisplay.html",
+          "hash": "6OPAx7pCBgoK6SArljmukA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.MarketCapRaw.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.MarketCapRaw.html",
+          "hash": "bIynBrcrQaH8oZBTZqzkvw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.MiningClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.MiningClient.html",
+          "hash": "SxmyTbvWddostZ+mCM4dGw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.MiningContract.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.MiningContract.html",
+          "hash": "a/J7xYWFQJlOIq1Kr90V6A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.MiningContractsResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.MiningContractsResponse.html",
+          "hash": "mLz61QWsLbD6YyKxuqYxTw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.MiningData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.MiningData.html",
+          "hash": "jluRIrBTqr5lBmjFiLtJKQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.MiningEquipment.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.MiningEquipment.html",
+          "hash": "FK/EbAj7OhLIDwZqRGjGGQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.MiningEquipmentsResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.MiningEquipmentsResponse.html",
+          "hash": "NDDC89Yl5IH9dhy2ekjEgQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.NewsClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.NewsClient.html",
+          "hash": "/4y+OjfwH6gX7s+PzJnqag=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.NewsEntity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.NewsEntity.html",
+          "hash": "DxrMGJnWSQh0Vzn5Xyd3AQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.NewsProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.NewsProvider.html",
+          "hash": "AqnMUhmMjd+v9o7ROPFtVg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.PageViewsSplit.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.PageViewsSplit.html",
+          "hash": "Z9Kog5pAx3+DQ4YvTnLDQA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.Parent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.Parent.html",
+          "hash": "ar/q9g+2nM4j+zW2lN0olA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.PriceAverageResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.PriceAverageResponse.html",
+          "hash": "GIgie4ZVaqS+QBpdbReeaw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.PriceClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.PriceClient.html",
+          "hash": "TuVHAf4m9qEqVLp/LNvF4g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.PriceHistoricalReponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.PriceHistoricalReponse.html",
+          "hash": "Dg1WUWSu2A/EJzrL5r4cgQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.PriceMultiFullDisplay.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.PriceMultiFullDisplay.html",
+          "hash": "86FAXEpkBZPVVKRIbdYdOg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.PriceMultiFullRaw.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.PriceMultiFullRaw.html",
+          "hash": "gFkfREJoIJImwacUIewy1A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.PriceMultiFullResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.PriceMultiFullResponse.html",
+          "hash": "aYNTy2GGoOaZbBoN55qLfA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.PriceMultiResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.PriceMultiResponse.html",
+          "hash": "QPFS9YMNezKoMecEhM4pDg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.PriceSingleResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.PriceSingleResponse.html",
+          "hash": "JoKOwcggCmvA2Bpz7AkjgA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.RateLimitClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.RateLimitClient.html",
+          "hash": "D9RzT/XnNPRrTBGmJdgSAA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.RateLimitResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.RateLimitResponse.html",
+          "hash": "UNupyvDoM3/VlPSWGPrSOg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.Reddit.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.Reddit.html",
+          "hash": "visp/ApbH6GZVPCO0TeZpw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.Repository.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.Repository.html",
+          "hash": "KdHTrC0wRPFonm8P6tCVzg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.SEO.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.SEO.html",
+          "hash": "T9qwcT3S220i9ROjMDRNPA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.SimilarItem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.SimilarItem.html",
+          "hash": "a6a60+Hwgw2r2B/hiug/vg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.SocialStats.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.SocialStats.html",
+          "hash": "oR56LELK7NuXqtfoMF3pgA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.SocialStatsClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.SocialStatsClient.html",
+          "hash": "rnDDGJxdZYRCD+htAOpyBw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.SocialStatsResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.SocialStatsResponse.html",
+          "hash": "TjAU1pvQXYHepMobv0Lq5g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.Sub.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.Sub.html",
+          "hash": "GQFMOY2HQOLgoZXqhcPMCg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.SubId.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.SubId.html",
+          "hash": "xzzlb0c0Ihu1n9JkFBKI8g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.SubList.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.SubList.html",
+          "hash": "Xb1d0ZbpqGTp05rAAhjIAA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.SubListResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.SubListResponse.html",
+          "hash": "lx4LW5LGQkBV6j8vfSUqNQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.SubsClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.SubsClient.html",
+          "hash": "98QdUtq3PJsJs2E6R6f5MQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.TopExchangeFullResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.TopExchangeFullResponse.html",
+          "hash": "BW+Lpy9ybMkxzrJSUKSx+A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.TopExchangeInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.TopExchangeInfo.html",
+          "hash": "8SLJ7xn2eIKUvej/VhVu7Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.TopInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.TopInfo.html",
+          "hash": "7ZGl1UnfnMz5sdMwsvld4A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.TopListClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.TopListClient.html",
+          "hash": "LG7kpFe5dIR1hrjlZNGCtg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.TopMarketCapInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.TopMarketCapInfo.html",
+          "hash": "2Gz2hC/v3R2kkCWbdk2zPg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.TopMarketCapResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.TopMarketCapResponse.html",
+          "hash": "ah5apTOyPIqZZYPggZ7ZTg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.TopResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.TopResponse.html",
+          "hash": "fJp5FzOvNheOIZT7azqc/A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.TopVolume24HInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.TopVolume24HInfo.html",
+          "hash": "jeUUFwc0GCraRHTJj4QJhA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.TopVolume24HResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.TopVolume24HResponse.html",
+          "hash": "98+RYlL+5INBUahBTLI/6Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.TopVolumeInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.TopVolumeInfo.html",
+          "hash": "lujW0RzErRHImK1uesxwQQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.TopVolumesResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.TopVolumesResponse.html",
+          "hash": "9Q5wDqjjcqzdUy9reEPcMA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.Twitter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.Twitter.html",
+          "hash": "IKuIgfOheXiIGIfIk8cKYQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.Volume24HDisplay.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.Volume24HDisplay.html",
+          "hash": "nj1mfOs41E3m0IDpQAVB/g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.Volume24HRaw.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.Volume24HRaw.html",
+          "hash": "5H7cCui1OFyot8EBv4gQXw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/CryptoCompare.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CryptoCompare.html",
+          "hash": "cqxio9fN9ZM5srbno2k0yA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "obj/api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "bp0K0rXxJnpKFAJ8IEhHng=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot build incrementally because last build info is missing.",
+        "incrementalPhase": "build"
+      },
+      "processors": {
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build"
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build"
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: should not trace intermediate info.",
+        "incrementalPhase": "postProcessing"
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

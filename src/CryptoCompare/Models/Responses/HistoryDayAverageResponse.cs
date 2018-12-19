@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Text;
 
-namespace CryptoCompare.Models.Responses
+namespace CryptoCompare
 {
     /// <summary>
     /// A history day average response.

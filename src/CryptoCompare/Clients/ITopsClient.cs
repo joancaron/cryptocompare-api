@@ -1,7 +1,5 @@
 ﻿using System.Threading.Tasks;
 
-using CryptoCompare.Models.Responses;
-
 using JetBrains.Annotations;
 
 namespace CryptoCompare

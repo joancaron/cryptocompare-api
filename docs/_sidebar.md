@@ -16,4 +16,3 @@
   - [Changelog](changelog.md)
   - [Contributing](contributing.md)
   - [Code of conduct](code-of-conduct.md)
-  - [License](license.md)

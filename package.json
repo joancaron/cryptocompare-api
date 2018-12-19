@@ -5,7 +5,8 @@
   "scripts": {
     "commit": "git-cz",
     "dry-release": "standard-version --dry-run",
-    "release": "standard-version"
+    "release": "standard-version",
+    "docs": "docsify serve docs"
   },
   "repository": {
     "type": "git",

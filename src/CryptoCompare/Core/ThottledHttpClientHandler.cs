@@ -17,7 +17,7 @@ namespace CryptoCompare
         /// <exception cref="T:System.ArgumentOutOfRangeException">The <paramref name="millisecondsDelay">millisecondsDelay</paramref> argument is less than or equal to 0.</exception>
         public ThottledHttpClientHandler(int millisecondsDelay)
         {
-            if (millisecondsDelay <= 0) throw new ArgumentOutOfRangeException(nameof(millisecondsDelay));
+            if (millisecondsDelay <= 0) { throw new ArgumentOutOfRangeException(nameof(millisecondsDelay)); }
 
             _millisecondsDelay = millisecondsDelay;
             _semaphore = new SemaphoreSlim(1, 1);
@@ -27,16 +27,27 @@ namespace CryptoCompare
         {
             Check.NotNull(requestMessage, nameof(requestMessage));
 
-            await _semaphore.WaitAsync(cancellationToken);
+            await _semaphore.WaitAsync(cancellationToken).ConfigureAwait(false);
             try
             {
                 return await base.SendAsync(requestMessage, cancellationToken);
             }
             finally
             {
-                await Task.Delay(_millisecondsDelay, cancellationToken);
+                await Task.Delay(_millisecondsDelay, cancellationToken).ConfigureAwait(false);
                 _semaphore.Release(1);
             }
+        }
+
+        /// <inheritdoc />
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                this._semaphore?.Dispose();
+            }
+
+            base.Dispose(disposing);
         }
     }
 }

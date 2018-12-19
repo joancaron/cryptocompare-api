@@ -39,8 +39,11 @@ namespace CryptoCompare
         /// <summary>
         /// Initializes a new instance of the CryptoCompare.CryptoCompareClient class.
         /// </summary>
-        public CryptoCompareClient(string apiKey = null)
-            : this(new HttpClientHandler(), apiKey)
+        /// /// <param name="throttleDelayMs">Delay imposed between each queries to avoid exceeding CryptoCompare's maximum number of requests per second.</param>
+        public CryptoCompareClient(string apiKey = null, int throttleDelayMs = 0)
+            : this(
+                throttleDelayMs <= 0 ? new HttpClientHandler() : new ThottledHttpClientHandler(throttleDelayMs),
+                apiKey)
         {
         }
 

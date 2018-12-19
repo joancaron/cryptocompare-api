@@ -1,7 +1,5 @@
 ﻿using System;
 
-using CryptoCompareApi.News;
-
 namespace CryptoCompare
 {
     /// <summary>

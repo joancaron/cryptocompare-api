@@ -1,4 +1,4 @@
-﻿namespace CryptoCompare.Models.Responses
+﻿namespace CryptoCompare
 {
     public class TopExchangeFullResponse : BaseApiResponse
     {

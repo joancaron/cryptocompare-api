@@ -1,0 +1,43 @@
+{
+  "projectName": "cryptocompare-api",
+  "projectOwner": "joancaron",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "monsieurleberre",
+      "name": "monsieurleberre",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/4638821?v=4",
+      "profile": "https://github.com/monsieurleberre",
+      "contributions": [
+        "code",
+        "test"
+      ]
+    },
+    {
+      "login": "stepkillah",
+      "name": "Anton",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/10140906?v=4",
+      "profile": "https://github.com/stepkillah",
+      "contributions": [
+        "code",
+        "test"
+      ]
+    },
+    {
+      "login": "cohowap",
+      "name": "cohowap",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/634931?v=4",
+      "profile": "https://github.com/cohowap",
+      "contributions": [
+        "code",
+        "test"
+      ]
+    }
+  ]
+}

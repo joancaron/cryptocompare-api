@@ -1,23 +1,18 @@
 # Contributing to cryptocompare-api project
 
-We would love for you to contribute to OpenThread and help make it even better than it is today! As a contributor, here are the guidelines we would like you to follow.
+We would love for you to contribute to cryptocompare-api project and help make it even better than it is today! As a contributor, here are the guidelines we would like you to follow.
 
-* [Code of Conduct](#coc)
-* [Issues and Bugs](#issue)
-* [Feature Requests](#feature)
-* [Pull Request Submission Guidelines](#submit-pr)
+## Code of Conduct
 
-## <a name="coc"></a> Code of Conduct
+Help us keep cryptocompare-api open and inclusive. Please read and follow our [Code of Conduct](https://github.com/joancaron/cryptocompare-api/blob/master/CODE_OF_CONDUCT.md)
 
-Help us keep cryptocompare-api open and inclusive. Please read and follow our [Code of Conduct](CODE_OF_CONDUCT.md)
-
-## <a name="issue"></a> Found a Bug?
+## Found a Bug?
 If you find a bug in the source code, you can help us by
-[submitting an issue](../../issues) to our GitHub Repository. Even better, you can
-[submit a Pull Request](#submit-pr) with a fix.
+[submitting an issue](https://github.com/joancaron/cryptocompare-api/issues) to our GitHub Repository. Even better, you can
+[submit a Pull Request](https://github.com/joancaron/cryptocompare-api/pulls) with a fix.
 
-## <a name="feature"></a> Missing a Feature?
-You can *request* a new feature by [submitting an issue](../../issues) to our GitHub
+## Missing a Feature?
+You can *request* a new feature by [submitting an issue](https://github.com/joancaron/cryptocompare-api/issues) to our GitHub
 Repository. If you would like to *implement* a new feature, please submit an issue with
 a proposal for your work first, to be sure that we can use it.
 Please consider what kind of change it is:
@@ -25,12 +20,12 @@ Please consider what kind of change it is:
 * For a **Major Feature**, first open an issue and outline your proposal so that it can be
 discussed. This will also allow us to better coordinate our efforts, prevent duplication of work,
 and help you to craft the change so that it is successfully accepted into the project.
-* **Small Features** can be crafted and directly [submitted as a Pull Request](#submit-pr).
+* **Small Features** can be crafted and directly [submitted as a Pull Request](https://github.com/joancaron/cryptocompare-api/pulls).
 
-## <a name="submit-pr"></a> Submitting a Pull Request (PR)
+## Submitting a Pull Request (PR)
 Before you submit your Pull Request (PR) consider the following guidelines:
 
-1. Search [GitHub](../../pulls) for an open or closed PR
+1. Search [GitHub](https://github.com/joancaron/cryptocompare-api/pulls) for an open or closed PR
   that relates to your submission. You don't want to duplicate effort.
 1. Be sure that an issue describes the problem you're fixing, or documents the design for the feature you'd like to add.
   Discussing the design up front helps to ensure that we're ready to accept your work.
@@ -42,7 +37,7 @@ Before you submit your Pull Request (PR) consider the following guidelines:
      ```
 
 1. Create your patch, **including appropriate test cases**.
-1. Follow our [Coding Rules](#rules).
+1. Follow our Coding Rules.
 1. Run the full test suite and ensure that all tests pass.
 1. Commit your changes using a descriptive commit message that follows 
   ["Conventional commits" conventions](https://www.conventionalcommits.org). Adherence to these conventions
@@ -101,7 +96,7 @@ from the main (upstream) repository:
     git pull --ff upstream master
     ```
 
-## <a name="rules"></a> Coding Rules
+## Coding Rules
 To ensure consistency throughout the source code, keep these rules in mind as you are working:
 
 * All features or bug fixes **must be tested** by one or more specs (unit-tests).

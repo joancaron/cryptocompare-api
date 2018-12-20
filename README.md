@@ -52,3 +52,8 @@ Unstable NuGet packages that track the develop branch of this repository are ava
 var btc = await CryptoCompareClient.Instance.Coins.SnapshotFullAsync(1182);
 Console.WriteLine(eth.Data.General.Name);
 ````
+
+## License
+*Apache License 2.0*
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fjoancaron%2Fcryptocompare-api.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fjoancaron%2Fcryptocompare-api?ref=badge_large)

@@ -6,7 +6,9 @@
     "commit": "git-cz",
     "dry-release": "standard-version --dry-run",
     "release": "standard-version",
-    "docs": "docsify serve docs"
+    "docs": "docsify serve docs",
+    "contributors:add": "all-contributors add",
+    "contributors:generate": "all-contributors generate"
   },
   "repository": {
     "type": "git",
@@ -19,6 +21,7 @@
   },
   "homepage": "https://github.com/joancaron/cryptocompare-api#readme",
   "devDependencies": {
+    "all-contributors-cli": "^5.4.1",
     "commitizen": "^3.0.4",
     "cz-conventional-changelog": "^2.1.0",
     "docsify-cli": "^4.3.0",

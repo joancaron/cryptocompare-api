@@ -84,5 +84,20 @@ namespace CryptoCompare
 
         [JsonProperty("VOLUMEDAYTO")]
         public string VolumeDayTo { get; set; }
+
+        [JsonProperty("VOLUMEHOUR")]
+        public string VolumeHour { get; set; }
+
+        [JsonProperty("VOLUMEHOURTO")]
+        public string VolumeHourTo { get; set; }
+
+        [JsonProperty("OPENHOUR")]
+        public string OpenHour { get; set; }
+
+        [JsonProperty("OPENHOURTO")]
+        public string OpenHourTo { get; set; }
+
+        [JsonProperty("IMAGEURL")]
+        public string ImageUrl { get; set; }
     }
 }

@@ -22,6 +22,8 @@ namespace CryptoCompare
 
         public static Uri AllExchanges() => new Uri(MinApiEndpoint, "all/exchanges");
 
+        public static Uri AllExchangesGeneral() => new Uri(MinApiEndpoint, "exchanges/general");
+
         public static Uri CoinSnapshot([NotNull] string fsym, [NotNull] string tsym)
         {
             Check.NotNull(tsym, nameof(tsym));

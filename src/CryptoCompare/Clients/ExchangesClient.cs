@@ -29,5 +29,10 @@ namespace CryptoCompare
         {
             return await this.GetAsync<ExchangeListResponse>(ApiUrls.AllExchanges()).ConfigureAwait(false);
         }
+
+        public async Task<ExchangeGeneralListResponse> GeneralListAsync()
+        {
+            return await this.GetAsync<ExchangeGeneralListResponse>(ApiUrls.AllExchangesGeneral()).ConfigureAwait(false);
+        }
     }
 }

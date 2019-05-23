@@ -14,5 +14,15 @@ namespace Cryptocompare.Integration.Tests.Clients
             var result = await CryptoCompareClient.Instance.Exchanges.ListAsync();
             Assert.NotNull(result);
         }
+
+        [Fact]
+        public async Task CanCallExchangeGeneralListEndpoint()
+        {
+            var result = await CryptoCompareClient.Instance.Exchanges.GeneralListAsync();
+            Assert.NotNull(result);
+        }
+
+
+
     }
 }

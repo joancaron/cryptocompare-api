@@ -11,5 +11,11 @@ namespace CryptoCompare
         /// all the exchanges that CryptoCompare has integrated with..
         /// </summary>
         Task<ExchangeListResponse> ListAsync();
+
+        /// <summary>
+        /// all exchanges general info.
+        /// </summary>
+        /// <returns></returns>
+        Task<ExchangeGeneralListResponse> GeneralListAsync();
     }
 }

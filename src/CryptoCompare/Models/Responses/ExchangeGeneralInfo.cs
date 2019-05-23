@@ -1,16 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Newtonsoft.Json;
 
 namespace CryptoCompare
 {
     public class ExchangeGeneralInfo
     {
-        public long Id { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
         public string Url { get; set; }
         public string LogoUrl { get; set; }
-        public List<ItemType> ItemType { get; set; }
+        [JsonProperty("ItemType")]
+        public List<string> ItemsType { get; set; }
         public CentralizationType CentralizationType { get; set; }
         public string InternalName { get; set; }
         public Uri AffiliateUrl { get; set; }
@@ -46,5 +48,5 @@ namespace CryptoCompare
 
     public enum CentralizationType { Centralized, Decentralized };
 
-    public enum ItemType { Cryptocurrency, Derivatives, Fiat, StableCoins, Tokens };
+    
 }

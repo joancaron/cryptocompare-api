@@ -67,6 +67,11 @@
         /// Gets or sets the symbol.
         /// </summary>
         public string Symbol { get; set; }
+        
+        /// <summary>
+        /// Gets or sets the smart contract address.
+        /// </summary>
+        public string SmartContractAddress { get; set; }
 
         /// <summary>
         /// Gets or sets the total number of freed coins.

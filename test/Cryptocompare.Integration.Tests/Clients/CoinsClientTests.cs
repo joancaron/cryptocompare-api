@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Linq;
+using System.Threading.Tasks;
 
 using CryptoCompare;
 
@@ -13,6 +14,15 @@ namespace Cryptocompare.Integration.Tests.Clients
         {
             var result = await CryptoCompareClient.Instance.Coins.ListAsync();
             Assert.NotNull(result);
+        }
+
+        [Fact]
+        public async Task CanCallListEndpointAndRetrieveSmartContractAddresses()
+        {
+            var result = await CryptoCompareClient.Instance.Coins.ListAsync();
+            Assert.NotNull(result);
+            var foundSmartContractTokens = result.Coins.Any(c => c.Value.SmartContractAddress.StartsWith("0x"));
+            Assert.True(foundSmartContractTokens);
         }
 
         [Fact]

@@ -1,9 +1,7 @@
-﻿using System.Collections.Generic;
-
-namespace CryptoCompare
+﻿namespace CryptoCompare
 {
     public class HistoryResponse : BaseApiResponse
     {
-        public IReadOnlyList<CandleData> Data { get; set; }
+        public HistoryResponseData Data { get; set; }
     }
 }

@@ -79,7 +79,7 @@ namespace CryptoCompare
             Check.NotNullOrWhiteSpace(fsym, nameof(fsym));
             Check.NotNullOrWhiteSpace(tsym, nameof(tsym));
 
-            return new Uri(MinApiEndpoint, $"histo{method}").ApplyParameters(
+            return new Uri(MinApiEndpoint, $"v2/histo{method}").ApplyParameters(
                 new Dictionary<string, string>
                 {
                     { nameof(fsym), fsym },

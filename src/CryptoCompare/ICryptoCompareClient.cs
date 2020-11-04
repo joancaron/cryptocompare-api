@@ -1,4 +1,5 @@
 ﻿using System;
+using CryptoCompare.Clients;
 
 namespace CryptoCompare
 {
@@ -56,5 +57,10 @@ namespace CryptoCompare
         /// Gets the api client for "tops" endpoints.
         /// </summary>
         ITopListClient Tops { get; }
+
+        /// <summary>
+        /// Gets the api client for "trading signals" endpoints.
+        /// </summary>
+        ITradingSignalsClient TradingSignals { get; }
     }
 }

@@ -335,5 +335,15 @@ namespace CryptoCompare
                     { nameof(limit), limit?.ToString() }
                 });
         }
+
+        public static Uri TradingSignals(string fsym)
+        {
+            Check.NotNullOrWhiteSpace(fsym, nameof(fsym));
+            return new Uri(MinApiEndpoint, "tradingsignals/intotheblock/latest").ApplyParameters(
+                new Dictionary<string, string>
+                {
+                    { nameof(fsym), fsym }
+                });
+        }
     }
 }

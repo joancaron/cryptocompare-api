@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Net.Http;
 using System.Net.Http.Headers;
-
+using CryptoCompare.Clients;
 using JetBrains.Annotations;
 
 namespace CryptoCompare
@@ -121,6 +121,8 @@ namespace CryptoCompare
         /// </summary>
         /// <seealso cref="P:CryptoCompare.ICryptoCompareClient.Tops"/>
         public ITopListClient Tops => new TopListClient(this._httpClient);
+
+        public ITradingSignalsClient TradingSignals => new TradingSignalsClient(this._httpClient);
 
         /// <summary>
         /// Performs application-defined tasks associated with freeing, releasing, or

@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/joancaron/cryptocompare-api#readme",
   "devDependencies": {
-    "all-contributors-cli": "^5.4.1",
+    "all-contributors-cli": "^6.26.1",
     "commitizen": "^3.0.4",
     "cz-conventional-changelog": "^2.1.0",
     "docsify-cli": "^4.3.0",
